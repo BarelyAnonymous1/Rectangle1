@@ -52,7 +52,7 @@ public class Rectangle1Test extends TestCase
         }
         catch (Exception e)
         {
-            assertFuzzyEquals("file1 (The system cannot find the file specified)\n", systemOut().getHistory());
+            assertFuzzyEquals("file1 (no such file or directory)\n", systemOut().getHistory());
         }
     }
 
