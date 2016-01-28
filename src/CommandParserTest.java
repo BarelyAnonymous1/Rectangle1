@@ -7,16 +7,14 @@ import student.TestCase;
 
 public class CommandParserTest extends TestCase
 {
+    private CommandParser parse;
 
-    @Before
     public void setUp()
     {
     }
 
-    @Test
-    public void test()
+    public void testSearchFail()
     {
-        fail("Not yet implemented");
     }
 
 }
