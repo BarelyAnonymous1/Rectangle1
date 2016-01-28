@@ -22,7 +22,7 @@ public class CommandParser
     {
         while (scanner.hasNext())
         {// While the scanner has information to read
-            String cmd = scanner.next();// Read the next term
+            String cmd = scanner.next(); // Read the next term
             System.out.println("Hello World!\n");
         }
     }
