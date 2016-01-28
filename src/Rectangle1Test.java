@@ -1,7 +1,7 @@
 import student.TestCase;
 
 /**
- * @author ayaan
+ * @author Jonathan DeFreeuw (jondef95), Preston Lattimer (platt)
  * @version 2
  */
 public class Rectangle1Test extends TestCase
