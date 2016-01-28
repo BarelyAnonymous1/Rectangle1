@@ -52,8 +52,16 @@ public class Rectangle1Test extends TestCase
         }
         catch (Exception e)
         {
-            assertFuzzyEquals("file1 (no such file or directory)\n", systemOut().getHistory());
+            assertFuzzyEquals(FileNotFoundException.class, e.getClass());
         }
+    }
+    
+    /**
+     * test to skim a file to show parser can move through file
+     */
+    public void testSearchFile()
+    {
+        
     }
 
 }
