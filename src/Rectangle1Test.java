@@ -7,12 +7,15 @@ import student.TestCase;
 public class Rectangle1Test extends TestCase
 {
     String[] input1, input2;
+
     /**
      * This method sets up the tests that follow.
      */
     public void setUp()
     {
-        input1 = {"file1", "file2"};
+        input1[0] = "file1";
+        input1[1] = "file2";
+
     }
 
     // ----------------------------------------------------------
