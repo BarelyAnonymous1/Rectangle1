@@ -27,6 +27,9 @@ public class CommandParser
         inputFile = file;
     }
 
+    /**
+     * function used to scan through the file input into the main program
+     */
     public void parse()
     {
         Scanner scanner = null;
