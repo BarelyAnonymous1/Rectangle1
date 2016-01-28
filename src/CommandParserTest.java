@@ -3,7 +3,9 @@ import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
 
-public class CommandParserTest
+import student.TestCase;
+
+public class CommandParserTest extends TestCase
 {
 
     @Before
