@@ -15,7 +15,7 @@ public class Rectangle1Test extends TestCase
     {
         input1[0] = "file1";
         input1[1] = "file2";
-
+        input2[0] = "file1";
     }
 
     // ----------------------------------------------------------
