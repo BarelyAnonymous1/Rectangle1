@@ -11,15 +11,22 @@
 public class Rectangle1
 {
 
-    /**
-     * The entry point of the application.
-     *
-     * @param args
-     *            The name of the command file passed in as a command line
-     *            argument.
-     */
-    public static void main(String[] args)
-    {
-        System.out.println("Hello, World");
-    }
+        /**
+         * The entry point of the application.
+         *
+         * @param args
+         *                The name of the command file passed in as a command
+         *                line argument.
+         */
+        public static void main(String[] args)
+        {
+                if (args.length != 1)
+                {
+                        System.out.println("Error: Incorrect number of arguments provided");
+                } else
+                {
+                        Parser parseFile = new Parser(args[0]);
+                        // parseFile.parse();
+                }
+        }
 }
