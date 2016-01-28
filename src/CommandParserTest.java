@@ -20,5 +20,12 @@ public class CommandParserTest extends TestCase
         boolean success = parser.parse();
         assertFalse(success);
     }
+    
+    public void testSearchPass()
+    {
+        parser = new CommandParser("SyntaxTest.txt");
+        boolean success = parser.parse();
+        assertTrue(success);
+    }
 
 }
