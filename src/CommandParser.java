@@ -4,26 +4,26 @@ import java.util.Scanner;
 
 public class CommandParser
 {
-        private Scanner scanner;
+    private Scanner scanner;
 
-        public CommandParser(String file)
+    public CommandParser(String file)
+    {
+        try
         {
-                try
-                {
-                        scanner = new Scanner(new File(file));
-                }
-                catch (FileNotFoundException e)
-                {
-                        e.printStackTrace();
-                } // Create new scanner
+            scanner = new Scanner(new File(file));
         }
+        catch (FileNotFoundException e)
+        {
+            e.printStackTrace();
+        } // Create new scanner
+    }
 
-        public void parse()
-        {
-                while (scanner.hasNext())
-                {// While the scanner has information to read
-                        String cmd = scanner.next();// Read the next term
-                        System.out.println(cmd);
-                }
+    public void parse()
+    {
+        while (scanner.hasNext())
+        {// While the scanner has information to read
+            String cmd = scanner.next();// Read the next term
+            System.out.println(cmd);
         }
+    }
 }
