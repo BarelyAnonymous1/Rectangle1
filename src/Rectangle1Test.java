@@ -46,22 +46,15 @@ public class Rectangle1Test extends TestCase
      */
     public void testFileNotFound()
     {
-        try
-        {
-            Rectangle1.main(input2);
-        }
-        catch (Exception e)
-        {
-            assertFuzzyEquals(FileNotFoundException.class, e.getClass());
-        }
+        Rectangle1.main(input2);
     }
-    
+
     /**
      * test to skim a file to show parser can move through file
      */
     public void testSearchFile()
     {
-        
+
     }
 
 }
