@@ -22,7 +22,9 @@ public class Rectangle1
     {
         if (args.length != 1)
         {
-            System.out.println("Error: Incorrect number of arguments provided");
+            CommandParser parser = new CommandParser(args[0]);
+            parser.parse();
+            //System.out.println("Error: Incorrect number of arguments provided");
         }
         else
         {
