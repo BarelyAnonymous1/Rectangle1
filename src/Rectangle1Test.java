@@ -23,7 +23,7 @@ public class Rectangle1Test extends TestCase
     {
         Rectangle1 dum = new Rectangle1();
         assertNotNull(dum);
-        Rectangle1.main(null);
+        Rectangle1.main("Hello");
         assertFuzzyEquals("Hello, World\n", systemOut().getHistory());
     }
 
