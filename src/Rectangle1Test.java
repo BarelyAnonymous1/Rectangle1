@@ -6,13 +6,13 @@ import student.TestCase;
  */
 public class Rectangle1Test extends TestCase
 {
-    String[] input;
+    String[] input1, input2;
     /**
      * This method sets up the tests that follow.
      */
     public void setUp()
     {
-        // Nothing here yet
+        input1 = {"file1", "file2"};
     }
 
     // ----------------------------------------------------------
