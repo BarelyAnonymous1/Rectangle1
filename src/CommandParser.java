@@ -8,6 +8,10 @@ public class CommandParser
 
     public CommandParser(String file)
     {
+    }
+
+    public void parse()
+    {
         try
         {
             scanner = new Scanner(new File(file));
@@ -17,10 +21,6 @@ public class CommandParser
             e.printStackTrace();
             System.out.println(e.getMessage());
         } // Create new scanner
-    }
-
-    public void parse()
-    {
         while (scanner.hasNext())
         { // While the scanner has information to read
             String cmd = scanner.next(); // Read the next term
