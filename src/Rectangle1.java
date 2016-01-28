@@ -10,7 +10,7 @@
  */
 public class Rectangle1
 {
-
+    public Rectangle1(){}
     /**
      * The entry point of the application.
      *
