@@ -6,7 +6,7 @@ import student.TestCase;
  */
 public class Rectangle1Test extends TestCase
 {
-
+    String[] input;
     /**
      * This method sets up the tests that follow.
      */
