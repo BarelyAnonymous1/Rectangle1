@@ -36,17 +36,14 @@ public class Rectangle1Test extends TestCase
 
     public void testFileNotFound()
     {
-        Exception d = null;
         try
         {
             Rectangle1.main(input2);
         }
         catch (Exception e)
         {
-            d = e;
             assertEquals(e.getClass(), FileNotFoundException.class);
         }
-        assertNotNull(d);// Make sure an exception was thrown
     }
 
 }
