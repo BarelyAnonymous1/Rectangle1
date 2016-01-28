@@ -3,8 +3,8 @@ import java.io.FileNotFoundException;
 import java.util.Scanner;
 
 /**
- * CommandParser class used to scan through a file with a Scanner and 
- * retrieve specific values to create a SkipList of Rectangles
+ * CommandParser class used to scan through a file with a Scanner and retrieve
+ * specific values to create a SkipList of Rectangles
  * 
  * @author Jonathan DeFreeuw (jondef95), Preston Lattimer (platt)
  *
@@ -18,7 +18,9 @@ public class CommandParser
 
     /**
      * constructor for parser, stores filename
-     * @param file  name for the file that is being parsed
+     * 
+     * @param file
+     *            name for the file that is being parsed
      */
     public CommandParser(String file)
     {
