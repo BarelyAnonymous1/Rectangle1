@@ -29,9 +29,9 @@ public class CommandParser
 
     /**
      * function used to scan through the file input into the main program
-     * @param success   did the parsing succeed?
+     * @return boolean   did the parsing succeed?
      */
-    public boolean parse(boolean success)
+    public boolean parse()
     {
         Scanner scanner = null;
         try
