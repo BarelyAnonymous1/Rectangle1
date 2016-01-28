@@ -8,7 +8,14 @@ import student.TestCase;
  */
 public class Rectangle1Test extends TestCase
 {
-    String[] input1, input2;
+    /**
+     * list of inputs for first test
+     */
+    String[] input1;
+    /**
+     * list of inputs for second test
+     */
+    String[] input2;
 
     /**
      * This method sets up the tests that follow.
