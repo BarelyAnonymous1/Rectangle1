@@ -44,7 +44,7 @@ public class Rectangle1Test extends TestCase
     /**
      * test to show that the main will display an error through the parser
      */
-    public void testFileNotFound()
+    public void testFileNotFound() throws FileNotFoundException
     {
         Rectangle1.main(input2);
     }
