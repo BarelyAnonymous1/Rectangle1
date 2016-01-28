@@ -42,7 +42,7 @@ public class Rectangle1Test extends TestCase
         }
         catch (Exception e)
         {
-            assertEquals(e.getClass(), FileNotFoundException.class);
+            assertEquals(FileNotFoundException.class, e.getClass());
         }
     }
 
