@@ -27,7 +27,7 @@ public class Rectangle1
         else
         {
             CommandParser parser = new CommandParser(args[0]);
-            // parser.parse();
+            parser.parse();
         }
     }
 }
