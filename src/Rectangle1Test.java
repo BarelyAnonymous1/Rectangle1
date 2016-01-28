@@ -40,7 +40,7 @@ public class Rectangle1Test extends TestCase
         Rectangle1.main(input1);
         assertFuzzyEquals("Error: Incorrect number of arguments provided\n", systemOut().getHistory());
     }
-    
+
     /**
      * test to show that the main will display an error through the parser
      */
