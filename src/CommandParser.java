@@ -15,7 +15,7 @@ public class CommandParser
                 catch (FileNotFoundException e)
                 {
                         e.printStackTrace();
-                } // Create our new scanner
+                } // Create new scanner
         }
 
         public void parse()
