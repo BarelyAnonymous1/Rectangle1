@@ -44,17 +44,6 @@ public class Rectangle1Test extends TestCase
         {
             d = e;
             assertEquals(e.getClass(), FileNotFoundException.class);
-            // There are a number of ways to test exceptions
-            // One way would be to get the message that it prints, however, that
-            // message will likely change in most exceptions (i.e. FileNotFound
-            // will
-            // throw information about the file location). The other way to test
-            // an
-            // exception would be to check the type of exception thrown. In
-            // addition,
-            // it is wise to make sure an that the catch block is reached by
-            // setting
-            // a marker value to guarantee it has been reached.
         }
         assertNotNull(d);// Make sure an exception was thrown
     }
