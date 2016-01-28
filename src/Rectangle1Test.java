@@ -24,7 +24,7 @@ public class Rectangle1Test extends TestCase
         Rectangle1 dum = new Rectangle1();
         assertNotNull(dum);
         Rectangle1.main(null);
-        assertFuzzyEquals("Hello, World\n", systemOut().getHistory());
+        assertFuzzyEquals("Error: Incorrect number of arguments provided\n", systemOut().getHistory());
     }
 
 }
