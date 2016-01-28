@@ -29,8 +29,9 @@ public class CommandParser
 
     /**
      * function used to scan through the file input into the main program
+     * @param success   did the parsing succeed?
      */
-    public void parse()
+    public boolean parse(boolean success)
     {
         Scanner scanner = null;
         try
@@ -49,6 +50,11 @@ public class CommandParser
                 String cmd = scanner.next(); // Read the next term
                 System.out.println(cmd);
             }
+            return true;
+        }
+        else
+        {
+            return false;
         }
     }
 }
