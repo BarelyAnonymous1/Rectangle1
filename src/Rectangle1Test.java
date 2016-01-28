@@ -28,6 +28,8 @@ public class Rectangle1Test extends TestCase
         assertNotNull(dum);
         Rectangle1.main(input1);
         assertFuzzyEquals("Error: Incorrect number of arguments provided\n", systemOut().getHistory());
+        Rectangle1.main(input2);
+        assertFuzzyEquals("Error: Incorrect number of arguments provided\n", systemOut().getHistory());
     }
 
 }
