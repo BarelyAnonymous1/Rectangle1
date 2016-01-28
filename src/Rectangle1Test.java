@@ -54,7 +54,8 @@ public class Rectangle1Test extends TestCase
      */
     public void testSearchFile()
     {
-
+        String[] input = {"SyntaxTest.txt"};
+        Rectangle1.main(input);
     }
 
 }
