@@ -36,8 +36,14 @@ public class Rectangle1Test extends TestCase
 
     public void testFileNotFound()
     {
-        Rectangle1.main(input2);
-        assertFuzzyEquals("Error: File not found", systemOut().getHistory());
+        try
+        {
+            Rectangle1.main(input2);
+        }
+        catch (Exception e)
+        {
+            assertFuzzyEquals("file1 (system cannot find the file)", e.getMessage());
+        }
     }
 
 }

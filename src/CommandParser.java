@@ -14,8 +14,8 @@ public class CommandParser
         }
         catch (FileNotFoundException e)
         {
-            System.out.println("Error: File not found");
             e.printStackTrace();
+            System.out.println(e.getMessage());
         } // Create new scanner
     }
 
