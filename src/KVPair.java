@@ -72,14 +72,23 @@ public class KVPair<K extends Comparable<K>, E>
         return theKey;
     }
 
+    /**
+     * returns the value from the KVPair
+     * 
+     * @return value stored in pair
+     */
     public E value()
     {
         return theVal;
     }
 
+    /**
+     * returns a String representation of the KVPair
+     * 
+     * @return the String values for both the key and value
+     */
     public String toString()
     {
         return theKey.toString() + ", " + theVal.toString();
     }
 }
-/* *** ODSAendTag: KVPair *** */
