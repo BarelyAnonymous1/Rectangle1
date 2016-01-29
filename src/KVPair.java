@@ -38,8 +38,11 @@ public class KVPair<K extends Comparable<K>, E>
         theVal = v;
     }
 
-    // Compare KVPairs
-    public int compareTo(KVPair<K, E> )
+    /**
+     * compares two KVPairs based on keys
+     * @return
+     */
+    public int compareTo(KVPair<K, E> it)
     {
         return theKey.compareTo(it.key());
     }
