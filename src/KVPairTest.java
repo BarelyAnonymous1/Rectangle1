@@ -1,6 +1,14 @@
 import static org.junit.Assert.*;
 import student.TestCase;
 
+/**
+ * test class to test the methods of the generic KVPair. String and Integer
+ * values were used to keep to the use of Strings and Integers in the Rectangle
+ * class
+ * 
+ * @author Jonathan DeFreeuw (jondef95), Preston Lattimer (platt)
+ *
+ */
 public class KVPairTest extends TestCase
 {
 
