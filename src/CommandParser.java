@@ -87,6 +87,7 @@ public class CommandParser
                     case ("dump"):
                     {
                         // TODO: IMPLEMENT DUMP OF SKIPLIST
+                        break;
                     }
                     default:
                     {
@@ -109,7 +110,7 @@ public class CommandParser
      * 
      * @param scanner
      *            the scanner that is used to search the file
-     * @precondition the scanner input is already intiialized
+     * @precondition the scanner input is already initialized
      * @postcondition if coordinates are correct, a node is added to the list
      */
     private void parseInsert(Scanner scanner)
