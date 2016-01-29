@@ -80,10 +80,12 @@ public class CommandParser
                     }
                     case ("search"):
                     {
+                        parseSearch(scanner);
                         break;
                     }
                     case ("dump"):
                     {
+                        // TODO: IMPLEMENT DUMP OF SKIPLIST
                         break;
                     }
                     default:
@@ -112,13 +114,14 @@ public class CommandParser
         int height = scanner.nextInt();
         // store these values as a KVPair
         // store KVPair into SkipList
+        // TODO: IMPLEMENT INSERT
     }
 
     private void parseRemove(Scanner scanner)
     {
         // figure out if it is removing by key or removing by value
+        // TODO: IMPLEMENT REMOVE ON NAME AND COORDINATE
         scanner.nextLine();
-        return;
     }
 
     private void parseRegionSearch(Scanner scanner)
@@ -127,13 +130,13 @@ public class CommandParser
         int y = scanner.nextInt();
         int width = scanner.nextInt();
         int height = scanner.nextInt();
-        //TODO: IMPLEMENT REGIONSEARCH
+        // TODO: IMPLEMENT REGIONSEARCH
         // look in the SkipList for all Rectangles in the region
     }
-    
+
     private void parseSearch(Scanner scanner)
     {
         String name = scanner.next();
-        //TODO: IMPLEMENT SEARCH ON SKIPLIST
+        // TODO: IMPLEMENT SEARCH ON SKIPLIST
     }
 }
