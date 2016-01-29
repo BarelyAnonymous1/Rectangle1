@@ -49,6 +49,38 @@ public class CommandParser
             while (scanner.hasNext())
             { // While the scanner has information to read
                 String cmd = scanner.next(); // Read the next term
+                switch(cmd)
+                {
+                    case("insert"):
+                    {
+                        scanner.nextLine();
+                    }
+                    case("remove"):
+                    {
+                        
+                    }
+                    case("regionsearch"):
+                    {
+                        
+                    }
+                    case("intersections"):
+                    {
+                        
+                    }
+                    case("search"):
+                    {
+                        
+                    }
+                    case("dump"):
+                    {
+                        
+                    }
+                    default:
+                    {
+                        scanner.nextLine();
+                        break;
+                    }
+                }
                 System.out.println(cmd);
             }
             return true;
