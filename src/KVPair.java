@@ -41,6 +41,8 @@ public class KVPair<K extends Comparable<K>, E>
     /**
      * compares two KVPairs based on keys
      * 
+     * @param it
+     *            the KVPair that is being checked against this pair
      * @return 0 if they have the same key, another integer if different
      */
     public int compareTo(KVPair<K, E> it)
@@ -48,7 +50,11 @@ public class KVPair<K extends Comparable<K>, E>
         return theKey.compareTo(it.key());
     }
 
-    // Compare against a key
+    /**
+     * 
+     * @param it
+     * @return
+     */
     public int compareTo(K it)
     {
         return theKey.compareTo(it);
