@@ -15,11 +15,6 @@ public class CommandParserTest extends TestCase
 {
     private CommandParser parser;
 
-    public void setUp()
-    {
-        
-    }
-
     public void testSearchFail()
     {
         parser = new CommandParser("fail");
