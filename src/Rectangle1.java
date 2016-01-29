@@ -1,8 +1,4 @@
 /**
- * { your description of the project here }
- */
-
-/**
  * The class containing the main method, the entry point of the application.
  *
  * @author Jonathan DeFreeuw (jondef95), Preston Lattimer (platt)
