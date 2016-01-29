@@ -27,7 +27,9 @@ public class KVPairTest
     @Test
     public void testCompareToK()
     {
-        fail("Not yet implemented");
+        assertEquals(0, KV2.compareTo("second"));
+        assertEquals(0, KV3.compareTo(KV1.key()));
+        assertFalse(KV1.compareTo(KV2.key()) == 0);
     }
 
     @Test
