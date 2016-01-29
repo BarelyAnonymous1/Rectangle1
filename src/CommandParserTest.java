@@ -9,7 +9,7 @@ import student.TestCase;
  * Test class to demonstrate proper use of the CommandParser
  * 
  * @author Jonathan DeFreeuw (jondef95), Preston Lattimer (platt)
- *
+ * @version 1
  */
 public class CommandParserTest extends TestCase
 {
