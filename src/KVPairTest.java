@@ -20,7 +20,7 @@ public class KVPairTest
     private KVPair<String, Integer> KV3;
 
     /**
-     * creates three KVPairs for use in testing 
+     * creates three KVPairs for use in testing
      */
     public void setUp()
     {
@@ -69,7 +69,10 @@ public class KVPairTest
                 .equals(Integer.valueOf(KV1.value())));
     }
 
-    @Test
+    /**
+     * tests to see if the toString method returns the expected string for a
+     * given KVPair
+     */
     public void testToString()
     {
         assertEquals("first, 1", KV1.toString());
