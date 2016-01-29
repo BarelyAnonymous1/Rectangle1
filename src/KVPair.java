@@ -1,5 +1,16 @@
-/* *** ODSATag: KVPair *** */
-// KVPair class definition
+/**
+ * Generic KVPair class used to store values and keys in the same class. Based
+ * off of the KVPair code given through OpenDSA. Comments added to show
+ * understanding of what the code does
+ * 
+ * @author Jonathan DeFreeuw (jondef95), Preston Lattimer (platt)
+ * @version 2
+ *
+ * @param <K>
+ *            generic key value
+ * @param <E>
+ *            generic element to be stored
+ */
 public class KVPair<K extends Comparable<K>, E>
         implements Comparable<KVPair<K, E>>
 {
@@ -13,7 +24,7 @@ public class KVPair<K extends Comparable<K>, E>
     }
 
     // Compare KVPairs
-    public int compareTo(KVPair<K, E> it)
+    public int compareTo(KVPair<K, E> )
     {
         return theKey.compareTo(it.key());
     }
