@@ -5,6 +5,10 @@ import student.TestCase;
 public class KVPairTest
 {
 
+    public void setUp()
+    {
+        KVPair<String, Integer> KV1;
+    }
     @Test
     public void testKVPair()
     {
