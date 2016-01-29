@@ -22,6 +22,7 @@
 // PRESTON YOU SHOULD DO THIS THING AT SOME POINT
 
 /**
+ * WE NEED TO TYPE OUT A BETTER HEADER COMMENT FOR THE OVERALL PROJECT
  * The class containing the main method, the entry point of the application.
  *
  * @author Jonathan DeFreeuw (jondef95), Preston Lattimer (platt)
@@ -30,6 +31,7 @@
 public class Rectangle1
 {
     /**
+     * NEED A BETTER EXPLANATION HERE TOO
      * The entry point of the application.
      *
      * @param args
