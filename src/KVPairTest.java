@@ -20,7 +20,7 @@ public class KVPairTest
     @Test
     public void testCompareToKVPairOfKE()
     {
-        assertEquals(0, KV1.compareTo(KV2));
+        assertEquals(0, KV1.compareTo(KV3));
         assertFalse(KV2.compareTo(KV3) == 0);
     }
 
