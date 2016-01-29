@@ -49,34 +49,30 @@ public class CommandParser
             while (scanner.hasNext())
             { // While the scanner has information to read
                 String cmd = scanner.next(); // Read the next term
-                switch(cmd)
-                {
-                    case("insert"):
+                switch (cmd) {
+                    case ("insert"):
                     {
                         parseInsert(scanner);
                     }
-                    case("remove"):
+                    case ("remove"):
                     {
-                        int x = scanner.nextInt();
-                        int y = scanner.nextInt();
-                        int width = scanner.nextInt();
-                        int height = scanner.nextInt();
+                        parseRemove(scanner);
                     }
-                    case("regionsearch"):
+                    case ("regionsearch"):
                     {
-                        
+
                     }
-                    case("intersections"):
+                    case ("intersections"):
                     {
-                        
+
                     }
-                    case("search"):
+                    case ("search"):
                     {
-                        
+
                     }
-                    case("dump"):
+                    case ("dump"):
                     {
-                        
+
                     }
                     default:
                     {
@@ -101,13 +97,23 @@ public class CommandParser
         int y = scanner.nextInt();
         int width = scanner.nextInt();
         int height = scanner.nextInt();
-        //store these values as a KVPair
-        //store KVPair into SkipList
+        // store these values as a KVPair
+        // store KVPair into SkipList
     }
-    
+
     private void parseRemove(Scanner scanner)
     {
         // figure out if it is removing by key or removing by value
         return;
     }
+    
+    private void parseRegionSearch(Scanner scanner)
+    {
+        int x = scanner.nextInt();
+        int y = scanner.nextInt();
+        int width = scanner.nextInt();
+        int height = scanner.nextInt();
+        // look in the SkipList for all Rectangles in the region
+    }
+    
 }
