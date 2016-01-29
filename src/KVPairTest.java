@@ -6,10 +6,22 @@ import student.TestCase;
 public class KVPairTest
 {
 
+    /**
+     * first test of generic KVPair
+     */
     private KVPair<String, Integer> KV1;
+    /**
+     * second generic KVPair
+     */
     private KVPair<String, Integer> KV2;
+    /**
+     * third generic KVPair
+     */
     private KVPair<String, Integer> KV3;
 
+    /**
+     * creates three KVPairs for use in testing 
+     */
     public void setUp()
     {
         KV1 = new KVPair<String, Integer>("first", 1);
