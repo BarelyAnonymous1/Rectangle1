@@ -14,9 +14,24 @@
 public class KVPair<K extends Comparable<K>, E>
         implements Comparable<KVPair<K, E>>
 {
+    /**
+     * where the key of the pair will be stored
+     */
     K theKey;
+
+    /**
+     * where the value for the pair will be stored
+     */
     E theVal;
 
+    /**
+     * constructor for the KVPair that stored the key and value
+     * 
+     * @param k
+     *            key to be stored
+     * @param v
+     *            value to be stored
+     */
     KVPair(K k, E v)
     {
         theKey = k;
