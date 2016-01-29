@@ -53,7 +53,11 @@ public class CommandParser
                 {
                     case("insert"):
                     {
-                        scanner.nextLine();
+                        String name = scanner.next();
+                        int x = scanner.nextInt();
+                        int y = scanner.nextInt();
+                        int width = scanner.nextInt();
+                        int height = scanner.nextInt();
                     }
                     case("remove"):
                     {
