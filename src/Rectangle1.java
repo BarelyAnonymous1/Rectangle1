@@ -18,7 +18,7 @@ public class Rectangle1
         if (args.length != 1)
         {
             System.out.println(
-            		"Error: Incorrect number of arguments provided\n");
+                    "Error: Incorrect number of arguments provided\n");
         }
         else
         {
