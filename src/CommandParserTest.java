@@ -27,6 +27,7 @@ public class CommandParserTest extends TestCase
     
     /**
      * tests to see if the parser will correctly open and close a file
+     * does not test the output of the parser
      */
     public void testSearchPass()
     {
