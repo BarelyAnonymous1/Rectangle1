@@ -62,6 +62,11 @@ public class KVPair<K extends Comparable<K>, E>
         return theKey.compareTo(it);
     }
 
+    /**
+     * returns the key from the KVPair
+     * 
+     * @return key stored in pair
+     */
     public K key()
     {
         return theKey;
