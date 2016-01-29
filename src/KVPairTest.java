@@ -1,9 +1,6 @@
 import static org.junit.Assert.*;
 
-import org.junit.Test;
-import student.TestCase;
-
-public class KVPairTest
+public class KVPairTest extends TestCase
 {
 
     /**
