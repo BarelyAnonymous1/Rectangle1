@@ -35,13 +35,16 @@ public class KVPairTest
     @Test
     public void testKey()
     {
-        fail("Not yet implemented");
+        assertEquals("first", KV1.key());
+        assertEquals("second", KV2.key());
+        assertEquals(KV1.key(), KV3.key());
     }
 
     @Test
     public void testValue()
     {
-        fail("Not yet implemented");
+        assertEquals(Integer.valueOf(1), Integer.valueOf(KV1.value()));
+        
     }
 
     @Test
