@@ -45,7 +45,7 @@ public class KVPairTest
     {
         assertEquals(Integer.valueOf(1), Integer.valueOf(KV1.value()));
         assertEquals(Integer.valueOf(2), Integer.valueOf(KV2.value()));
-        assertEquals(Integer.valueOf(KV3.value()), Integer.valueOf(KV1.value()));
+        assertFalse(Integer.valueOf(KV3.value()).equals(Integer.valueOf(KV1.value())));
     }
 
     @Test
