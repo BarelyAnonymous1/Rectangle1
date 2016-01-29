@@ -48,7 +48,9 @@ public class KVPairTest
         assertFalse(KV1.compareTo(KV2.key()) == 0);
     }
 
-    @Test
+    /**
+     * tests the getter for the key
+     */
     public void testKey()
     {
         assertEquals("first", KV1.key());
@@ -56,7 +58,9 @@ public class KVPairTest
         assertEquals(KV1.key(), KV3.key());
     }
 
-    @Test
+    /**
+     * tests the getter for the value
+     */
     public void testValue()
     {
         assertEquals(Integer.valueOf(1), Integer.valueOf(KV1.value()));
