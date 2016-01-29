@@ -13,9 +13,8 @@ public class KVPairTest
     @Test
     public void testCompareToKVPairOfKE()
     {
-        KV1 = new KVPair<String, Integer>("first", 1);
-        KV2 = new KVPair<String, Integer>("second", 2);
-        KV3 = new KVPair<String, Integer>("first", 3);
+        assertEquals(0, KV1.compareTo(KV2));
+        assertFalse(KV2.compareTo(KV3) == 0);
     }
 
     @Test
