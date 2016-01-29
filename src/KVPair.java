@@ -7,7 +7,7 @@
  * @version 2
  *
  * @param <K>
- *            generic key value
+ *            generic key to be stored
  * @param <E>
  *            generic element to be stored
  */
