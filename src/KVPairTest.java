@@ -2,24 +2,18 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 import student.TestCase;
+
 public class KVPairTest
 {
 
-    public void setUp()
-    {
-        KVPair<String, Integer> KV1;
-        KVPair<String, Integer> KV2;
-    }
-    @Test
-    public void testKVPair()
-    {
-        fail("Not yet implemented");
-    }
+    private KVPair<String, Integer> KV1;
+    private KVPair<String, Integer> KV2;
 
     @Test
     public void testCompareToKVPairOfKE()
     {
-        fail("Not yet implemented");
+        KV1 = new KVPair<String, Integer>("first", 1);
+        KV2 = new KVPair<String, Integer>("second", 2);
     }
 
     @Test
