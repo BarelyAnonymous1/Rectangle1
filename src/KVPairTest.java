@@ -16,6 +16,7 @@ public class KVPairTest
         KV2 = new KVPair<String, Integer>("second", 2);
         KV3 = new KVPair<String, Integer>("first", 3);
     }
+
     @Test
     public void testCompareToKVPairOfKE()
     {
