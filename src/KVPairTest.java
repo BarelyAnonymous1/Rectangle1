@@ -51,7 +51,9 @@ public class KVPairTest
     @Test
     public void testToString()
     {
-        fail("Not yet implemented");
+        assertEquals("first, 1", KV1.toString());
+        assertEquals("second, 2", KV2.toString());
+        assertEquals("first, 3", KV3.toString());
     }
 
 }
