@@ -1,4 +1,5 @@
 import static org.junit.Assert.*;
+import student.TestCase;
 
 public class KVPairTest extends TestCase
 {
