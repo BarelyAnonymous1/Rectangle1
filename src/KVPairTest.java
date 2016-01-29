@@ -61,8 +61,8 @@ public class KVPairTest extends TestCase
      */
     public void testValue()
     {
-        assertEquals(Integer.valueOf(1), Integer.valueOf(KV1.value()));
-        assertEquals(Integer.valueOf(2), Integer.valueOf(KV2.value()));
+        assertTrue(Integer.valueOf(1).equals(Integer.valueOf(KV1.value())));
+        assertTrue(Integer.valueOf(2).equals(Integer.valueOf(KV2.value())));
         assertFalse(Integer.valueOf(KV3.value())
                 .equals(Integer.valueOf(KV1.value())));
     }
