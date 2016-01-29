@@ -7,24 +7,24 @@ public class KVPairTest extends TestCase
     /**
      * first test of generic KVPair
      */
-    private KVPair<String, Integer> KV1;
+    private KVPair<String, Integer> pair1;
     /**
      * second generic KVPair
      */
-    private KVPair<String, Integer> KV2;
+    private KVPair<String, Integer> pair2;
     /**
      * third generic KVPair
      */
-    private KVPair<String, Integer> KV3;
+    private KVPair<String, Integer> pair3;
 
     /**
      * creates three KVPairs for use in testing
      */
     public void setUp()
     {
-        KV1 = new KVPair<String, Integer>("first", 1);
-        KV2 = new KVPair<String, Integer>("second", 2);
-        KV3 = new KVPair<String, Integer>("first", 3);
+        pair1 = new KVPair<String, Integer>("first", 1);
+        pair2 = new KVPair<String, Integer>("second", 2);
+        pair3 = new KVPair<String, Integer>("first", 3);
     }
 
     /**
@@ -32,8 +32,8 @@ public class KVPairTest extends TestCase
      */
     public void testCompareToKVPairOfKE()
     {
-        assertEquals(0, KV1.compareTo(KV3));
-        assertFalse(KV2.compareTo(KV3) == 0);
+        assertEquals(0, pair1.compareTo(pair3));
+        assertFalse(pair2.compareTo(pair3) == 0);
     }
 
     /**
@@ -41,9 +41,9 @@ public class KVPairTest extends TestCase
      */
     public void testCompareToK()
     {
-        assertEquals(0, KV2.compareTo("second"));
-        assertEquals(0, KV3.compareTo(KV1.key()));
-        assertFalse(Integer.valueOf(KV1.compareTo(KV2.key()))
+        assertEquals(0, pair2.compareTo("second"));
+        assertEquals(0, pair3.compareTo(pair1.key()));
+        assertFalse(Integer.valueOf(pair1.compareTo(pair2.key()))
                 .equals(Integer.valueOf(0)));
     }
 
@@ -52,9 +52,9 @@ public class KVPairTest extends TestCase
      */
     public void testKey()
     {
-        assertEquals("first", KV1.key());
-        assertEquals("second", KV2.key());
-        assertEquals(KV1.key(), KV3.key());
+        assertEquals("first", pair1.key());
+        assertEquals("second", pair2.key());
+        assertEquals(pair1.key(), pair3.key());
     }
 
     /**
@@ -62,10 +62,10 @@ public class KVPairTest extends TestCase
      */
     public void testValue()
     {
-        assertTrue(Integer.valueOf(1).equals(Integer.valueOf(KV1.value())));
-        assertTrue(Integer.valueOf(2).equals(Integer.valueOf(KV2.value())));
-        assertFalse(Integer.valueOf(KV3.value())
-                .equals(Integer.valueOf(KV1.value())));
+        assertTrue(Integer.valueOf(1).equals(Integer.valueOf(pair1.value())));
+        assertTrue(Integer.valueOf(2).equals(Integer.valueOf(pair2.value())));
+        assertFalse(Integer.valueOf(pair3.value())
+                .equals(Integer.valueOf(pair1.value())));
     }
 
     /**
@@ -74,9 +74,9 @@ public class KVPairTest extends TestCase
      */
     public void testToString()
     {
-        assertEquals("first, 1", KV1.toString());
-        assertEquals("second, 2", KV2.toString());
-        assertEquals("first, 3", KV3.toString());
+        assertEquals("first, 1", pair1.toString());
+        assertEquals("second, 2", pair2.toString());
+        assertEquals("first, 3", pair3.toString());
     }
 
 }
