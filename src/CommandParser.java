@@ -60,11 +60,11 @@ public class CommandParser
                     }
                     case ("regionsearch"):
                     {
-
+                        parseRegionSearch(scanner);
                     }
                     case ("intersections"):
                     {
-
+                        //SkipList 
                     }
                     case ("search"):
                     {
