@@ -1,6 +1,7 @@
 /* *** ODSATag: KVPair *** */
 // KVPair class definition
-public class KVPair<K extends Comparable<K>, E> implements Comparable<KVPair<K, E>>
+public class KVPair<K extends Comparable<K>, E>
+        implements Comparable<KVPair<K, E>>
 {
     K theKey;
     E theVal;
