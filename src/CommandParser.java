@@ -56,7 +56,8 @@ public class CommandParser
             while (scanner.hasNext())
             { // While the scanner has information to read
                 String cmd = scanner.next(); // Read the next command
-                switch (cmd) {
+                switch (cmd) 
+                {
                     case ("insert"):
                     {
                         parseInsert(scanner);
@@ -86,12 +87,9 @@ public class CommandParser
                     case ("dump"):
                     {
                         // TODO: IMPLEMENT DUMP OF SKIPLIST
-                        break;
                     }
                     default:
                     {
-                        System.out.println("Command not recognized: " + cmd);
-                        scanner.nextLine();
                         break;
                     }
                 }
@@ -105,6 +103,15 @@ public class CommandParser
         }
     }
 
+    /**
+     * private method that allows the parser to scan a line and insert the new
+     * rectangle into a SkipList
+     * 
+     * @param scanner
+     *            the scanner that is used to search the file
+     * @precondition the scanner input is already intiialized
+     * @postcondition if coordinates are correct, a node is added to the list
+     */
     private void parseInsert(Scanner scanner)
     {
         String name = scanner.next();
@@ -117,6 +124,15 @@ public class CommandParser
         // TODO: IMPLEMENT INSERT
     }
 
+    /**
+     * private method that allows the parser to scan a line and remove a
+     * rectangle based on either name or coordinates
+     * 
+     * @param scanner
+     *            the scanner that is used to search the file
+     * @precondition the scanner input is already intiialized
+     * @postcondition if the rectangle exists, it is removed from the list
+     */
     private void parseRemove(Scanner scanner)
     {
         // figure out if it is removing by key or removing by value
@@ -124,6 +140,16 @@ public class CommandParser
         scanner.nextLine();
     }
 
+    /**
+     * private method that allows the parser to scan a line and search the
+     * SkipList for Rectangles within a certain region
+     * 
+     * @param scanner
+     *            the scanner that is used to search the file
+     * @precondition the scanner input is already intiialized
+     * @postcondition if the height and width are appropriate, a list of
+     *                rectangles are output to the console
+     */
     private void parseRegionSearch(Scanner scanner)
     {
         int x = scanner.nextInt();
@@ -134,6 +160,15 @@ public class CommandParser
         // look in the SkipList for all Rectangles in the region
     }
 
+    /**
+     * private method that allows the parser to scan a line and search a list
+     * for the specific rectangle; if it exists, output it to the console
+     * 
+     * @param scanner
+     *            the scanner that is used to search the file
+     * @precondition the scanner input is already intiialized
+     * @postcondition if coordinates are correct, a node is added to the list
+     */
     private void parseSearch(Scanner scanner)
     {
         String name = scanner.next();
