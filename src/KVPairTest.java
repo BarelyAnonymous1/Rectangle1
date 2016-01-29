@@ -15,7 +15,7 @@ public class KVPairTest
     {
         KV1 = new KVPair<String, Integer>("first", 1);
         KV2 = new KVPair<String, Integer>("second", 2);
-        KV3 = new KVPair<String, Integer>("first", 2);
+        KV3 = new KVPair<String, Integer>("first", 3);
     }
 
     @Test
