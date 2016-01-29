@@ -115,5 +115,4 @@ public class CommandParser
         int height = scanner.nextInt();
         // look in the SkipList for all Rectangles in the region
     }
-    
 }
