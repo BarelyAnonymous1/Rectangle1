@@ -29,14 +29,18 @@ public class KVPairTest
         KV3 = new KVPair<String, Integer>("first", 3);
     }
 
-    @Test
+    /**
+     * tests the comparison of two specific KVPairs
+     */
     public void testCompareToKVPairOfKE()
     {
         assertEquals(0, KV1.compareTo(KV3));
         assertFalse(KV2.compareTo(KV3) == 0);
     }
 
-    @Test
+    /**
+     * compares a KVPair to a given key
+     */
     public void testCompareToK()
     {
         assertEquals(0, KV2.compareTo("second"));
