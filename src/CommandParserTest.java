@@ -5,6 +5,12 @@ import org.junit.Test;
 
 import student.TestCase;
 
+/**
+ * Test class to demonstrate proper use of the CommandParser
+ * 
+ * @author Jonathan
+ *
+ */
 public class CommandParserTest extends TestCase
 {
     private CommandParser parser;
