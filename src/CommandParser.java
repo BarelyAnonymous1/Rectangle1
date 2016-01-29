@@ -17,6 +17,11 @@ public class CommandParser
     private String inputFile;
 
     /**
+     * SkipList used to hold the KeyValue Pairs for Rectangles
+     */
+    // TODO: IMPLEMENT SKIPLIST
+    // TODO: IMPLEMENT RECTANGLE
+    /**
      * constructor for parser, stores filename
      * 
      * @param file
@@ -35,47 +40,55 @@ public class CommandParser
     public boolean parse()
     {
         Scanner scanner = null;
+        Exception d = null;
         try
         {
             scanner = new Scanner(new File(inputFile));
         }
         catch (FileNotFoundException e)
         {
+            d = e;
             e.printStackTrace();
             System.out.println(e.getMessage());
         } // Create new scanner
-        if (scanner != null)
+        if (d == null)
         {
             while (scanner.hasNext())
             { // While the scanner has information to read
-                String cmd = scanner.next(); // Read the next term
+                String cmd = scanner.next(); // Read the next command
                 switch (cmd) {
                     case ("insert"):
                     {
                         parseInsert(scanner);
+                        break;
                     }
                     case ("remove"):
                     {
                         parseRemove(scanner);
+                        break;
                     }
                     case ("regionsearch"):
                     {
                         parseRegionSearch(scanner);
+                        break;
                     }
                     case ("intersections"):
                     {
-                        //SkipList 
+                        // TODO: IMPLEMENT INTERSECTIONS METHOD IN SKIPLIST
+                        // SkipList does things with intersections
+                        break;
                     }
                     case ("search"):
                     {
-
+                        break;
                     }
                     case ("dump"):
                     {
-
+                        break;
                     }
                     default:
                     {
+                        System.out.println("Command not recognized: " + cmd);
                         scanner.nextLine();
                         break;
                     }
@@ -104,15 +117,23 @@ public class CommandParser
     private void parseRemove(Scanner scanner)
     {
         // figure out if it is removing by key or removing by value
+        scanner.nextLine();
         return;
     }
-    
+
     private void parseRegionSearch(Scanner scanner)
     {
         int x = scanner.nextInt();
         int y = scanner.nextInt();
         int width = scanner.nextInt();
         int height = scanner.nextInt();
+        //TODO: IMPLEMENT REGIONSEARCH
         // look in the SkipList for all Rectangles in the region
+    }
+    
+    private void parseSearch(Scanner scanner)
+    {
+        String name = scanner.next();
+        //TODO: IMPLEMENT SEARCH ON SKIPLIST
     }
 }
