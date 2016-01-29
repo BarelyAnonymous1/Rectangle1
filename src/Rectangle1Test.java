@@ -38,8 +38,7 @@ public class Rectangle1Test extends TestCase
         Rectangle1 dum = new Rectangle1();
         assertNotNull(dum);
         Rectangle1.main(input1);
-        assertFuzzyEquals(
-                "Error: Incorrect number of arguments provided\n", 
+        assertFuzzyEquals("Error: Incorrect number of arguments provided\n",
                 systemOut().getHistory());
     }
 
@@ -56,7 +55,7 @@ public class Rectangle1Test extends TestCase
      */
     public void testSearchFile()
     {
-        String[] input = {"SyntaxTest.txt"};
+        String[] input = { "SyntaxTest.txt" };
         Rectangle1.main(input);
     }
 
