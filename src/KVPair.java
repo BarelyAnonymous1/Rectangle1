@@ -41,7 +41,7 @@ public class KVPair<K extends Comparable<K>, E>
     /**
      * compares two KVPairs based on keys
      * 
-     * @return 0 if they are the same, another integer if different
+     * @return 0 if they have the same key, another integer if different
      */
     public int compareTo(KVPair<K, E> it)
     {
