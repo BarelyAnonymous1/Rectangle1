@@ -53,15 +53,14 @@ public class CommandParser
                 {
                     case("insert"):
                     {
-                        String name = scanner.next();
+                        parseInsert(scanner);
+                    }
+                    case("remove"):
+                    {
                         int x = scanner.nextInt();
                         int y = scanner.nextInt();
                         int width = scanner.nextInt();
                         int height = scanner.nextInt();
-                    }
-                    case("remove"):
-                    {
-                        
                     }
                     case("regionsearch"):
                     {
@@ -93,5 +92,22 @@ public class CommandParser
         {
             return false;
         }
+    }
+
+    private void parseInsert(Scanner scanner)
+    {
+        String name = scanner.next();
+        int x = scanner.nextInt();
+        int y = scanner.nextInt();
+        int width = scanner.nextInt();
+        int height = scanner.nextInt();
+        //store these values as a KVPair
+        //store KVPair into SkipList
+    }
+    
+    private void parseRemove(Scanner scanner)
+    {
+        // figure out if it is removing by key or removing by value
+        return;
     }
 }
