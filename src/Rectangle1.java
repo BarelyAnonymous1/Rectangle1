@@ -47,7 +47,8 @@ public class Rectangle1
         }
         else
         {
-            CommandParser parser = new CommandParser(args[0]);
+            String file = args[0].trim();
+            CommandParser parser = new CommandParser(file);
             parser.parse();
         }
     }
