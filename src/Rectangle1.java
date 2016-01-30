@@ -49,7 +49,7 @@ public class Rectangle1
         {
             String file = args[0].trim();
             CommandParser parser = new CommandParser(file);
-            parser.parse();
+            parser.parseFile();
         }
     }
 }
