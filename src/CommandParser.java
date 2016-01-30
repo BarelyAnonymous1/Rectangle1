@@ -37,7 +37,7 @@ public class CommandParser
      * 
      * @return boolean did the parsing succeed?
      */
-    public boolean parse()
+    public boolean parseFile()
     {
         Scanner scanner = null;
         Exception d = null;
