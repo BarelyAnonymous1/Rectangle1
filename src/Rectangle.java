@@ -23,8 +23,8 @@ public class Rectangle implements Comparable<Rectangle>
      */
     private int width;
     /**
-     * horizontal length of Rectangle; the difference between the x coordinate
-     * of the right corner and x coordinate of left corner
+     * vertical length of Rectangle; the difference between the x coordinate of
+     * the right corner and x coordinate of left corner
      */
     private int height;
 
