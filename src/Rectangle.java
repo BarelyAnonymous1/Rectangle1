@@ -1,6 +1,6 @@
 
 @SuppressWarnings("rawtypes")
-public class Rectangle implements Comparable
+public class Rectangle implements Comparable<Rectangle>
 {
     private int x;
     private int y;
@@ -64,22 +64,18 @@ public class Rectangle implements Comparable
     }
 
     @Override
-    public int compareTo(Object obj) throws ClassCastException
+    public int compareTo(Rectangle o)
     {
-        // TODO Auto-generated method stub
-        if (!(obj instanceof Rectangle))
+        if (this.x == ((Rectangle) obj).getX()
+                && this.y == ((Rectangle) obj).getY()
+                && this.width == ((Rectangle) obj).getWidth()
+                && this.height == ((Rectangle) obj).getHeight())
         {
-            throw new ClassCastException("A Recangle object was expected");
+            return 0;
         }
         else
         {
-            if (this.x == ((Rectangle) obj).getX()
-                    && this.y == ((Rectangle) obj).getY()
-                    && this.y == ((Rectangle) obj).getY()
-                    && this.y == ((Rectangle) obj).getY())
-            {
-
-            }
+            return -1;
         }
     }
 
