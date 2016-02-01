@@ -16,8 +16,7 @@ public class SkipNode<K extends Comparable<K>, E> {
 	private SkipNode<K, E> 
 	above, 
 	below, 
-	next, 
-	previous;
+	next;
 	
 	/**
 	 * creates a private key for this node;
@@ -63,22 +62,6 @@ public class SkipNode<K extends Comparable<K>, E> {
 	public int getLevel()
 	{
 		return level;
-	}
-	
-	/**
-	 * --------------------------------
-	 * @param node is the previous node
-	 */
-	public void setPrevious(SkipNode<K, E> node)
-	{
-		previous = node;
-	}
-	/**
-	 * @return previous node 
-	 */
-	public SkipNode<K, E> getPrevious()
-	{
-		return previous;
 	}
 	
 	/**
