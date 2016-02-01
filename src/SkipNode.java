@@ -137,15 +137,23 @@ public class SkipNode<K extends Comparable<K>, E> {
 	/**
 	 * Insert function for the nodes, aligns pointers correctly
 	 * PRE: key should not be the same as any other key in the list
-	 * @param key
-	 * @param value
-	 * @param level
-	 * @param parent
+	 * @param key is the key of the node to be added
+	 * @param value is the value of the node to be added
+	 * @param level is the level of the node to be added
+	 * @param parent is the previous node for the one we're currently working with
 	 */
 	public void insert(K key, E value, 
 			int level, SkipNode<K, E> parent)
 	{
-		// if the level is the same and 
+		// if the level is the same, set next and previous parameters and check for above and below
+		
+		// if the level is different and larger, modify next, previous, above parameters
+		
+		// if the level is different and smaller (not 1), modify next, previous, above, and below parameters
+		
+		// if the level is 1, modify next and previous parameters
+		
+		//
 	}
 	
 	
