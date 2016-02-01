@@ -50,6 +50,10 @@ public class Rectangle implements Comparable<Rectangle>
      *            horizontal length of Rectangle
      * @param newHeight
      *            vertical length of Rectangle
+     * @precondition width and height are greater than 0
+     * @precondition x and y coordinate are greater than or equal to 0
+     * @precondition x + width is less than 1024
+     * @precondition y + height is less than 1024
      */
     public Rectangle(int newX, int newY, int newWidth, int newHeight)
     {
