@@ -164,6 +164,13 @@ public class CommandParser
         int y = scanner.nextInt();
         int width = scanner.nextInt();
         int height = scanner.nextInt();
+        if (width > 0 && height > 0)
+        {
+            if (x + width < 1024 && y + height < 1024)
+            {
+
+            }
+        }
         // TODO: IMPLEMENT REGIONSEARCH
         // look in the SkipList for all Rectangles in the region
     }
