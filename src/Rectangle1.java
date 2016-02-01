@@ -19,7 +19,7 @@
 // letter of this restriction.
 // 
 // Signed: Jonathan DeFreeuw on 01/28/2016
-// PRESTON YOU SHOULD DO THIS THING AT SOME POINT
+// Signed: Preston Lattimer on 02/01/2015
 
 /**
  * WE NEED TO TYPE OUT A BETTER HEADER COMMENT FOR THE OVERALL PROJECT
