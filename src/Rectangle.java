@@ -29,7 +29,7 @@ public class Rectangle implements Comparable<Rectangle>
     private int height;
 
     /**
-     * 
+     * default constructor for Rectangle class; creates an empty Rectangle
      */
     public Rectangle()
     {
@@ -40,11 +40,16 @@ public class Rectangle implements Comparable<Rectangle>
     }
 
     /**
+     * standard constructor for Rectangle; sets up the position and size
      * 
      * @param newX
+     *            x coordinate of upper left corner
      * @param newY
+     *            y coordinate of upper left corner
      * @param newWidth
+     *            horizontal length of Rectangle
      * @param newHeight
+     *            vertical length of Rectangle
      */
     public Rectangle(int newX, int newY, int newWidth, int newHeight)
     {
