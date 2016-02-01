@@ -56,43 +56,43 @@ public class CommandParser
             while (scanner.hasNext())
             { // While the scanner has information to read
                 String cmd = scanner.next(); // Read the next command
-                switch (cmd) 
+                switch (cmd)
                 {
-                    case ("insert"):
-                    {
-                        parseInsert(scanner);
-                        break;
-                    }
-                    case ("remove"):
-                    {
-                        parseRemove(scanner);
-                        break;
-                    }
-                    case ("regionsearch"):
-                    {
-                        parseRegionSearch(scanner);
-                        break;
-                    }
-                    case ("intersections"):
-                    {
-                        // TODO: IMPLEMENT INTERSECTIONS METHOD IN SKIPLIST
-                        // SkipList does things with intersections
-                        break;
-                    }
-                    case ("search"):
-                    {
-                        parseSearch(scanner);
-                        break;
-                    }
-                    case ("dump"):
-                    {
-                        // TODO: IMPLEMENT DUMP OF SKIPLIST
-                        break;
-                    }
-                    default:
-                    {
-                        break;
-                    }
+                case ("insert"):
+                {
+                    parseInsert(scanner);
+                    break;
+                }
+                case ("remove"):
+                {
+                    parseRemove(scanner);
+                    break;
+                }
+                case ("regionsearch"):
+                {
+                    parseRegionSearch(scanner);
+                    break;
+                }
+                case ("intersections"):
+                {
+                    // TODO: IMPLEMENT INTERSECTIONS METHOD IN SKIPLIST
+                    // SkipList does things with intersections
+                    break;
+                }
+                case ("search"):
+                {
+                    parseSearch(scanner);
+                    break;
+                }
+                case ("dump"):
+                {
+                    // TODO: IMPLEMENT DUMP OF SKIPLIST
+                    break;
+                }
+                default:
+                {
+                    break;
+                }
                 }
                 System.out.println(cmd);
             }
@@ -120,6 +120,13 @@ public class CommandParser
         int y = scanner.nextInt();
         int width = scanner.nextInt();
         int height = scanner.nextInt();
+        if (width > 0 && height > 0)
+        {
+            if (x + width < 1024 && y + height < 1024)
+            {
+
+            }
+        }
         // store these values as a KVPair
         // store KVPair into SkipList
         // TODO: IMPLEMENT INSERT
