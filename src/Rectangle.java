@@ -9,9 +9,23 @@
  */
 public class Rectangle implements Comparable<Rectangle>
 {
+    /**
+     * x coordinate of upper left corner of Rectangle
+     */
     private int x;
+    /**
+     * y coordinate of upper left corner of Rectangle
+     */
     private int y;
+    /**
+     * horizontal length of Rectangle; the difference between the x coordinate
+     * of the right corner and x coordinate of left corner
+     */
     private int width;
+    /**
+     * horizontal length of Rectangle; the difference between the x coordinate
+     * of the right corner and x coordinate of left corner
+     */
     private int height;
 
     /**
