@@ -181,7 +181,7 @@ public class CommandParser
      * 
      * @param scanner
      *            the scanner that is used to search the file
-     * @precondition the scanner input is already intiialized
+     * @precondition the scanner input is already initialized
      * @postcondition if coordinates are correct, a node is added to the list
      */
     private void parseSearch(Scanner scanner)
