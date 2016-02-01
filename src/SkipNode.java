@@ -13,9 +13,9 @@ public class SkipNode<K extends Comparable<K>, E> {
 	 * creates a skip list node that is blank that 
 	 * will be the one we actually are creating
 	 */
-	private SkipNode<K,E> 
-	up, 
-	down, 
+	private SkipNode<K, E> 
+	above, 
+	below, 
 	next, 
 	previous;
 	
@@ -57,17 +57,25 @@ public class SkipNode<K extends Comparable<K>, E> {
 	}
 	
 	/**
+	 * @return level of the current node
+	 */
+	public int getLevel()
+	{
+		return level;
+	}
+	
+	/**
 	 * --------------------------------
 	 * @param node is the previous node
 	 */
-	public void setPrevious(SkipNode node)
+	public void setPrevious(SkipNode<K, E> node)
 	{
 		previous = node;
 	}
 	/**
 	 * @return previous node 
 	 */
-	public SkipNode getPrevious()
+	public SkipNode<K, E> getPrevious()
 	{
 		return previous;
 	}
@@ -76,14 +84,14 @@ public class SkipNode<K extends Comparable<K>, E> {
 	 * --------------------------------
 	 * @param node is the next node
 	 */
-	public void setNext(SkipNode node)
+	public void setNext(SkipNode<K, E> node)
 	{
 		next = node;
 	}
 	/**
 	 * @return next node 
 	 */
-	public SkipNode getNext()
+	public SkipNode<K, E> getNext()
 	{
 		return next;
 	}
@@ -92,31 +100,31 @@ public class SkipNode<K extends Comparable<K>, E> {
 	 * --------------------------------
 	 * @param node is the node above
 	 */
-	public void setUp(SkipNode node)
+	public void setAbove(SkipNode<K, E> node)
 	{
-		up = node;
+		above = node;
 	}
 	/**
 	 * @return up node 
 	 */
-	public SkipNode getUp()
+	public SkipNode<K, E> getUp()
 	{
-		return up;
+		return above;
 	}
 	
 	/**
 	 * --------------------------------
 	 * @param node is the node below
 	 */
-	public void setDown(SkipNode node)
+	public void setDown(SkipNode<K, E> node)
 	{
-		down = node;
+		below = node;
 	}
 	/**
 	 * @return down node 
 	 */
-	public SkipNode getDown()
+	public SkipNode<K, E> getDown()
 	{
-		return down;
+		return below;
 	}
 }
