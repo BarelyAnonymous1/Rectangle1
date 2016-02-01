@@ -32,7 +32,7 @@ public class KVPair<K extends Comparable<K>, E>
      * @param v
      *            value to be stored
      */
-    KVPair(K k, E v)
+    public KVPair(K k, E v)
     {
         theKey = k;
         theVal = v;
