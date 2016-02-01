@@ -64,18 +64,23 @@ public class Rectangle implements Comparable
     }
 
     @Override
-    public int compareTo(Object otherRect) throws ClassCastException
+    public int compareTo(Object obj) throws ClassCastException
     {
         // TODO Auto-generated method stub
-        if (!(otherRect instanceof Rectangle))
+        if (!(obj instanceof Rectangle))
         {
             throw new ClassCastException("A Recangle object was expected");
         }
         else
         {
-            return 
+            if (this.x == ((Rectangle) obj).getX()
+                    && this.y == ((Rectangle) obj).getY()
+                    && this.y == ((Rectangle) obj).getY()
+                    && this.y == ((Rectangle) obj).getY())
+            {
+
+            }
         }
-        return 0;
     }
 
 }
