@@ -32,9 +32,40 @@ public class SkipNode<K extends Comparable<K>, E> {
 		this.value = val;
 		this.level = lev;
 	}
-	public void insert(K key, E Value, int level, SkipNode<K, E> parent)
-	{
-		
+	
+	/**
+	 * getters and setters section
+	 */
+	
+	/**
+	 * @return key of the node
+	 */
+	public K getKey() {
+		return key;
 	}
-
+	
+	/**
+	 * @return value of node
+	 */
+	public E getValue() {
+		return value;
+	}
+	
+	/**
+	 * @param node is the previuos node
+	 */
+	public void setPrevious(SkipNode node)
+	{
+		previous = node;
+	}
+	
+	/**
+	 * @param node is the next node
+	 */
+	public void setNext(SkipNode node)
+	{
+		next = node;
+	}
+	
+	
 }
