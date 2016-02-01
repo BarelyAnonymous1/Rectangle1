@@ -66,8 +66,7 @@ public class Rectangle implements Comparable<Rectangle>
     @Override
     public int compareTo(Rectangle obj)
     {
-        if (this.x == obj.getX()
-                && this.y == obj.getY()
+        if (this.x == obj.getX() && this.y == obj.getY()
                 && this.width == obj.getWidth()
                 && this.height == obj.getHeight())
         {
