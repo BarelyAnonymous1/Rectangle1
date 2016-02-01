@@ -39,6 +39,7 @@ public class SkipNode<K extends Comparable<K>, E> {
 	}
 	
 	/**
+	 * ===========================
 	 * getters and setters section
 	 */
 	
@@ -127,4 +128,30 @@ public class SkipNode<K extends Comparable<K>, E> {
 	{
 		return below;
 	}
+	
+	/**
+	 * ================================
+	 * this section contains insert, and find operations
+	 */
+	
+	/**
+	 * Insert function for the nodes, aligns pointers correctly
+	 * PRE: key should not be the same as any other key in the list
+	 * @param key
+	 * @param value
+	 * @param level
+	 * @param parent
+	 */
+	public void insert(K key, E value, 
+			int level, SkipNode<K, E> parent)
+	{
+		// if the level is the same and 
+	}
+	
+	
+	
+	
+	
+	
+	
 }
