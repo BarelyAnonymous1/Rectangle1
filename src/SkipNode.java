@@ -1,5 +1,7 @@
 /**
- * @author prestonlattimer
+ * Node used to implement the SkipList; takes a KVPair and stores it
+ * 
+ * @author Preston Lattimer (platt), Jonathan DeFreeuw (jondef95)
  * 
  * @param <K>
  *            the generic key value for the KVPair
@@ -25,10 +27,13 @@ public class SkipNode<K extends Comparable<K>, E>
      */
     private int            level;
 
+    public SkipNode(int lev)
+    {
+        level = lev;
+        pair = null;
+    }
     public SkipNode(K keyer, E val, int lev)
     {
-        this.key = keyer;
-        this.value = val;
         this.level = lev;
     }
 
