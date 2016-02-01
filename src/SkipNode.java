@@ -16,8 +16,7 @@ public class SkipNode<K extends Comparable<K>, E> {
 	private SkipNode<K, E> 
 	above, 
 	below, 
-	next, 
-	previous;
+	next;
 	
 	/**
 	 * creates a private key for this node;
@@ -39,6 +38,7 @@ public class SkipNode<K extends Comparable<K>, E> {
 	}
 	
 	/**
+	 * ===========================
 	 * getters and setters section
 	 */
 	
@@ -62,22 +62,6 @@ public class SkipNode<K extends Comparable<K>, E> {
 	public int getLevel()
 	{
 		return level;
-	}
-	
-	/**
-	 * --------------------------------
-	 * @param node is the previous node
-	 */
-	public void setPrevious(SkipNode<K, E> node)
-	{
-		previous = node;
-	}
-	/**
-	 * @return previous node 
-	 */
-	public SkipNode<K, E> getPrevious()
-	{
-		return previous;
 	}
 	
 	/**
@@ -127,4 +111,38 @@ public class SkipNode<K extends Comparable<K>, E> {
 	{
 		return below;
 	}
+	
+	/**
+	 * ================================
+	 * this section contains insert, and find operations
+	 */
+	
+	/**
+	 * Insert function for the nodes, aligns pointers correctly
+	 * PRE: key should not be the same as any other key in the list
+	 * @param key is the key of the node to be added
+	 * @param value is the value of the node to be added
+	 * @param level is the level of the node to be added
+	 * @param parent is the previous node for the one we're currently working with
+	 */
+	public void insert(K key, E value, 
+			int level, SkipNode<K, E> parent)
+	{
+		// if the level is the same, set next and previous parameters and check for above and below
+		
+		// if the level is different and larger, modify next, previous, above parameters
+		
+		// if the level is different and smaller (not 1), modify next, previous, above, and below parameters
+		
+		// if the level is 1, modify next and previous parameters
+		
+		//
+	}
+	
+	
+	
+	
+	
+	
+	
 }
