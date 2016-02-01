@@ -1,8 +1,11 @@
 
 /**
+ * Rectangle class that is used to hold the upper left corner coordiantes,
+ * width, and height of a Rectangle. Implements Comparable interface to allow
+ * comparison of Rectangles when searching for a specific Rectangle in a list
  * 
- * @author Jonathan
- *
+ * @author Jonathan DeFreeuw (jondef95), Preston Lattimer (platt)
+ * @version 1
  */
 public class Rectangle implements Comparable<Rectangle>
 {
