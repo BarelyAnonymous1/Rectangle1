@@ -1,10 +1,10 @@
 /**
- * 
- */
-
-/**
  * @author prestonlattimer
+ * 
+ * @param <K>
+ *            the generic key value for the KVPair
  * @param <E>
+ *            the generic data value for the KVPair
  *
  */
 public class SkipNode<K extends Comparable<K>, E>
@@ -17,13 +17,9 @@ public class SkipNode<K extends Comparable<K>, E>
     private SkipNode<K, E> above, below, next;
 
     /**
-     * creates a private key for this node;
+     * Data stored into the node
      */
-    private K              key;
-    /**
-     * creates a private value for this node;
-     */
-    private E              value;
+    private KVPair<K, E>   pair;
     /**
      * determines the level that the node is actually on
      */
