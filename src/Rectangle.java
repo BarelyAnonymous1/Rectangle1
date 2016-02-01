@@ -1,5 +1,9 @@
 
-@SuppressWarnings("rawtypes")
+/**
+ * 
+ * @author Jonathan
+ *
+ */
 public class Rectangle implements Comparable<Rectangle>
 {
     private int x;
@@ -7,6 +11,9 @@ public class Rectangle implements Comparable<Rectangle>
     private int width;
     private int height;
 
+    /**
+     * 
+     */
     public Rectangle()
     {
         x = 0;
@@ -15,6 +22,13 @@ public class Rectangle implements Comparable<Rectangle>
         height = 0;
     }
 
+    /**
+     * 
+     * @param newX
+     * @param newY
+     * @param newWidth
+     * @param newHeight
+     */
     public Rectangle(int newX, int newY, int newWidth, int newHeight)
     {
         x = newX;
@@ -23,47 +37,81 @@ public class Rectangle implements Comparable<Rectangle>
         height = newHeight;
     }
 
+    /**
+     * 
+     * @return
+     */
     public int getX()
     {
         return x;
     }
 
+    /**
+     * 
+     * @return
+     */
     public int getY()
     {
         return y;
     }
 
+    /**
+     * 
+     * @return
+     */
     public int getWidth()
     {
         return width;
     }
 
+    /**
+     * 
+     * @return
+     */
     public int getHeight()
     {
         return height;
     }
 
+    /**
+     * 
+     * @param newX
+     */
     public void setX(int newX)
     {
         x = newX;
     }
 
+    /**
+     * 
+     * @param newY
+     */
     public void setY(int newY)
     {
         y = newY;
     }
 
+    /**
+     * 
+     * @param newWidth
+     */
     public void setWidth(int newWidth)
     {
         width = newWidth;
     }
 
+    /**
+     * 
+     * @param newHeight
+     */
     public void setHeigh(int newHeight)
     {
         height = newHeight;
     }
 
-    @Override
+    /**
+     * @param obj
+     */
     public int compareTo(Rectangle obj)
     {
         if (this.x == obj.getX() && this.y == obj.getY()
