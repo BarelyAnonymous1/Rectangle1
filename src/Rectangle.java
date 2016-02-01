@@ -64,8 +64,8 @@ public class Rectangle implements Comparable<Rectangle>
     }
 
     /**
-     * 
-     * @return
+     * access to x coordinate
+     * @return x coordinate
      */
     public int getX()
     {
@@ -73,8 +73,8 @@ public class Rectangle implements Comparable<Rectangle>
     }
 
     /**
-     * 
-     * @return
+     * access to y coordinate
+     * @return y coordinate
      */
     public int getY()
     {
@@ -82,8 +82,8 @@ public class Rectangle implements Comparable<Rectangle>
     }
 
     /**
-     * 
-     * @return
+     * access to width
+     * @return horizontal length
      */
     public int getWidth()
     {
@@ -91,8 +91,8 @@ public class Rectangle implements Comparable<Rectangle>
     }
 
     /**
-     * 
-     * @return
+     * access to height
+     * @return vertical length
      */
     public int getHeight()
     {
