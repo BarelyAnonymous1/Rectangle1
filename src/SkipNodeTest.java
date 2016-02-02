@@ -7,7 +7,7 @@ import student.TestCase;
  */
 public class SkipNodeTest extends TestCase {
 
-	
+	private SkipNode<String, Integer> head;
 	private SkipNode<String, Integer> node1;
 	private SkipNode<String, Integer> node2;
 	private SkipNode<String, Integer> node3;
@@ -20,6 +20,7 @@ public class SkipNodeTest extends TestCase {
 	{
 		pair = new KVPair<String, Integer>("first", 1);
 		pair2 = new KVPair<String, Integer>("second", 2);
+		head = new SkipNode<String, Integer>(3);
 		node1 = new SkipNode<String, Integer>(1);
 		node2 = new SkipNode<String, Integer>(pair, 1);
 		node3 = new SkipNode<String, Integer>(pair2, 2);
@@ -48,6 +49,14 @@ public class SkipNodeTest extends TestCase {
 		assertEquals(node2.getAbove().getKey(), pair2.key());
 		node3.setBelow(node1);
 		assertNull(node3.getBelow().getKey());
+	}
+	
+	/**
+	 * tests the insert functionality that links a node to a brand new node
+	 */
+	public void testInsert()
+	{
+		head.insert(pair, 1, null);
 	}
 	
 
