@@ -123,5 +123,4 @@ public class Rectangle implements Comparable<Rectangle>
             return -1;
         }
     }
-
 }
