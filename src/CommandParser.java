@@ -14,13 +14,13 @@ public class CommandParser
     /**
      * String field to hold the file that has been input
      */
-    private String inputFile;
+    private String                      inputFile;
 
     /**
      * SkipList used to hold the KeyValue Pairs for Rectangles
      */
-    // TODO: IMPLEMENT SKIPLIST
-    // TODO: IMPLEMENT RECTANGLE
+    private SkipList<String, Rectangle> list;
+
     /**
      * constructor for parser, stores filename
      * 
@@ -30,6 +30,7 @@ public class CommandParser
     public CommandParser(String file)
     {
         inputFile = file;
+        list = new SkipList<String, Rectangle>();
     }
 
     /**
@@ -56,8 +57,7 @@ public class CommandParser
             while (scanner.hasNext())
             { // While the scanner has information to read
                 String cmd = scanner.next(); // Read the next command
-                switch (cmd)
-                {
+                switch (cmd) {
                     case ("insert"):
                     {
                         parseInsert(scanner);
@@ -120,16 +120,18 @@ public class CommandParser
         int y = scanner.nextInt();
         int width = scanner.nextInt();
         int height = scanner.nextInt();
-        if (width > 0 && height > 0)
+        if (width > 0 && height > 0 && x + width < 1024 && y + height < 1024)
         {
-            if (x + width < 1024 && y + height < 1024)
-            {
-
-            }
+            Rectangle rect = new Rectangle(x, y, width, height);
+            KVPair<String, Rectangle> pair = new KVPair<String, Rectangle>(name,
+                    rect);
+            list.insert(pair);
         }
-        // store these values as a KVPair
-        // store KVPair into SkipList
-        // TODO: IMPLEMENT INSERT
+        else
+        {
+            System.out.println("Rectangle rejected: (" + name + ", " + x + ", "
+                    + y + ", " + width + ", " + height + ")");
+        }
     }
 
     /**
