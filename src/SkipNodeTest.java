@@ -25,10 +25,12 @@ public class SkipNodeTest extends TestCase {
 	/**
 	 * tests the head parameters
 	 */
-	public void testGetKey()
+	public void testGetKeyAndValue()
 	{
 		assertNull(node1.getKey());
 		assertEquals(pair.key(), node2.getKey());
+		assertNull(node1.getValue());
+		assertEquals(pair.value(), node2.getValue());
 	}
 
 }
