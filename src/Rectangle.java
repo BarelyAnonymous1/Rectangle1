@@ -107,7 +107,8 @@ public class Rectangle implements Comparable<Rectangle>
      * Comparable interface method that allows two rectangles to be compared
      * based on their coordinates and sizes
      * 
-     * @param obj
+     * @param obj rectangle object to compare to current
+     * @return an integer to describe if the rectangles are the same
      */
     public int compareTo(Rectangle obj)
     {
