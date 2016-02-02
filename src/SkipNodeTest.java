@@ -27,8 +27,8 @@ public class SkipNodeTest extends TestCase {
 	 */
 	public void testGetKey()
 	{
-		assertNull(node1.getKey());
-		//assertEquals(node2.getKey(), pair.key());
+		//assertNull(node1.getKey());
+		assertEquals(node2.getKey(), pair.key());
 	}
 
 }
