@@ -29,6 +29,7 @@ public class SkipListTest extends TestCase {
 	{
 		list.insert(pair1);
 		list.dump();
+		list.getHead();
 	}
 	
 	
