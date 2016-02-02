@@ -29,17 +29,6 @@ public class Rectangle implements Comparable<Rectangle>
     private int height;
 
     /**
-     * default constructor for Rectangle class; creates an empty Rectangle
-     */
-    public Rectangle()
-    {
-        x = 0;
-        y = 0;
-        width = 0;
-        height = 0;
-    }
-
-    /**
      * standard constructor for Rectangle; sets up the position and size
      * 
      * @param newX
