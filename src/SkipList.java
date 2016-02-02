@@ -11,9 +11,15 @@ public class SkipList<K extends Comparable<K>, E>
      */
     private SkipNode<K, E> head;
     
+    /**
+     * number of nodes in the list
+     */
+    private int size;
+    
     public SkipList()
     {
-        head = new SkipNode<K, E>(0);
+        head = new SkipNode<K, E>(1);
+        size = 0;
     }
     
     public void insert(KVPair<K, E> newPair)
@@ -32,6 +38,22 @@ public class SkipList<K extends Comparable<K>, E>
     
     public void dump()
     {
-        //while 
+        System.out.println("SkipList dump:");
+        SkipNode<K, E> current = head;
+        while (current != null)
+        {
+            String name = "";
+            if (current.getValue() == null)
+            {
+                name = "(null)";
+            }
+            else
+            {
+                name = current.getValue().toString();
+            }
+            System.out.println("Node has depth " + current.getLevel() + ", Value " + name);
+            System.out.println("SkipList size is: " + size);
+            current = current.getNext();
+        }
     }
 }
