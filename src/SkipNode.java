@@ -144,6 +144,7 @@ public class SkipNode<K extends Comparable<K>, E>
     }
 
     /**
+     * below node getter
      * @return down node
      */
     public SkipNode<K, E> getDown()
