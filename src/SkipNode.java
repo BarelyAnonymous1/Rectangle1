@@ -27,6 +27,13 @@ public class SkipNode<K extends Comparable<K>, E>
      */
     private int            level;
 
+    /**
+     * constructor used to create the empty nodes of the SkipList
+     * 
+     * @param newLevel
+     *            the level used to describe how far ahead the next node is on
+     *            that level
+     */
     public SkipNode(int newLevel)
     {
         level = newLevel;
