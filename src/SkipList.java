@@ -22,7 +22,7 @@ public class SkipList<K extends Comparable<K>, E>
      */
     public SkipList()
     {
-        head = new SkipNode<K, E>(1);
+        head = new SkipNode<K, E>(0);
         size = 0;
     }
     
