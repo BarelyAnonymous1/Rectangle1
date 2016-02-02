@@ -1,3 +1,4 @@
+import java.util.Random;
 
 /**
  * SkipList that will be used to hold rectnagles input from a file
@@ -30,16 +31,31 @@ public class SkipList<K extends Comparable<K>, E>
      */
     public void insert(KVPair<K, E> newPair)
     {
-        SkipNode<K, E> newNode = new SkipNode<K, E>(newPair, 0);
-        if (head.getNext() == null)
-        {
-            head.setNext(newNode);
-        }
-        else
-        {
-            newNode.setNext(head.getNext());
-            head.setNext(newNode);
-        }
+    	int level = 0;
+    	Random random = new Random();
+    	while (random.nextBoolean())
+    	{
+    		level++;
+    	}
+    	
+    	while(head.getLevel() < level)
+    	{
+    		SkipNode<K, E> newHead = new SkipNode<K, E>(null, head.getLevel() + 1);
+    		head.setAbove(newHead);
+    		newHead.setBelow(head);
+    		head = newHead;
+    	}
+    	head.insert(newPair, level, null);
+//        SkipNode<K, E> newNode = new SkipNode<K, E>(newPair, 0);
+//        if (head.getNext() == null)
+//        {
+//            head.setNext(newNode);
+//        }
+//        else
+//        {
+//            newNode.setNext(head.getNext());
+//            head.setNext(newNode);
+//        }
     }
     
     /**

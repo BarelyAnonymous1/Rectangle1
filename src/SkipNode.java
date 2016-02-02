@@ -99,7 +99,7 @@ public class SkipNode<K extends Comparable<K>, E>
      */
     public int getLevel()
     {
-        return level;
+    	return level;
     }
 
     /**
@@ -188,7 +188,8 @@ public class SkipNode<K extends Comparable<K>, E>
      public void insert(KVPair<K, E> kvpair, int level, SkipNode<K, E> parent)
      {
     	 if (level >= this.level && 
-    			 (next == null || (kvpair.key().compareTo(next.getKey()) > 0)))
+    			 (next == null || 
+    			 (kvpair.key().compareTo(next.getKey()) > 0)))
     	 {
     		 SkipNode<K, E> node1 = new SkipNode<K, E>(kvpair, this.level);
     		 if (next != null)

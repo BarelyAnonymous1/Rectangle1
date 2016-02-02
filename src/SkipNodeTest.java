@@ -20,7 +20,7 @@ public class SkipNodeTest extends TestCase {
 	{
 		pair = new KVPair<String, Integer>("first", 1);
 		pair2 = new KVPair<String, Integer>("second", 2);
-		head = new SkipNode<String, Integer>(3);
+		head = new SkipNode<String, Integer>(0);
 		node1 = new SkipNode<String, Integer>(1);
 		node2 = new SkipNode<String, Integer>(pair, 1);
 		node3 = new SkipNode<String, Integer>(pair2, 2);
