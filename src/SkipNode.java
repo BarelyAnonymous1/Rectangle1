@@ -51,6 +51,7 @@ public class SkipNode<K extends Comparable<K>, E>
     public SkipNode(KVPair<K, E> newPair, int newLevel)
     {
         level = newLevel;
+        pair = newPair;
     }
 
     /**
