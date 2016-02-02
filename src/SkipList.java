@@ -71,7 +71,7 @@ public class SkipList<K extends Comparable<K>, E>
      */
     public SkipNode<K, E> getHead()
     {
-    	
+    	return head;
     }
     
 }
