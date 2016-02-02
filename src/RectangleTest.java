@@ -1,7 +1,10 @@
 import static org.junit.Assert.*;
-import student.TestCase;
+
+import org.junit.Test;
+
 /**
  * test class to ensure the proper usage of the compareTo method
+ * 
  * @author Jonathan DeFreeuw (jondef95), Preston Lattimer (platt)
  * @version 1
  */
