@@ -12,7 +12,8 @@ public class RectangleTest
         Rectangle rect3 = new Rectangle(10, 11, 13, 13);
 
         assertTrue(rect1.compareTo(rect2) == 0);
-
+        assertTrue(rect1.compareTo(rect3) == -1);
+        assertTrue(rect2.compareTo(rect3) == -1);
     }
 
 }
