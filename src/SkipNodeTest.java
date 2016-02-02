@@ -34,5 +34,6 @@ public class SkipNodeTest extends TestCase {
 		assertEquals(1, node1.getLevel());
 	}
 	
+	
 
 }
