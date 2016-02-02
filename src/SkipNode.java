@@ -58,6 +58,8 @@ public class SkipNode<K extends Comparable<K>, E>
      */
 
     /**
+     * key getter
+     * 
      * @return key of the node
      */
     public K getKey()
@@ -66,6 +68,8 @@ public class SkipNode<K extends Comparable<K>, E>
     }
 
     /**
+     * value getter
+     * 
      * @return value of node
      */
     public E getValue()
@@ -74,6 +78,8 @@ public class SkipNode<K extends Comparable<K>, E>
     }
 
     /**
+     * level getter
+     * 
      * @return level of the current node
      */
     public int getLevel()
@@ -82,7 +88,7 @@ public class SkipNode<K extends Comparable<K>, E>
     }
 
     /**
-     * --------------------------------
+     * -------------------------------- set the next node pointer
      * 
      * @param node
      *            is the next node
@@ -93,6 +99,8 @@ public class SkipNode<K extends Comparable<K>, E>
     }
 
     /**
+     * next node getter
+     * 
      * @return next node
      */
     public SkipNode<K, E> getNext()
@@ -103,6 +111,8 @@ public class SkipNode<K extends Comparable<K>, E>
     /**
      * --------------------------------
      * 
+     * set the node above current
+     * 
      * @param node
      *            is the node above
      */
@@ -112,15 +122,18 @@ public class SkipNode<K extends Comparable<K>, E>
     }
 
     /**
-     * @return up node
+     * above node getter
+     * 
+     * @return above node
      */
-    public SkipNode<K, E> getUp()
+    public SkipNode<K, E> getAbove()
     {
         return above;
     }
 
     /**
      * 
+     * set the node below current
      * 
      * @param node
      *            is the node below
