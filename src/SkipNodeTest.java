@@ -23,14 +23,16 @@ public class SkipNodeTest extends TestCase {
 	}
 	
 	/**
-	 * tests the head parameters
+	 * tests the kvpair get and set parameters
 	 */
 	public void testGetKeyAndValue()
 	{
 		assertNull(node1.getKey());
 		assertEquals(pair.key(), node2.getKey());
 		assertNull(node1.getValue());
-		assertEquals(1, node2.getValue());
+		assertEquals(0, pair.value().compareTo(node2.getValue()));
+		assertEquals(1, node1.getLevel());
 	}
+	
 
 }
