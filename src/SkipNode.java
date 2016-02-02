@@ -153,7 +153,7 @@ public class SkipNode<K extends Comparable<K>, E>
      * @param node
      *            is the node below
      */
-    public void setDown(SkipNode<K, E> node)
+    public void setBelow(SkipNode<K, E> node)
     {
         below = node;
     }
@@ -162,7 +162,7 @@ public class SkipNode<K extends Comparable<K>, E>
      * below node getter
      * @return down node
      */
-    public SkipNode<K, E> getDown()
+    public SkipNode<K, E> getBelow()
     {
         return below;
     }
