@@ -79,7 +79,11 @@ public class SkipNode<K extends Comparable<K>, E>
      */
     public E getValue()
     {
-        return pair.value();
+    	if (pair != null)
+    	{
+    		return pair.value();
+    	}
+        return null;
     }
 
     /**
