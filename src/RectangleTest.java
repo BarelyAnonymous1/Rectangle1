@@ -1,10 +1,15 @@
 import static org.junit.Assert.*;
-
-import org.junit.Test;
-
+/**
+ * test class to ensure the proper usage of the compareTo method
+ * @author Jonathan DeFreeuw (jondef95), Preston Lattimer (platt)
+ * @version 1
+ */
 public class RectangleTest
 {
 
+    /**
+     * tests the results of the compareTo method
+     */
     public void testCompareTo()
     {
         Rectangle rect1 = new Rectangle(0, 0, 10, 10);
