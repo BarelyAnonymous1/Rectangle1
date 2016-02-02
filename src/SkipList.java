@@ -16,12 +16,18 @@ public class SkipList<K extends Comparable<K>, E>
      */
     private int size;
     
+    /**
+     * creates a new skip list
+     */
     public SkipList()
     {
         head = new SkipNode<K, E>(1);
         size = 0;
     }
     
+    /**
+     * @param newPair determines the pair to be added
+     */
     public void insert(KVPair<K, E> newPair)
     {
         SkipNode<K, E> newNode = new SkipNode<K, E>(newPair, 0);
@@ -36,6 +42,9 @@ public class SkipList<K extends Comparable<K>, E>
         }
     }
     
+    /**
+     * dumps the things in the skip list
+     */
     public void dump()
     {
         System.out.println("SkipList dump:");
@@ -56,4 +65,13 @@ public class SkipList<K extends Comparable<K>, E>
             current = current.getNext();
         }
     }
+    
+    /**
+     * gets the head
+     */
+    public SkipNode<K, E> getHead()
+    {
+    	
+    }
+    
 }
