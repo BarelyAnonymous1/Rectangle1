@@ -1,4 +1,5 @@
 import static org.junit.Assert.*;
+import student.TestCase;
 
 import org.junit.Test;
 
@@ -22,6 +23,15 @@ public class SkipNodeTest {
 		pair = new KVPair<String, Integer>("first", 1);
 		node1 = new SkipNode<String, Integer>(1);
 		node2 = new SkipNode<String, Integer>(pair, 1);
+	}
+	
+	/**
+	 * tests the head parameters
+	 */
+	public void testGetKey()
+	{
+		assertNull(node1.getKey());
+		assertEquals(node2.getKey(), pair.key());
 	}
 
 }
