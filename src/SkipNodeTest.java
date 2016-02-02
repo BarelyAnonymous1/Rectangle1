@@ -57,7 +57,7 @@ public class SkipNodeTest extends TestCase {
 	public void testInsert()
 	{
 		head.insert(pair, 1, null);
-		assertNotNull(head.getNext());
+		assertEquals(0, head.getNext().getKey().compareTo("first"));
 	}
 	
 
