@@ -38,6 +38,9 @@ public class SkipNode<K extends Comparable<K>, E>
     {
         level = newLevel;
         pair = null;
+        next = null;
+        below = null;
+        above = null;
     }
 
     /**
@@ -52,6 +55,9 @@ public class SkipNode<K extends Comparable<K>, E>
     {
         level = newLevel;
         pair = newPair;
+        next = null;
+        below = null;
+        above = null;
     }
 
     /**
