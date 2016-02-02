@@ -46,7 +46,7 @@ public class SkipNode<K extends Comparable<K>, E>
      */
     public K getKey()
     {
-        return key;
+        return pair.key();
     }
 
     /**
@@ -54,7 +54,7 @@ public class SkipNode<K extends Comparable<K>, E>
      */
     public E getValue()
     {
-        return value;
+        return pair.value();
     }
 
     /**
