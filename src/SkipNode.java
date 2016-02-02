@@ -216,6 +216,44 @@ public class SkipNode<K extends Comparable<K>, E>
     	 }
      }
      
+     /**
+      * implements the find method
+      */
+     public SkipNode<K, E> find(K key)
+     {
+    	 if (next!= null) 
+    	 {
+    		 int comparison = next.getKey().compareTo(this.getKey());
+    		 
+    		 if (comparison == 0)
+    		 {
+    			 return next;
+    		 }
+    		 else if (comparison < 0)
+    		 {
+    			 return next.find(this.getKey());
+    		 }
+    		 else if (below != null)
+    		 {
+    			 return below.find(this.getKey());
+    		 }
+    		 else
+    		 {
+    			 System.out.println("No such key exists");
+    			 return null;
+    		 }
+    	 }
+    	 else if (below != null)
+    	 {
+    		 return below.find(this.getKey());
+    	 }
+    	 else
+    	 {
+    		 System.out.println("No such key exists");
+    		 return null;
+    	 }
+     }
+     
      
 
 }

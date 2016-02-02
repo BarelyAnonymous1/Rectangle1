@@ -57,6 +57,13 @@ public class SkipList<K extends Comparable<K>, E>
 //            head.setNext(newNode);
 //        }
     }
+    /**
+     * implements find method
+     */
+    public E find(K key)
+    {
+    	return head.find(key).getValue();
+    }
     
     /**
      * dumps the things in the skip list
