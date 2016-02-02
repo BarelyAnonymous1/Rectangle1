@@ -12,14 +12,17 @@ public class SkipNodeTest extends TestCase {
 	private SkipNode<String, Integer> node2;
 	private SkipNode<String, Integer> node3;
 	private KVPair<String, Integer> pair;
+	private KVPair<String, Integer> pair2;
 	/**
 	 * sets up the test cases
 	 */
 	public void setUp()
 	{
 		pair = new KVPair<String, Integer>("first", 1);
+		pair2 = new KVPair<String, Integer>("second", 2);
 		node1 = new SkipNode<String, Integer>(1);
 		node2 = new SkipNode<String, Integer>(pair, 1);
+		
 	}
 	
 	/**
@@ -40,6 +43,10 @@ public class SkipNodeTest extends TestCase {
 	{
 		node1.setNext(node2);
 		assertEquals(node1.getNext().getKey(), pair.key());
+		node2.setAbove(node3);
+		assertEquals(node2.getAbove().getKey(), pair2.key());
+		node3.setBelow(node1);
+		assertNull(node3.getBelow().getKey());
 	}
 	
 
