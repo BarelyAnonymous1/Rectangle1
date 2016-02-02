@@ -30,7 +30,7 @@ public class SkipNodeTest extends TestCase {
 		assertNull(node1.getKey());
 		assertEquals(pair.key(), node2.getKey());
 		assertNull(node1.getValue());
-		assertEquals(pair.value(), node2.getValue());
+		assertSame(pair.value(), node2.getValue());
 	}
 
 }
