@@ -22,6 +22,7 @@ public class SkipNodeTest extends TestCase {
 		pair2 = new KVPair<String, Integer>("second", 2);
 		node1 = new SkipNode<String, Integer>(1);
 		node2 = new SkipNode<String, Integer>(pair, 1);
+		node3 = new SkipNode<String, Integer>(pair2, 2);
 		
 	}
 	
@@ -44,9 +45,9 @@ public class SkipNodeTest extends TestCase {
 		node1.setNext(node2);
 		assertEquals(node1.getNext().getKey(), pair.key());
 		node2.setAbove(node3);
-		//assertEquals(node2.getAbove().getKey(), pair2.key());
-		//node3.setBelow(node2);
-		//assertNull(node3.getBelow().getKey());
+		assertEquals(node2.getAbove().getKey(), pair2.key());
+		node3.setBelow(node1);
+		assertNull(node3.getBelow().getKey());
 	}
 	
 
