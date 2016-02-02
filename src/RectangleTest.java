@@ -1,7 +1,5 @@
-import static org.junit.Assert.*;
-
-import org.junit.Test;
 import student.TestCase;
+
 /**
  * test class to ensure the proper usage of the compareTo method
  * 
@@ -10,7 +8,6 @@ import student.TestCase;
  */
 public class RectangleTest extends TestCase
 {
-
     /**
      * tests the results of the compareTo method
      */
@@ -24,5 +21,4 @@ public class RectangleTest extends TestCase
         assertTrue(rect1.compareTo(rect3) == -1);
         assertTrue(rect2.compareTo(rect3) == -1);
     }
-
 }
