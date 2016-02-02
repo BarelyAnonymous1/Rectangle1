@@ -32,6 +32,7 @@ public class SkipNode<K extends Comparable<K>, E>
         level = newLevel;
         pair = null;
     }
+
     public SkipNode(KVPair<K, E> newPair, int newLevel)
     {
         level = newLevel;
@@ -140,20 +141,20 @@ public class SkipNode<K extends Comparable<K>, E>
      * @param parent
      *            is the previous node for the one we're currently working with
      */
-//    public void insert(K key, E value, int level, SkipNode<K, E> parent)
-//    {
-//        // if the level is the same, set next and previous parameters and check
-//        // for above and below
-//
-//        // if the level is different and larger, modify next, previous, above
-//        // parameters
-//
-//        // if the level is different and smaller (not 1), modify next, previous,
-//        // above, and below parameters
-//
-//        // if the level is 1, modify next and previous parameters
-//
-//        //
-//    }
+    // public void insert(K key, E value, int level, SkipNode<K, E> parent)
+    // {
+    // // if the level is the same, set next and previous parameters and check
+    // // for above and below
+    //
+    // // if the level is different and larger, modify next, previous, above
+    // // parameters
+    //
+    // // if the level is different and smaller (not 1), modify next, previous,
+    // // above, and below parameters
+    //
+    // // if the level is 1, modify next and previous parameters
+    //
+    // //
+    // }
 
 }
