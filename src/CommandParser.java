@@ -58,41 +58,41 @@ public class CommandParser
                 String cmd = scanner.next(); // Read the next command
                 switch (cmd)
                 {
-                case ("insert"):
-                {
-                    parseInsert(scanner);
-                    break;
-                }
-                case ("remove"):
-                {
-                    parseRemove(scanner);
-                    break;
-                }
-                case ("regionsearch"):
-                {
-                    parseRegionSearch(scanner);
-                    break;
-                }
-                case ("intersections"):
-                {
-                    // TODO: IMPLEMENT INTERSECTIONS METHOD IN SKIPLIST
-                    // SkipList does things with intersections
-                    break;
-                }
-                case ("search"):
-                {
-                    parseSearch(scanner);
-                    break;
-                }
-                case ("dump"):
-                {
-                    // TODO: IMPLEMENT DUMP OF SKIPLIST
-                    break;
-                }
-                default:
-                {
-                    break;
-                }
+                    case ("insert"):
+                    {
+                        parseInsert(scanner);
+                        break;
+                    }
+                    case ("remove"):
+                    {
+                        parseRemove(scanner);
+                        break;
+                    }
+                    case ("regionsearch"):
+                    {
+                        parseRegionSearch(scanner);
+                        break;
+                    }
+                    case ("intersections"):
+                    {
+                        // TODO: IMPLEMENT INTERSECTIONS METHOD IN SKIPLIST
+                        // SkipList does things with intersections
+                        break;
+                    }
+                    case ("search"):
+                    {
+                        parseSearch(scanner);
+                        break;
+                    }
+                    case ("dump"):
+                    {
+                        // TODO: IMPLEMENT DUMP OF SKIPLIST
+                        break;
+                    }
+                    default:
+                    {
+                        break;
+                    }
                 }
                 System.out.println(cmd);
             }
