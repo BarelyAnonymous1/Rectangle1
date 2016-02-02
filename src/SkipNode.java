@@ -27,14 +27,14 @@ public class SkipNode<K extends Comparable<K>, E>
      */
     private int            level;
 
-    public SkipNode(int lev)
+    public SkipNode(int newLevel)
     {
-        level = lev;
+        level = newLevel;
         pair = null;
     }
-    public SkipNode(K keyer, E val, int lev)
+    public SkipNode(KVPair<K, E> newPair, int newLevel)
     {
-        this.level = lev;
+        level = newLevel;
     }
 
     /**
