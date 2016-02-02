@@ -104,7 +104,7 @@ public class SkipNode<K extends Comparable<K>, E>
     }
 
     /**
-     * --------------------------------
+     * 
      * 
      * @param node
      *            is the node below
