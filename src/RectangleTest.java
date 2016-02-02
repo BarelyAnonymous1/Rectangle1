@@ -73,4 +73,15 @@ public class RectangleTest extends TestCase
 
         assertTrue(rect1.compareTo(rect2) == -1);
     }
+    
+    /**
+     * tests when the compareTo should be false
+     */
+    public void testCompareToFalseYW()
+    {
+        Rectangle rect1 = new Rectangle(0, 0, 10, 10);
+        Rectangle rect2 = new Rectangle(0, 1, 11, 10);
+
+        assertTrue(rect1.compareTo(rect2) == -1);
+    }
 }
