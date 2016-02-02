@@ -183,22 +183,44 @@ public class SkipNode<K extends Comparable<K>, E>
      * @param level
      *            is the level of the node to be added
      * @param parent
-     *            is the previous node for the one we're currently working with
+     *            is the node for the level above where we are, CAN be null
      */
-    // public void insert(K key, E value, int level, SkipNode<K, E> parent)
-    // {
-    // // if the level is the same, set next and previous parameters and check
-    // // for above and below
-    //
-    // // if the level is different and larger, modify next, previous, above
-    // // parameters
-    //
-    // // if the level is different and smaller (not 1), modify next, previous,
-    // // above, and below parameters
-    //
-    // // if the level is 1, modify next and previous parameters
-    //
-    // //
-    // }
+     public void insert(KVPair<K, E> kvpair, int level, SkipNode<K, E> parent)
+     {
+    	 if (level >= this.level && 
+    			 ((kvpair.key().compareTo(next.getKey()) > 0) || next == null))
+    	 {
+    		 SkipNode<K, E> node1 = new SkipNode<K, E>(kvpair, this.level);
+    		 if (next != null)
+    		 {
+    			 node1.setNext(next);
+    		 }
+    		 next = node1;
+    		 if (parent != null) 
+    		 {
+    			 node1.setAbove(parent);
+    			 parent.setBelow(node1);
+    		 }
+    		 if (below != null) 
+    		 {
+    			 below.insert(kvpair, level, node1);
+    		 }
+    		 
+    	 }
+    	 else if (next != null && next.getKey().compareTo(this.getKey()) < 0)
+    	 {
+    		 next.insert(kvpair, level, parent);
+    	 }
+    	 else if (next != null && next.getKey().compareTo(this.getKey()) == 0)
+    	 {
+    		 System.out.println("Cannot use duplicate key!");
+    	 }
+    	 else if (below != null) 
+    	 {
+    		 below.insert(kvpair, level, parent);
+    	 }
+     }
+     
+     
 
 }
