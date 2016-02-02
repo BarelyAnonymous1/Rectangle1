@@ -65,6 +65,7 @@ public class Rectangle implements Comparable<Rectangle>
 
     /**
      * access to x coordinate
+     * 
      * @return x coordinate
      */
     public int getX()
@@ -74,6 +75,7 @@ public class Rectangle implements Comparable<Rectangle>
 
     /**
      * access to y coordinate
+     * 
      * @return y coordinate
      */
     public int getY()
@@ -83,6 +85,7 @@ public class Rectangle implements Comparable<Rectangle>
 
     /**
      * access to width
+     * 
      * @return horizontal length
      */
     public int getWidth()
@@ -92,6 +95,7 @@ public class Rectangle implements Comparable<Rectangle>
 
     /**
      * access to height
+     * 
      * @return vertical length
      */
     public int getHeight()
@@ -100,42 +104,9 @@ public class Rectangle implements Comparable<Rectangle>
     }
 
     /**
+     * Comparable interface method that allows two rectangles to be compared
+     * based on their coordinates and sizes
      * 
-     * @param newX
-     */
-    public void setX(int newX)
-    {
-        x = newX;
-    }
-
-    /**
-     * 
-     * @param newY
-     */
-    public void setY(int newY)
-    {
-        y = newY;
-    }
-
-    /**
-     * 
-     * @param newWidth
-     */
-    public void setWidth(int newWidth)
-    {
-        width = newWidth;
-    }
-
-    /**
-     * 
-     * @param newHeight
-     */
-    public void setHeigh(int newHeight)
-    {
-        height = newHeight;
-    }
-
-    /**
      * @param obj
      */
     public int compareTo(Rectangle obj)
