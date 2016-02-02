@@ -45,7 +45,7 @@ public class SkipNodeTest extends TestCase {
 		assertEquals(node1.getNext().getKey(), pair.key());
 		node2.setAbove(node3);
 		assertEquals(node2.getAbove().getKey(), pair2.key());
-		node3.setBelow(node1);
+		node3.setBelow(node2);
 		assertNull(node3.getBelow().getKey());
 	}
 	
