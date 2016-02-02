@@ -65,7 +65,11 @@ public class SkipNode<K extends Comparable<K>, E>
      */
     public K getKey()
     {
-        return pair.key();
+    	if (pair != null)
+    	{
+    		return pair.key();
+    	}
+    	return null;
     }
 
     /**
