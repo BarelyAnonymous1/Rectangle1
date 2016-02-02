@@ -29,4 +29,9 @@ public class SkipList<K extends Comparable<K>, E>
             head.setNext(newNode);
         }
     }
+    
+    public void dump()
+    {
+        while 
+    }
 }
