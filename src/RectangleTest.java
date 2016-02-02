@@ -9,16 +9,57 @@ import student.TestCase;
 public class RectangleTest extends TestCase
 {
     /**
-     * tests the results of the compareTo method
+     * tests the results of the compareTo method when the two rectangles are the same
      */
-    public void testCompareTo()
+    public void testCompareToTrue()
     {
         Rectangle rect1 = new Rectangle(0, 0, 10, 10);
         Rectangle rect2 = new Rectangle(0, 0, 10, 10);
-        Rectangle rect3 = new Rectangle(10, 11, 13, 13);
 
         assertTrue(rect1.compareTo(rect2) == 0);
-        assertTrue(rect1.compareTo(rect3) == -1);
-        assertTrue(rect2.compareTo(rect3) == -1);
+    }
+    
+    /**
+     * tests when the compareTo should be false
+     */
+    public void testCompareToFalseX()
+    {
+        Rectangle rect1 = new Rectangle(0, 0, 10, 10);
+        Rectangle rect2 = new Rectangle(1, 0, 10, 10);
+
+        assertTrue(rect1.compareTo(rect2) == -1);
+    }
+    
+    /**
+     * tests when the compareTo should be false
+     */
+    public void testCompareToFalseXY()
+    {
+        Rectangle rect1 = new Rectangle(0, 0, 10, 10);
+        Rectangle rect2 = new Rectangle(1, 1, 10, 10);
+
+        assertTrue(rect1.compareTo(rect2) == -1);
+    }
+    
+    /**
+     * tests when the compareTo should be false
+     */
+    public void testCompareToFalseXYW()
+    {
+        Rectangle rect1 = new Rectangle(0, 0, 10, 10);
+        Rectangle rect2 = new Rectangle(1, 1, 11, 10);
+
+        assertTrue(rect1.compareTo(rect2) == -1);
+    }
+    
+    /**
+     * tests when the compareTo should be false
+     */
+    public void testCompareToFalseXYWH()
+    {
+        Rectangle rect1 = new Rectangle(0, 0, 10, 10);
+        Rectangle rect2 = new Rectangle(1, 1, 11, 11);
+
+        assertTrue(rect1.compareTo(rect2) == -1);
     }
 }
