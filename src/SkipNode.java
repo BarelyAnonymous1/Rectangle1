@@ -31,8 +31,8 @@ public class SkipNode<K extends Comparable<K>, E>
      * constructor used to create the empty nodes of the SkipList
      * 
      * @param newLevel
-     *            the level used to describe how far ahead the next node is on
-     *            that level
+     *            the integer used to store the level of that node
+     * 
      */
     public SkipNode(int newLevel)
     {
@@ -40,6 +40,14 @@ public class SkipNode<K extends Comparable<K>, E>
         pair = null;
     }
 
+    /**
+     * constructor to make nodes that store a KVPair
+     * 
+     * @param newPair
+     *            pair of values stored as the data in the node
+     * @param newLevel
+     *            the integer used to store the level of that node
+     */
     public SkipNode(KVPair<K, E> newPair, int newLevel)
     {
         level = newLevel;
