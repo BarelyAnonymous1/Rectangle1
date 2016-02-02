@@ -8,7 +8,7 @@ import student.TestCase;
  * @author Jonathan DeFreeuw (jondef95), Preston Lattimer (platt)
  * @version 1
  */
-public class RectangleTest
+public class RectangleTest extends TestCase
 {
 
     /**
