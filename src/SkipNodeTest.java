@@ -33,7 +33,14 @@ public class SkipNodeTest extends TestCase {
 		assertEquals(0, pair.value().compareTo(node2.getValue()));
 		assertEquals(1, node1.getLevel());
 	}
-	
+	/**
+	 * tests get and set for above, below, next
+	 */
+	public void testSetNextAboveBelow()
+	{
+		node1.setNext(node2);
+		assertEquals(node1.getNext().getKey(), pair.key());
+	}
 	
 
 }
