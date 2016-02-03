@@ -143,12 +143,4 @@ public class SkipList<K extends Comparable<K>, E>
         }
     }
     
-    /**
-     * gets the head
-     */
-    public SkipNode<K, E> getHead()
-    {
-    	return head;
-    }
-    
 }

@@ -18,11 +18,16 @@ public class SkipNodeTest extends TestCase {
 	 */
 	public void setUp()
 	{
-		pair = new KVPair<String, Integer>("first", 1);
-		pair2 = new KVPair<String, Integer>("second", 2);
+		pair = null;
 		node2 = new SkipNode<String, Integer>(pair, 1);
-		node3 = new SkipNode<String, Integer>(pair2, 2);
-		
+	}
+	
+	/**
+	 * tests the getKey method properly
+	 */
+	public void testGetKey()
+	{
+		assertNull(node2.getKey());
 	}
 	
 	
