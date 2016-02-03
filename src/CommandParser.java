@@ -191,6 +191,9 @@ public class CommandParser
     private void parseSearch(Scanner scanner)
     {
         String name = scanner.next();
-        list.find(name);
+        if (null == list.find(name))
+        	{
+        		System.out.println("Rectangle not found: " + name);
+        	}
     }
 }

@@ -97,8 +97,7 @@ public class Rectangle implements Comparable<Rectangle>
      */
     public String toString()
     {
-    	String name = "" + x + y + width + height;
-    	return name;
+    	return x + ", " + y + ", " + width + ", " + height;
     }
 
     /**
