@@ -26,8 +26,8 @@ public class SkipList<K extends Comparable<K>, E>
      */
     public SkipList()
     {
-        head = new SkipNode<K, E>(null, 0);
-        level = -1;
+        head = new SkipNode<K, E>(null, 1);
+        level = 0;
         size = 0;
     }
     
@@ -127,6 +127,27 @@ public class SkipList<K extends Comparable<K>, E>
     		return null;
     	}
     }
+    
+    public KVPair<K, E> search(K key)
+    {
+    	boolean found = false;
+    	SkipNode<K, E> current = head;
+    	for (int i = level; 0 <= i; i--)
+    	{
+    		while (current.next[i] != null &&
+    				key.compareTo(current.next[i].getKey()) > 0)
+    		{
+    			current = current.next[i];
+    		}
+    	}
+    	current = current.next[0];
+    	if (current != null && key.compareTo(current.getKey()) == 0)
+    	{
+    		return current;
+    	}
+    	return null;
+    }
+    
     
     /**
      * dumps the things in the skip list

@@ -75,8 +75,7 @@ public class CommandParser
                     }
                     case ("intersections"):
                     {
-                        // TODO: IMPLEMENT INTERSECTIONS METHOD IN SKIPLIST
-                        // SkipList does things with intersections
+                        parseIntersections();
                         break;
                     }
                     case ("search"):
@@ -128,6 +127,8 @@ public class CommandParser
             KVPair<String, Rectangle> pair = new KVPair<String, Rectangle>(name,
                     rect);
             list.insert(pair);
+            System.out.println("Rectangle inserted: (" + name + ", " + x + ", "
+            		+ y + ", " + width + ", " + height + ")");
         }
         else
         {
@@ -149,7 +150,37 @@ public class CommandParser
     {
         // figure out if it is removing by key or removing by value
         // TODO: IMPLEMENT REMOVE ON NAME AND COORDINATE
-        scanner.nextLine();
+        String name = scanner.next();
+        if (!isNumeric(name))
+        {
+        	Rectangle foundRect = list.find(name);
+        	if (null == list.find(name))
+        	{
+        		System.out.println("Rectangle not removed: (" + name + ")");
+        	}
+        	else
+        	{
+        		
+        	}
+        }
+        else 
+        {
+        	int x = Integer.parseInt(name);
+        	int y = scanner.nextInt();
+        	int width = scanner.nextInt();
+        	int height = scanner.nextInt();
+        	if (width > 0 && height > 0 && 
+            		x + width < 1024 && y + height < 1024 &&
+            		x + width > 0 && y + height > 0)
+        	{
+        		Rectangle rect = new Rectangle(x, y, width, height);
+        	}
+        	else
+        	{
+        		System.out.println("Rectangle not removed: (" + x + ", " +
+        				y + ", " + width + ", " + height + ")");
+        	}
+        }
     }
 
     /**
@@ -168,12 +199,19 @@ public class CommandParser
         int y = scanner.nextInt();
         int width = scanner.nextInt();
         int height = scanner.nextInt();
+        System.out.println("Rectangles intersecting region (" + x + ", " + y +
+        		", " + width + ", " + height + "):");
         if (width > 0 && height > 0)
         {
-            if (x + width < 1024 && y + height < 1024)
+            if (x + width < 1024 && y + height < 1024 &&
+            		x + width > 0 && y + height > 0)
             {
-
+            	//list.regionSearch();
             }
+        }
+        else
+        {
+        	
         }
         // TODO: IMPLEMENT REGIONSEARCH
         // look in the SkipList for all Rectangles in the region
@@ -195,5 +233,20 @@ public class CommandParser
         	{
         		System.out.println("Rectangle not found: " + name);
         	}
+    }
+    
+    private void parseIntersections()
+    {
+    	System.out.println("Intersection pairs:");
+    }
+    
+    /**
+     * checks for numeric nature of the string
+     * @param str string taken to be checked
+     * @return a boolean false or true. 
+     */
+    private static boolean isNumeric(String str)
+    {
+      return str.matches("-?\\d+(\\.\\d+)?");
     }
 }

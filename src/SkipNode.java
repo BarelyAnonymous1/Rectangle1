@@ -91,4 +91,15 @@ public class SkipNode<K extends Comparable<K>, E>
     {
     	return level;
     }
+    
+    /**
+     * gets the pair
+     * @return KVPair of the node
+     */
+    public KVPair<K, E> getPair()
+    {
+    	if (pair != null)
+    		return pair;
+    	return null;
+    }
 }
