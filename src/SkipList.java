@@ -106,7 +106,7 @@ public class SkipList<K extends Comparable<K>, E>
      * @param key the value to search for
      * @return a value associated with the key if one is found
      */
-    public E find(K keyFind)
+    /**public E find(K keyFind)
     {
     	SkipNode<K, E> finder = head;
     	for (int i = level; 0 <= i; i--)
@@ -126,11 +126,29 @@ public class SkipList<K extends Comparable<K>, E>
     	{
     		return null;
     	}
-    }
+    }*/
     
     public KVPair<K, E> search(K key)
     {
-    	boolean found = false;
+    	SkipNode<K, E> current = head;
+    	for (int i = level; 0 <= i; i--)
+    	{
+    		while (current.next[i] != null &&
+    				key.compareTo(current.next[i].getKey()) > 0)
+    		{
+    			current = current.next[i];
+    		}
+    	}
+    	current = current.next[0];
+    	if (current != null && key.compareTo(current.getKey()) == 0)
+    	{
+    		return current.getPair();
+    	}
+    	return null;
+    }
+    
+    public SkipNode<K, E> nodeSearch(K key)
+    {
     	SkipNode<K, E> current = head;
     	for (int i = level; 0 <= i; i--)
     	{

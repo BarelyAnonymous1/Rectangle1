@@ -120,7 +120,7 @@ public class CommandParser
         int width = scanner.nextInt();
         int height = scanner.nextInt();
         if (width > 0 && height > 0 && 
-        		x + width < 1024 && y + height < 1024 &&
+        		x + width < 1024 && y + height < 1024 && 
         		x + width > 0 && y + height > 0)
         {
             Rectangle rect = new Rectangle(x, y, width, height);
@@ -148,13 +148,11 @@ public class CommandParser
      */
     private void parseRemove(Scanner scanner)
     {
-        // figure out if it is removing by key or removing by value
-        // TODO: IMPLEMENT REMOVE ON NAME AND COORDINATE
         String name = scanner.next();
         if (!isNumeric(name))
         {
-        	Rectangle foundRect = list.find(name);
-        	if (null == list.find(name))
+        	//KVPair<String, Rectangle> pair = list.search(name);
+        	if (null == list.search(name))
         	{
         		System.out.println("Rectangle not removed: (" + name + ")");
         	}
@@ -229,10 +227,23 @@ public class CommandParser
     private void parseSearch(Scanner scanner)
     {
         String name = scanner.next();
-        if (null == list.find(name))
+        if (null == list.search(name))
+        {
+       		System.out.println("Rectangle not found: " + name);
+        }
+        else
+        {
+        	SkipNode<String, Rectangle> node = list.nodeSearch(name);
+        	System.out.println("(" + name + ", " + 
+        			node.getValue().toString() + ")");
+        	while (node.next[0] != null &&
+        			node.next[0].getKey().compareTo(node.getKey()) == 0)
         	{
-        		System.out.println("Rectangle not found: " + name);
+        		node = node.next[0];
+        		System.out.println("(" + name + ", " + 
+        				node.getValue().toString() + ")");
         	}
+        }
     }
     
     private void parseIntersections()
@@ -247,6 +258,6 @@ public class CommandParser
      */
     private static boolean isNumeric(String str)
     {
-      return str.matches("-?\\d+(\\.\\d+)?");
+    	return str.matches("-?\\d+(\\.\\d+)?");
     }
 }
