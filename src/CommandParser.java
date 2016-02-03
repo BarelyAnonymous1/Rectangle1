@@ -86,7 +86,7 @@ public class CommandParser
                     }
                     case ("dump"):
                     {
-                        // TODO: IMPLEMENT DUMP OF SKIPLIST
+                        list.dump();
                         break;
                     }
                     default:
@@ -94,7 +94,7 @@ public class CommandParser
                         break;
                     }
                 }
-                System.out.println(cmd);
+                //System.out.println(cmd);
             }
             return true;
         }
@@ -120,7 +120,9 @@ public class CommandParser
         int y = scanner.nextInt();
         int width = scanner.nextInt();
         int height = scanner.nextInt();
-        if (width > 0 && height > 0 && x + width < 1024 && y + height < 1024)
+        if (width > 0 && height > 0 && 
+        		x + width < 1024 && y + height < 1024 &&
+        		x + width > 0 && y + height > 0)
         {
             Rectangle rect = new Rectangle(x, y, width, height);
             KVPair<String, Rectangle> pair = new KVPair<String, Rectangle>(name,
@@ -189,6 +191,6 @@ public class CommandParser
     private void parseSearch(Scanner scanner)
     {
         String name = scanner.next();
-        // TODO: IMPLEMENT SEARCH ON SKIPLIST
+        list.find(name);
     }
 }

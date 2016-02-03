@@ -91,6 +91,14 @@ public class Rectangle implements Comparable<Rectangle>
     {
         return height;
     }
+    
+    /**
+     * outputs the 4 values to the console
+     */
+    public void dump()
+    {
+    	System.out.print(x + y + width + height);
+    }
 
     /**
      * Comparable interface method that allows two rectangles to be compared

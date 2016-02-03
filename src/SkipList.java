@@ -140,13 +140,14 @@ public class SkipList<K extends Comparable<K>, E>
             String name = "";
             if (current.getValue() == null)
             {
-                name = "(null)";
+                name = "null";
             }
             else
             {
                 name = current.getValue().toString();
             }
-            System.out.println(current.getKey() + " has depth " + current.getLevel() + ", Value " + current.getValue());
+            System.out.println("Node has depth " + 
+            		current.getLevel() + ", Value (" + name + ")");
             
             current = current.next[0];
         }
