@@ -48,6 +48,12 @@ public class SkipList<K extends Comparable<K>, E>
     	
     }
     
+    /**
+     * flips a coin to generate a random level for the nodes
+     * to be added.
+     *
+     * @return picked random level
+     */
     private int pickRandomLevel()
     {
     	int leveler = 0;
@@ -60,6 +66,9 @@ public class SkipList<K extends Comparable<K>, E>
     }
     
     /**
+     * randomly generates a level and iterates through
+     * the list to add values in order, adds them at the
+     * randomly generated level
      * @param newPair determines the pair to be added
      */
     @SuppressWarnings("unchecked")
