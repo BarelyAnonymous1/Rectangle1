@@ -95,9 +95,10 @@ public class Rectangle implements Comparable<Rectangle>
     /**
      * outputs the 4 values to the console
      */
-    public void dump()
+    public String dump()
     {
-    	System.out.print(x + y + width + height);
+    	String name = "" + x + y + width + height;
+    	return name;
     }
 
     /**
