@@ -29,7 +29,9 @@ public class SkipListTest extends TestCase {
 	{
 		list.insert(pair1);
 		list.insert(pair2);
-		assertEquals(list.find("node2"), pair2.value());
+		list.insert(pair3);
+		//list.insert(pair3);
+		list.dump();
 		
 		//list.dump();
 	}

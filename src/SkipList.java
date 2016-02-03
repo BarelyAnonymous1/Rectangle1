@@ -16,36 +16,83 @@ public class SkipList<K extends Comparable<K>, E>
      * number of nodes in the list
      */
     private int size;
+    /**
+     * level of the head
+     */
+    private int level;
     
     /**
      * creates a new skip list
      */
     public SkipList()
     {
-        head = new SkipNode<K, E>(0);
+        head = new SkipNode<K, E>(null, 0);
+        level = -1;
         size = 0;
+    }
+    
+    /**
+     * fixes the head to make sure that it represents the new
+     * 	largest number of levels
+     * @param newLevel is the new largest levels
+     */
+    private void fixHead(int newLevel)
+    {
+    	SkipNode<K, E> oldHead = head;
+    	head = new SkipNode<K, E>(null, newLevel);
+    	for (int i = 0; i <= level; i++)
+    	{
+    		head.next[i] = oldHead.next[i];
+    	}
+    	level = newLevel;
+    	
+    }
+    
+    private int pickRandomLevel()
+    {
+    	int leveler = 0;
+    	Random random = new Random();
+    	while (random.nextBoolean())
+    	{
+    		leveler++;
+    	}
+    	return leveler;
     }
     
     /**
      * @param newPair determines the pair to be added
      */
-    public void insert(KVPair<K, E> newPair)
+    @SuppressWarnings("unchecked")
+	public void insert(KVPair<K, E> newPair)
     {
-    	int level = 0;
-    	Random random = new Random();
-    	while (random.nextBoolean())
+    	int newLevel = pickRandomLevel();
+    	if (level < newLevel)
     	{
-    		level++;
+    		fixHead(newLevel);
     	}
     	
-    	while(head.getLevel() < level)
+    	SkipNode<K, E>[] fixer = (SkipNode<K, E>[])new
+    			SkipNode[level + 1];
+    	SkipNode<K, E> inserter = head;
+    	for (int i = level; 0 <= i; i--)
     	{
-    		SkipNode<K, E> newHead = new SkipNode<K, E>(null, head.getLevel() + 1);
-    		head.setAbove(newHead);
-    		newHead.setBelow(head);
-    		head = newHead;
+    		while((inserter.next[i] != null) && 
+    				(newPair.key().compareTo(inserter.next[i].getKey()) > 0))
+    		{
+    			inserter = inserter.next[i];
+    		}
+    		fixer[i] = inserter;
     	}
-    	head.insert(newPair, level, null);
+    	size++;
+    	
+    	/**while(head.getLevel() < level)
+    	{
+    		sdf;
+    	}
+    	for (int i = level; 0 <= i; i--)
+    	{
+    		s;
+    	}*/
 //        SkipNode<K, E> newNode = new SkipNode<K, E>(newPair, 0);
 //        if (head.getNext() == null)
 //        {
@@ -60,10 +107,11 @@ public class SkipList<K extends Comparable<K>, E>
     /**
      * implements find method
      */
-    public E find(K key)
+    /**public E find(K key)
     {
-    	return head.find(key).getValue();
-    }
+    	SkipNode<K, E> foundnode = head.find(key);
+    	return foundnode.getValue();
+    }*/
     
     /**
      * dumps the things in the skip list
@@ -85,7 +133,7 @@ public class SkipList<K extends Comparable<K>, E>
             }
             System.out.println("Node has depth " + current.getLevel() + ", Value " + name);
             System.out.println("SkipList size is: " + size);
-            current = current.getNext();
+            current = current.next[0];
         }
     }
     

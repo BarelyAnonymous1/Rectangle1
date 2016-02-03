@@ -13,10 +13,10 @@ public class SkipNode<K extends Comparable<K>, E>
 {
 
     /**
-     * creates a skip list node that is blank that will be the one we actually
-     * are creating
+     * creates a skip list node array that is blank that will point to 
+     * the next node in the list
      */
-    private SkipNode<K, E> above, below, next;
+    public SkipNode<K, E>[] next;
 
     /**
      * Data stored into the node
@@ -26,19 +26,8 @@ public class SkipNode<K extends Comparable<K>, E>
      * determines the level that the node is actually on
      */
     private int            level;
+ 
 
-    /**
-     * constructor used to create the empty nodes of the SkipList
-     * 
-     * @param newLevel
-     *            the integer used to store the level of that node
-     * 
-     */
-    public SkipNode(int newLevel)
-    {
-        level = newLevel;
-        pair = null;
-    }
 
     /**
      * constructor to make nodes that store a KVPair
@@ -48,10 +37,17 @@ public class SkipNode<K extends Comparable<K>, E>
      * @param newLevel
      *            the integer used to store the level of that node
      */
-    public SkipNode(KVPair<K, E> newPair, int newLevel)
+
+	@SuppressWarnings("unchecked")
+	public SkipNode(KVPair<K, E> newPair, int newLevel)
     {
         level = newLevel;
         pair = newPair;
+        next = (SkipNode<K, E>[])new SkipNode[newLevel + 1];
+        for (int i = 0; i < level; i++)
+        {
+        	next[i] = null;
+        }
     }
 
     /**
@@ -102,20 +98,11 @@ public class SkipNode<K extends Comparable<K>, E>
      * @param node
      *            is the next node
      */
-    public void setNext(SkipNode<K, E> node)
+    /**public void setNext(SkipNode<K, E> node)
     {
         next = node;
-    }
+    }*/
 
-    /**
-     * next node getter
-     * 
-     * @return next node
-     */
-    public SkipNode<K, E> getNext()
-    {
-        return next;
-    }
 
     /**
      * --------------------------------
@@ -125,17 +112,17 @@ public class SkipNode<K extends Comparable<K>, E>
      * @param node
      *            is the node above
      */
-    public void setAbove(SkipNode<K, E> node)
+    /**public void setAbove(SkipNode<K, E> node)
     {
         above = node;
-    }
+    }*/
 
     /**
      * above node getter
      * 
      * @return above node
      */
-    public SkipNode<K, E> getAbove()
+    /**public SkipNode<K, E> getAbove()
     {
         return above;
     }
@@ -147,19 +134,19 @@ public class SkipNode<K extends Comparable<K>, E>
      * @param node
      *            is the node below
      */
-    public void setBelow(SkipNode<K, E> node)
+    /**public void setBelow(SkipNode<K, E> node)
     {
         below = node;
-    }
+    }*/
 
     /**
      * below node getter
      * @return down node
      */
-    public SkipNode<K, E> getBelow()
+    /**public SkipNode<K, E> getBelow()
     {
         return below;
-    }
+    }*/
 
     /**
      * ================================ this section contains insert, and find
@@ -179,13 +166,13 @@ public class SkipNode<K extends Comparable<K>, E>
      * @param parent
      *            is the node for the level above where we are, CAN be null
      */
-     public void insert(KVPair<K, E> kvpair, int level, SkipNode<K, E> parent)
+     /**public void insert(KVPair<K, E> kvpair, int level, SkipNode<K, E> parent)
      {
     	 if (level >= this.level && 
     			 (next == null || 
     			 (kvpair.key().compareTo(next.getKey()) > 0)))
     	 {
-    		 SkipNode<K, E> node1 = new SkipNode<K, E>(kvpair, this.level);
+    		 SkipNode<K, E> node1 = new SkipNode<K, E>(kvpair, level);
     		 if (next != null)
     		 {
     			 node1.setNext(next);
@@ -214,16 +201,16 @@ public class SkipNode<K extends Comparable<K>, E>
     	 {
     		 below.insert(kvpair, level, parent);
     	 }
-     }
+     }*/
      
      /**
       * implements the find method
       */
-     public SkipNode<K, E> find(K key)
+     /**public SkipNode<K, E> find(K key)
      {
     	 if (next!= null) 
     	 {
-    		 int comparison = next.getKey().compareTo(this.getKey());
+    		 int comparison = next.getKey().compareTo(key);
     		 
     		 if (comparison == 0)
     		 {
@@ -231,28 +218,26 @@ public class SkipNode<K extends Comparable<K>, E>
     		 }
     		 else if (comparison < 0)
     		 {
-    			 return next.find(this.getKey());
+    			 return next.find(key);
     		 }
     		 else if (below != null)
     		 {
-    			 return below.find(this.getKey());
+    			 return below.find(key);
     		 }
     		 else
     		 {
-    			 System.out.println("No such key exists");
-    			 return null;
+    			 throw new IllegalArgumentException();
     		 }
     	 }
     	 else if (below != null)
     	 {
-    		 return below.find(this.getKey());
+    		 return below.find(key);
     	 }
     	 else
     	 {
-    		 System.out.println("No such key exists");
-    		 return null;
+    		 throw new IllegalArgumentException();
     	 }
-     }
+     }*/
      
      
 
