@@ -83,35 +83,41 @@ public class SkipList<K extends Comparable<K>, E>
     		}
     		fixer[i] = inserter;
     	}
-    	size++;
-    	
-    	/**while(head.getLevel() < level)
+    	inserter = new SkipNode<K, E>(newPair, newLevel);
+    	for (int i = 0; i <= newLevel; i++)
     	{
-    		sdf;
+    		inserter.next[i] = fixer[i].next[i];
+    		fixer[i].next[i] = inserter;
     	}
+    	size++;
+    }
+    
+    /**
+     * implements the find method
+     * @param key the value to search for
+     * @return a value associated with the key if one is found
+     */
+    public E find(K keyFind)
+    {
+    	SkipNode<K, E> finder = head;
     	for (int i = level; 0 <= i; i--)
     	{
-    		s;
-    	}*/
-//        SkipNode<K, E> newNode = new SkipNode<K, E>(newPair, 0);
-//        if (head.getNext() == null)
-//        {
-//            head.setNext(newNode);
-//        }
-//        else
-//        {
-//            newNode.setNext(head.getNext());
-//            head.setNext(newNode);
-//        }
+    		while((finder.next[i] != null) &&
+    				(keyFind.compareTo(finder.next[i].getKey()) > 0))
+    		{
+    			finder = finder.next[i];
+    		}
+    	}
+    	finder = finder.next[0];
+    	if ((finder != null) && (keyFind.compareTo(finder.getKey()) == 0))
+    	{
+    		return finder.getValue();
+    	}
+    	else
+    	{
+    		return null;
+    	}
     }
-    /**
-     * implements find method
-     */
-    /**public E find(K key)
-    {
-    	SkipNode<K, E> foundnode = head.find(key);
-    	return foundnode.getValue();
-    }*/
     
     /**
      * dumps the things in the skip list
