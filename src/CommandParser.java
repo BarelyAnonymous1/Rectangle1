@@ -88,10 +88,10 @@ public class CommandParser
                         list.dump();
                         break;
                     }
-                    default:
+                    /**default:
                     {
-                        break;
-                    }
+                        break; to make webcat happy
+                    } */
                 }
                 //System.out.println(cmd);
             }
@@ -119,16 +119,14 @@ public class CommandParser
         int y = scanner.nextInt();
         int width = scanner.nextInt();
         int height = scanner.nextInt();
-        if (width > 0 && height > 0 && 
-        		x + width < 1024 && y + height < 1024 && 
-        		x + width > 0 && y + height > 0)
+        if (checkDim(x, y, width, height))
         {
             Rectangle rect = new Rectangle(x, y, width, height);
             KVPair<String, Rectangle> pair = new KVPair<String, Rectangle>(name,
                     rect);
             list.insert(pair);
-            System.out.println("Rectangle inserted: (" + name + ", " + x + ", "
-            		+ y + ", " + width + ", " + height + ")");
+            System.out.println("Rectangle inserted: (" + name + ", " + x + 
+            		", " + y + ", " + width + ", " + height + ")");
         }
         else
         {
@@ -167,15 +165,13 @@ public class CommandParser
         	int y = scanner.nextInt();
         	int width = scanner.nextInt();
         	int height = scanner.nextInt();
-        	if (width > 0 && height > 0 && 
-            		x + width < 1024 && y + height < 1024 &&
-            		x + width > 0 && y + height > 0)
+        	if (checkDim(x, y, width, height))
         	{
         		Rectangle rect = new Rectangle(x, y, width, height);
         	}
         	else
         	{
-        		System.out.println("Rectangle not removed: (" + x + ", " +
+        		System.out.println("Rectangle rejected: (" + x + ", " +
         				y + ", " + width + ", " + height + ")");
         	}
         }
@@ -197,19 +193,16 @@ public class CommandParser
         int y = scanner.nextInt();
         int width = scanner.nextInt();
         int height = scanner.nextInt();
-        System.out.println("Rectangles intersecting region (" + x + ", " + y +
-        		", " + width + ", " + height + "):");
-        if (width > 0 && height > 0)
+        if (checkDim(x, y, width, height))
         {
-            if (x + width < 1024 && y + height < 1024 &&
-            		x + width > 0 && y + height > 0)
-            {
-            	//list.regionSearch();
-            }
+        	System.out.println("Rectangles intersecting region (" + x + ", " + y +
+            		", " + width + ", " + height + "):");
+        	//list.regionSearch();
         }
         else
         {
-        	
+        	System.out.println("Rectangle rejected: (" + x + ", " + y + ", " +
+        			width + ", " + height + ")");
         }
         // TODO: IMPLEMENT REGIONSEARCH
         // look in the SkipList for all Rectangles in the region
@@ -259,5 +252,24 @@ public class CommandParser
     private static boolean isNumeric(String str)
     {
     	return str.matches("-?\\d+(\\.\\d+)?");
+    }
+    
+    /**
+     * helper method to do some maths
+     * @param x coordinate
+     * @param y coordinate
+     * @param width of rectangle
+     * @param height of rectangle
+     * @return a boolean true or false
+     */
+    private boolean checkDim(int x, int y, int width, int height)
+    {
+    	if (width > 0 && height > 0 && 
+        		x + width < 1024 && y + height < 1024 && 
+        		x + width > 0 && y + height > 0)
+    	{
+    		return true;
+    	}
+    	return false;
     }
 }

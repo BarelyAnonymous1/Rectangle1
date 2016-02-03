@@ -1,3 +1,4 @@
+import java.lang.reflect.Array;
 import java.util.Random;
 
 /**
@@ -71,7 +72,7 @@ public class SkipList<K extends Comparable<K>, E>
      * randomly generated level
      * @param newPair determines the pair to be added
      */
-    @SuppressWarnings("unchecked")
+    /**@SuppressWarnings("unchecked")
 	public void insert(KVPair<K, E> newPair)
     {
     	int newLevel = pickRandomLevel();
@@ -99,6 +100,42 @@ public class SkipList<K extends Comparable<K>, E>
     		fixer[i].next[i] = inserter;
     	}
     	size++;
+    }*/
+    
+    /**
+     * inserts a node in a sorted order
+     * @param newpair is the pair to be inserted
+     * @return whether iteration succeeded
+     */
+    @SuppressWarnings("unchecked")
+    public boolean insert(KVPair<K, E> newpair)
+    {
+    	int newLevel = pickRandomLevel();
+    	Comparable<K> key = newpair.key();
+    	if (level < newLevel)
+    	{
+    		fixHead(newLevel);
+    	}
+    	SkipNode<K, E>[] update = (SkipNode[])Array.newInstance(SkipNode.class, 
+    			level + 1);
+    	SkipNode<K, E> curr = head;
+    	for (int i = level; 0 <= i; i--)
+    	{
+    		while((curr.next[i] != null) &&
+    				(key.compareTo((curr.next[i]).getPair().key()) > 0))
+    		{
+    			curr = curr.next[i];
+    		}
+    		update[i] = curr;
+    	}
+    	curr = new SkipNode<K, E>(newpair, newLevel);
+    	for (int i = 0; i <= newLevel; i++)
+    	{
+    		curr.next[i] = update[i].next[i];
+    		update[i].next[i] = curr;
+    	}
+    	size++;
+    	return true;
     }
     
     /**

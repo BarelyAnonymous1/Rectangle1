@@ -38,5 +38,17 @@ public class SkipListTest extends TestCase {
 		//list.dump();
 	}
 	
+	/**
+	 * tests search
+	 */
+	public void testSearch()
+	{
+		assertNull(list.search("a"));
+		assertNull(list.nodeSearch("a"));
+		list.insert(pair1);
+		list.insert(pair2);
+		list.nodeSearch("node1");
+		list.nodeSearch("node2");
+	}
 	
 }

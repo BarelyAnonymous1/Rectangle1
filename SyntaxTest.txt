@@ -1,8 +1,14 @@
 
 insert r_r          -1 -20 3 4
   insert rec        7 -8 1 3
-insert virtual_rec0 1 1 1 1
-insert virtual_REC0 0 0 11 1
+insert b 1 1 1 1
+insert a 0 0 11 1
+insert a 1 1 1 2
+insert c 1 2 3 4
+insert a 0 0 -1 -1
+insert a 0 1 0 -2
+insert a 1 1 0 0
+
 insert inExistRec_0 1 1 -1 -2
 
  regionsearch   11 11                 0 0
@@ -11,11 +17,14 @@ intersections
 
 dump
 
-search rec
+search a
+search c
 search virtual_rec0
 
 remove r_r
-remove 1 1 0 0
+remove a
+remove 1 -2 1 1
+remove 1 1 1 1
 	
 regionsearch   -5 -5 20 20 
 
