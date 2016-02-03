@@ -137,10 +137,11 @@ public class SkipList<K extends Comparable<K>, E>
             {
                 name = current.getValue().toString();
             }
-            System.out.println("Node has depth " + current.getLevel() + ", Value " + name);
-            System.out.println("SkipList size is: " + size);
+            System.out.println(current.getKey() + " has depth " + current.getLevel() + ", Value " + current.getValue());
+            
             current = current.next[0];
         }
+        System.out.println("SkipList size is: " + size);
     }
     
 }

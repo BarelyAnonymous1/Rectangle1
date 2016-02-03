@@ -17,7 +17,7 @@ public class SkipListTest extends TestCase {
 	public void setUp()
 	{
 		pair1 = new KVPair<String, Integer>("node1", 1);
-		pair2 = new KVPair<String, Integer>("node2", 2);
+		pair2 = new KVPair<String, Integer>("node6", 2);
 		pair3 = new KVPair<String, Integer>("node3", 3);
 		list = new SkipList<String, Integer>();
 	}
@@ -27,8 +27,8 @@ public class SkipListTest extends TestCase {
 	 */
 	public void testInsert()
 	{
-		list.insert(pair1);
 		list.insert(pair2);
+		list.insert(pair1);
 		assertNull(list.find("node3"));
 		list.insert(pair3);
 		assertEquals(pair3.value().compareTo(list.find("node3")), 0);
