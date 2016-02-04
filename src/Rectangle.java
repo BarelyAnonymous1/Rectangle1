@@ -12,22 +12,22 @@ public class Rectangle implements Comparable<Rectangle>
     /**
      * x coordinate of upper left corner of Rectangle
      */
-    private int x;
+    private int    x;
     /**
      * y coordinate of upper left corner of Rectangle
      */
-    private int y;
+    private int    y;
     /**
      * horizontal length of Rectangle; the difference between the x coordinate
      * of the right corner and x coordinate of left corner
      */
-    private int width;
+    private int    width;
     /**
      * vertical length of Rectangle; the difference between the x coordinate of
      * the right corner and x coordinate of left corner
      */
-    private int height;
-    
+    private int    height;
+
     /**
      * holds the name of the rectangle
      */
@@ -44,14 +44,16 @@ public class Rectangle implements Comparable<Rectangle>
      *            horizontal length of Rectangle
      * @param newHeight
      *            vertical length of Rectangle
+     * @precondition string name starts with an alphabetic character
      * @precondition width and height are greater than 0
      * @precondition x and y coordinate are greater than or equal to 0
      * @precondition x + width is less than 1024
      * @precondition y + height is less than 1024
      */
-    public Rectangle(String newName, int newX, int newY, int newWidth, int newHeight)
+    public Rectangle(String newName, int newX, int newY, int newWidth,
+            int newHeight)
     {
-    	name = newName;
+        name = newName;
         x = newX;
         y = newY;
         width = newWidth;
@@ -97,13 +99,13 @@ public class Rectangle implements Comparable<Rectangle>
     {
         return height;
     }
-    
+
     /**
      * outputs the 4 values to the console
      */
     public String toString()
     {
-    	return name + ", " + x + ", " + y + ", " + width + ", " + height;
+        return name + ", " + x + ", " + y + ", " + width + ", " + height;
     }
 
     /**
