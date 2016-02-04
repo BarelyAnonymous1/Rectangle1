@@ -119,7 +119,7 @@ public class SkipList<K extends Comparable<K>, E>
     	SkipNode<K, E>[] update = (SkipNode[])Array.newInstance(SkipNode.class, 
     			level + 1);
     	SkipNode<K, E> curr = head;
-    	for (int i = level; 0 <= i; i--)
+    	for (int i = level; i >= 0; i--)
     	{
     		while((curr.next[i] != null) &&
     				(key.compareTo((curr.next[i]).getPair().key()) > 0))
@@ -209,7 +209,6 @@ public class SkipList<K extends Comparable<K>, E>
      */
     public void dump()
     {
-        System.out.println("SkipList dump:");
         SkipNode<K, E> current = head;
         while (current != null)
         {
