@@ -27,6 +27,11 @@ public class Rectangle implements Comparable<Rectangle>
      * the right corner and x coordinate of left corner
      */
     private int height;
+    
+    /**
+     * holds the name of the rectangle
+     */
+    private String name;
 
     /**
      * standard constructor for Rectangle; sets up the position and size
@@ -44,8 +49,9 @@ public class Rectangle implements Comparable<Rectangle>
      * @precondition x + width is less than 1024
      * @precondition y + height is less than 1024
      */
-    public Rectangle(int newX, int newY, int newWidth, int newHeight)
+    public Rectangle(String newName, int newX, int newY, int newWidth, int newHeight)
     {
+    	name = newName;
         x = newX;
         y = newY;
         width = newWidth;
@@ -97,7 +103,7 @@ public class Rectangle implements Comparable<Rectangle>
      */
     public String toString()
     {
-    	return x + ", " + y + ", " + width + ", " + height;
+    	return name + ", " + x + ", " + y + ", " + width + ", " + height;
     }
 
     /**

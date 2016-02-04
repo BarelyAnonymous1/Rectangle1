@@ -119,9 +119,11 @@ public class CommandParser
         int y = scanner.nextInt();
         int width = scanner.nextInt();
         int height = scanner.nextInt();
-        if (checkDim(x, y, width, height))
+        char c = name.charAt(0);
+        boolean isDigit = (c >= '0' && c <= '9');
+        if (checkDim(x, y, width, height) && !isDigit)
         {
-            Rectangle rect = new Rectangle(x, y, width, height);
+            Rectangle rect = new Rectangle(name, x, y, width, height);
             KVPair<String, Rectangle> pair = new KVPair<String, Rectangle>(name,
                     rect);
             list.insert(pair);
@@ -167,7 +169,7 @@ public class CommandParser
         	int height = scanner.nextInt();
         	if (checkDim(x, y, width, height))
         	{
-        		Rectangle rect = new Rectangle(x, y, width, height);
+        		Rectangle rect = new Rectangle(null, x, y, width, height);
         	}
         	else
         	{
