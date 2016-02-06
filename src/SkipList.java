@@ -34,7 +34,7 @@ public class SkipList<K extends Comparable<K>, E>
      */
     public SkipList()
     {
-        head = new SkipNode<K, E>(null, 0);
+        head = new SkipNode<K, E>(null, 1);
         level = 0;
         size = 0;
     }
@@ -171,7 +171,6 @@ public class SkipList<K extends Comparable<K>, E>
     public E removeValue(E value)
     {
         SkipNode<K, E> current = head;
-        K foundKey = null;
         while (current.next[0] != null)
         {
             if ( current.next[0].getValue().equals(value))
