@@ -1,11 +1,17 @@
 import java.lang.reflect.Array;
 import java.util.Random;
+import student.TestableRandom;
 
 /**
  * SkipList that will be used to hold rectnagles input from a file
  * 
- * @author Jonathan
+ * @author Jonathan DeFreeuw (jondef95), Preston Lattimer (platt)
+ * @version 1
  *
+ * @param <K>
+ *            key value contained in the KVPair of the node
+ * @param <E>
+ *            the data value contained in the KVPair of the node
  */
 public class SkipList<K extends Comparable<K>, E>
 {
@@ -31,6 +37,15 @@ public class SkipList<K extends Comparable<K>, E>
         head = new SkipNode<K, E>(null, 1);
         level = 0;
         size = 0;
+    }
+    
+    /**
+     * retrieves the head of the list
+     * @return the head of the list
+     */
+    public SkipNode<K, E> getHead()
+    {
+        return head;
     }
 
     /**
@@ -60,7 +75,7 @@ public class SkipList<K extends Comparable<K>, E>
     private int pickRandomLevel()
     {
         int leveler = 0;
-        Random random = new Random();
+        Random random = new TestableRandom();
         while (random.nextBoolean())
         {
             leveler++;
@@ -69,39 +84,17 @@ public class SkipList<K extends Comparable<K>, E>
     }
 
     /**
-     * randomly generates a level and iterates through the list to add values in
-     * order, adds them at the randomly generated level
-     * 
-     * @param newPair
-     *            determines the pair to be added
-     */
-    /**
-     * @SuppressWarnings("unchecked") public void insert(KVPair<K, E> newPair) {
-     * int newLevel = pickRandomLevel(); if (level < newLevel) {
-     * fixHead(newLevel); }
-     * 
-     * SkipNode<K, E>[] fixer = (SkipNode<K, E>[])new SkipNode[level + 1];
-     * SkipNode<K, E> inserter = head; for (int i = level; 0 <= i; i--) {
-     * while((inserter.next[i] != null) &&
-     * (newPair.key().compareTo(inserter.next[i].getKey()) > 0)) { inserter =
-     * inserter.next[i]; } fixer[i] = inserter; } inserter = new SkipNode<K,
-     * E>(newPair, newLevel); for (int i = 0; i <= newLevel; i++) {
-     * inserter.next[i] = fixer[i].next[i]; fixer[i].next[i] = inserter; }
-     * size++; }
-     */
-
-    /**
      * inserts a node in a sorted order
      * 
-     * @param newpair
+     * @param newPair
      *            is the pair to be inserted
      * @return whether iteration succeeded
      */
     @SuppressWarnings("unchecked")
-    public boolean insert(KVPair<K, E> newpair)
+    public boolean insert(KVPair<K, E> newPair)
     {
         int newLevel = pickRandomLevel();
-        Comparable<K> key = newpair.key();
+        Comparable<K> key = newPair.key();
         if (level < newLevel)
         {
             fixHead(newLevel);
@@ -118,7 +111,7 @@ public class SkipList<K extends Comparable<K>, E>
             }
             update[i] = curr;
         }
-        curr = new SkipNode<K, E>(newpair, newLevel);
+        curr = new SkipNode<K, E>(newPair, newLevel);
         for (int i = 0; i <= newLevel; i++)
         {
             curr.next[i] = update[i].next[i];
@@ -129,21 +122,12 @@ public class SkipList<K extends Comparable<K>, E>
     }
 
     /**
-     * implements the find method
+     * implements the search method; looks through nodes for a specific key
      * 
      * @param key
      *            the value to search for
-     * @return a value associated with the key if one is found
+     * @return the KVPair of the node
      */
-    /**
-     * public E find(K keyFind) { SkipNode<K, E> finder = head; for (int i =
-     * level; 0 <= i; i--) { while((finder.next[i] != null) &&
-     * (keyFind.compareTo(finder.next[i].getKey()) > 0)) { finder =
-     * finder.next[i]; } } finder = finder.next[0]; if ((finder != null) &&
-     * (keyFind.compareTo(finder.getKey()) == 0)) { return finder.getValue(); }
-     * else { return null; } }
-     */
-
     public KVPair<K, E> search(K key)
     {
         SkipNode<K, E> current = head;
@@ -156,19 +140,19 @@ public class SkipList<K extends Comparable<K>, E>
             }
         }
         current = current.next[0];
-        if (current != null && key.compareTo(current.getKey()) == 0)
+        if (current == null || key.compareTo(current.getKey()) != 0)
         {
-            return current.getPair();
+            return null;
         }
-        return null;
+        return current.getPair();
     }
 
     /**
-     * fins a node that contains a specific key
+     * finds a specific node given a key value
      * 
      * @param key
-     *            key that is being searched for
-     * @return the node with a certain key
+     *            the key that is being searched for
+     * @return the node that contains a specific key
      */
     public SkipNode<K, E> nodeSearch(K key)
     {
@@ -182,11 +166,11 @@ public class SkipList<K extends Comparable<K>, E>
             }
         }
         current = current.next[0];
-        if (current != null && key.compareTo(current.getKey()) == 0)
+        if (current == null || key.compareTo(current.getKey()) != 0)
         {
-            return current;
+            return null;
         }
-        return null;
+        return current;
     }
 
     /**
@@ -194,6 +178,7 @@ public class SkipList<K extends Comparable<K>, E>
      */
     public void dump()
     {
+        System.out.println("SkipList dump:");
         SkipNode<K, E> current = head;
         while (current != null)
         {
@@ -204,7 +189,7 @@ public class SkipList<K extends Comparable<K>, E>
             }
             else
             {
-                name = current.getValue().toString();
+                name = current.getPair().toString();
             }
             System.out.println("Node has depth " + current.getLevel()
                     + ", Value (" + name + ")");
@@ -214,4 +199,58 @@ public class SkipList<K extends Comparable<K>, E>
         System.out.println("SkipList size is: " + size);
     }
 
+    /**
+     * checks through the SkipList for intersections between rectangles forced
+     * to use Casting to check for intersections
+     * 
+     * @return whether or not an intersection was found
+     */
+    public boolean intersections()
+    {
+        boolean foundIntersect = false;
+        SkipNode<K, E> current = head.next[0];
+        for (int i = 0; i < size; i++)
+        {
+            SkipNode<K, E> check = head.next[0];
+            for (int j = 0; j < size; j++)
+            {
+                if (i != j)
+                {
+                    if (((Rectangle) current.getValue())
+                            .intersects(((Rectangle) check.getValue())))
+                    {
+                        System.out.println(current.getPair().toString() + " | "
+                                + check.getPair().toString());
+                        foundIntersect = true;
+                    }
+                }
+                check = check.next[0];
+            }
+            current = current.next[0];
+        }
+        return foundIntersect;
+    }
+
+    /**
+     * checks the SkipList for all rectangles intersecting a certain region.
+     * 
+     * @param region
+     *            KVPair that contains the rectangle for the intersecting region
+     * @return whether or not a rectangle was found in the region
+     */
+    public boolean regionSearch(Rectangle region)
+    {
+        boolean inRegion = false;
+        SkipNode<K, E> current = head.next[0];
+        for (int i = 0; i < size; i++)
+        {
+            if (((Rectangle) current.getValue()).intersects(region))
+            {
+                System.out.println(current.getPair().toString());
+                inRegion = true;
+            }
+            current = current.next[0];
+        }
+        return inRegion;
+    }
 }

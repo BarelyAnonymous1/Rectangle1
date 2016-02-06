@@ -31,4 +31,17 @@ public class CommandParserTest extends TestCase
         assertTrue(success);
     }
 
+    /**
+     * tests checkDim
+     */
+    public void testCheckDim()
+    {
+        parser = new CommandParser("SyntaxTest.txt");
+        assertTrue(parser.checkDim(0, 0, 1, 1));
+        assertFalse(parser.checkDim(-1, 1, 1, 1));
+        assertFalse(parser.checkDim(0, -1, 1, 1));
+        assertFalse(parser.checkDim(-1, -1, 1, 1));
+        assertFalse(parser.checkDim(-1, -1, -1, 1));
+        assertFalse(parser.checkDim(-1, -1, -1, -1));
+    }
 }

@@ -36,6 +36,8 @@ public class Rectangle implements Comparable<Rectangle>
     /**
      * standard constructor for Rectangle; sets up the position and size
      * 
+     * @param newName
+     *            the name fo the rectangle given from the scanner
      * @param newX
      *            x coordinate of upper left corner
      * @param newY
@@ -44,7 +46,7 @@ public class Rectangle implements Comparable<Rectangle>
      *            horizontal length of Rectangle
      * @param newHeight
      *            vertical length of Rectangle
-     * @precondition string name starts with an alphabetic character
+     * 
      * @precondition width and height are greater than 0
      * @precondition x and y coordinate are greater than or equal to 0
      * @precondition x + width is less than 1024
@@ -102,10 +104,12 @@ public class Rectangle implements Comparable<Rectangle>
 
     /**
      * outputs the 4 values to the console
+     * 
+     * @return the string representation of the rectangle
      */
     public String toString()
     {
-        return name + ", " + x + ", " + y + ", " + width + ", " + height;
+        return x + ", " + y + ", " + width + ", " + height;
     }
 
     /**
@@ -128,5 +132,27 @@ public class Rectangle implements Comparable<Rectangle>
         {
             return -1;
         }
+    }
+
+    /**
+     * determines if the given rectangle intersects with the current rectangle.
+     * does so by checking if the given rectangle could possibly NOT intersect.
+     * set of all not intersecting rectangles is much smaller than the set of
+     * all possible intersecting rectangles
+     * 
+     * @param otherRect
+     *            the second rectangle that is being checked for intersections
+     * @return true if the rectangles intersect, false if not
+     */
+    public boolean intersects(Rectangle otherRect)
+    {
+        // left edge r2 is to the right of r1
+        return !((otherRect.getX() >= this.x + this.width)
+                // right edge r2 is to the left of r1
+                || (otherRect.getX() + otherRect.getWidth() <= this.x)
+                // bottom edge r2 is above r1
+                || (otherRect.getY() + otherRect.getHeight() <= this.y)
+                // top edge r2 is below r1
+                || (otherRect.getY() >= this.y + this.height));
     }
 }

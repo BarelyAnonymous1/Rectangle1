@@ -7,27 +7,26 @@
  *            the generic key value for the KVPair
  * @param <E>
  *            the generic data value for the KVPair
+ * @version 1
  *
  */
 public class SkipNode<K extends Comparable<K>, E>
 {
 
     /**
-     * creates a skip list node array that is blank that will point to 
-     * the next node in the list
+     * creates a skip list node array that is blank that will point to the next
+     * node in the list
      */
     public SkipNode<K, E>[] next;
 
     /**
      * Data stored into the node
      */
-    private KVPair<K, E>   pair;
+    private KVPair<K, E>    pair;
     /**
      * determines the level that the node is actually on
      */
-    private int            level;
- 
-
+    private int             level;
 
     /**
      * constructor to make nodes that store a KVPair
@@ -38,15 +37,15 @@ public class SkipNode<K extends Comparable<K>, E>
      *            the integer used to store the level of that node
      */
 
-	@SuppressWarnings("unchecked")
-	public SkipNode(KVPair<K, E> newPair, int newLevel)
+    @SuppressWarnings("unchecked")
+    public SkipNode(KVPair<K, E> newPair, int newLevel)
     {
         level = newLevel;
         pair = newPair;
-        next = (SkipNode<K, E>[])new SkipNode[newLevel + 1];
+        next = (SkipNode<K, E>[]) new SkipNode[newLevel + 1];
         for (int i = 0; i < level; i++)
         {
-        	next[i] = null;
+            next[i] = null;
         }
     }
 
@@ -61,11 +60,11 @@ public class SkipNode<K extends Comparable<K>, E>
      */
     public K getKey()
     {
-    	if (pair != null)
-    	{
-    		return pair.key();
-    	}
-    	return null;
+        if (pair != null)
+        {
+            return pair.key();
+        }
+        return null;
     }
 
     /**
@@ -75,10 +74,10 @@ public class SkipNode<K extends Comparable<K>, E>
      */
     public E getValue()
     {
-    	if (pair != null)
-    	{
-    		return pair.value();
-    	}
+        if (pair != null)
+        {
+            return pair.value();
+        }
         return null;
     }
 
@@ -89,17 +88,18 @@ public class SkipNode<K extends Comparable<K>, E>
      */
     public int getLevel()
     {
-    	return level;
+        return level;
     }
-    
+
     /**
      * gets the pair
+     * 
      * @return KVPair of the node
      */
     public KVPair<K, E> getPair()
     {
-    	if (pair != null)
-    		return pair;
-    	return null;
+        if (pair != null)
+            return pair;
+        return null;
     }
 }

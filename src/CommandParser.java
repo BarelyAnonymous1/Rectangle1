@@ -88,12 +88,11 @@ public class CommandParser
                         list.dump();
                         break;
                     }
-                    /**default:
+                    default:
                     {
-                        break; to make webcat happy
-                    } */
+                        break;
+                    }
                 }
-                //System.out.println(cmd);
             }
             return true;
         }
@@ -127,8 +126,8 @@ public class CommandParser
             KVPair<String, Rectangle> pair = new KVPair<String, Rectangle>(name,
                     rect);
             list.insert(pair);
-            System.out.println("Rectangle inserted: (" + name + ", " + x + 
-            		", " + y + ", " + width + ", " + height + ")");
+            System.out.println("Rectangle inserted: (" + name + ", " + x + ", "
+                    + y + ", " + width + ", " + height + ")");
         }
         else
         {
@@ -151,31 +150,31 @@ public class CommandParser
         String name = scanner.next();
         if (!isNumeric(name))
         {
-        	//KVPair<String, Rectangle> pair = list.search(name);
-        	if (null == list.search(name))
-        	{
-        		System.out.println("Rectangle not removed: (" + name + ")");
-        	}
-        	else
-        	{
-        		
-        	}
+            // KVPair<String, Rectangle> pair = list.search(name);
+            if (list.search(name) == null)
+            {
+                System.out.println("Rectangle not removed: (" + name + ")");
+            }
+            else
+            {
+                System.out.println("Will remove rectangle");
+            }
         }
-        else 
+        else
         {
-        	int x = Integer.parseInt(name);
-        	int y = scanner.nextInt();
-        	int width = scanner.nextInt();
-        	int height = scanner.nextInt();
-        	if (checkDim(x, y, width, height))
-        	{
-        		Rectangle rect = new Rectangle(null, x, y, width, height);
-        	}
-        	else
-        	{
-        		System.out.println("Rectangle rejected: (" + x + ", " +
-        				y + ", " + width + ", " + height + ")");
-        	}
+            int x = Integer.parseInt(name);
+            int y = scanner.nextInt();
+            int width = scanner.nextInt();
+            int height = scanner.nextInt();
+            if (checkDim(x, y, width, height))
+            {
+                Rectangle rect = new Rectangle(null, x, y, width, height);
+            }
+            else
+            {
+                System.out.println("Rectangle rejected: (" + x + ", " + y + ", "
+                        + width + ", " + height + ")");
+            }
         }
     }
 
@@ -195,18 +194,19 @@ public class CommandParser
         int y = scanner.nextInt();
         int width = scanner.nextInt();
         int height = scanner.nextInt();
-        if (checkDim(x, y, width, height))
+        if (!(height < 1 | width < 1))
         {
-        	System.out.println("Rectangles intersecting region (" + x + ", " + y +
-            		", " + width + ", " + height + "):");
-        	//list.regionSearch();
+            System.out.println("Rectangles intersecting region (" + x + ", " + y
+                    + ", " + width + ", " + height + "):");
+            Rectangle regionRect = new Rectangle("regionRect", x, y, width,
+                    height);
+            list.regionSearch(regionRect);
         }
         else
         {
-        	System.out.println("Rectangle rejected: (" + x + ", " + y + ", " +
-        			width + ", " + height + ")");
+            System.out.println("Rectangle rejected: (" + x + ", " + y + ", "
+                    + width + ", " + height + ")");
         }
-        // TODO: IMPLEMENT REGIONSEARCH
         // look in the SkipList for all Rectangles in the region
     }
 
@@ -224,54 +224,68 @@ public class CommandParser
         String name = scanner.next();
         if (null == list.search(name))
         {
-       		System.out.println("Rectangle not found: " + name);
+            System.out.println("Rectangle not found: " + name);
         }
         else
         {
-        	SkipNode<String, Rectangle> node = list.nodeSearch(name);
-        	System.out.println("(" + name + ", " + 
-        			node.getValue().toString() + ")");
-        	while (node.next[0] != null &&
-        			node.next[0].getKey().compareTo(node.getKey()) == 0)
-        	{
-        		node = node.next[0];
-        		System.out.println("(" + name + ", " + 
-        				node.getValue().toString() + ")");
-        	}
+            SkipNode<String, Rectangle> node = list.nodeSearch(name);
+            System.out.println(
+                    "(" + name + ", " + node.getValue().toString() + ")");
+            while (node.next[0] != null
+                    && node.next[0].getKey().compareTo(node.getKey()) == 0)
+            {
+                node = node.next[0];
+                System.out.println(
+                        "(" + name + ", " + node.getValue().toString() + ")");
+            }
         }
     }
-    
+
+    /**
+     * calls the intersections function of the SkipList to output all
+     * intersections of rectangles
+     * 
+     * @precondition the correct command has been asserted
+     * @postcondition terminal will have outputs containing intersections of
+     *                rectangles, if any
+     */
     private void parseIntersections()
     {
-    	System.out.println("Intersection pairs:");
+        System.out.println("Intersection pairs:");
+        list.intersections();
     }
-    
+
     /**
      * checks for numeric nature of the string
-     * @param str string taken to be checked
-     * @return a boolean false or true. 
+     * 
+     * @param str
+     *            string taken to be checked
+     * @return a boolean false or true.
      */
     private static boolean isNumeric(String str)
     {
-    	return str.matches("-?\\d+(\\.\\d+)?");
+        return str.matches("-?\\d+(\\.\\d+)?");
     }
-    
+
     /**
      * helper method to do some maths
-     * @param x coordinate
-     * @param y coordinate
-     * @param width of rectangle
-     * @param height of rectangle
+     * 
+     * @param x
+     *            coordinate
+     * @param y
+     *            coordinate
+     * @param width
+     *            of rectangle
+     * @param height
+     *            of rectangle
      * @return a boolean true or false
      */
-    private boolean checkDim(int x, int y, int width, int height)
+    public boolean checkDim(int x, int y, int width, int height)
     {
-    	if (width > 0 && height > 0 && 
-        		x + width < 1024 && y + height < 1024 && 
-        		x + width > 0 && y + height > 0)
-    	{
-    		return true;
-    	}
-    	return false;
+        return (width > 0 && height > 0 && x + width <= 1024
+                && y + height <= 1024 && x + width > 0 && y + height > 0
+                && x >= 0 && y >= 0);
+//        return !(width <= 0 || height <= 0 || x + width > 1024
+//                || y + height > 1024 || x < 0 || y < 0);
     }
 }
