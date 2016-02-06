@@ -120,6 +120,24 @@ public class SkipList<K extends Comparable<K>, E>
         size++;
         return true;
     }
+    
+    public E remove(K key)
+    {
+    	SkipNode<K, E> current = head;
+        for (int i = level; 0 <= i; i--)
+        {
+            while (current.next[i] != null
+                    && key.compareTo(current.next[i].getKey()) > 0)
+            {
+                current = current.next[i];
+            }
+        }
+        if (current.next == null || key.compareTo(current.next[0].getKey()) != 0)
+        {
+            return null;
+        }
+        for (int i = 0)
+    }
 
 //    /**
 //     * implements the search method; looks through nodes for a specific key
