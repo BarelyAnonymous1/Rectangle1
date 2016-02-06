@@ -158,7 +158,7 @@ public class CommandParser
             }
             else
             {
-                System.out.println("Rectangle removed: (" + name + ", " + found + ")");
+                System.out.println("Rectangle removed: (" + name + ", " + found.toString() + ")");
             }
         }
         else
