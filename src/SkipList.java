@@ -198,7 +198,10 @@ public class SkipList<K extends Comparable<K>, E>
                 {
                     break;
                 }
-                current = current.next[i];
+                if (current.next[i] != null)
+                {
+                    current = current.next[i];
+                }
             }
         }
         if (located != null)
