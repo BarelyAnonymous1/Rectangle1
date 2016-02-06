@@ -188,8 +188,9 @@ public class SkipList<K extends Comparable<K>, E>
                     if (current.next[i].getKey().compareTo(locatedKey) == 0)
                     {
                         current.next[i] = current.next[i].next[i];
+                        break;
                     }
-                    break;
+   
                 }
                 if (locatedKey != null
                         && current.next[i].getKey().compareTo(locatedKey) > 0)
