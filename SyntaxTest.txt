@@ -29,7 +29,7 @@ search c
 search virtual_rec0
 
 remove r_r
-remove a
+remove 1 1 1 4
 remove 1 -2 1 1
 remove 1 1 1 1
 	
