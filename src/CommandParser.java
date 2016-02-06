@@ -150,7 +150,6 @@ public class CommandParser
         String name = scanner.next();
         if (!isNumeric(name))
         {
-            // KVPair<String, Rectangle> pair = list.search(name);
             if (list.search(name) == null)
             {
                 System.out
