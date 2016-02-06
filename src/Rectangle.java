@@ -101,6 +101,15 @@ public class Rectangle implements Comparable<Rectangle>
     {
         return height;
     }
+    
+    /**
+     * access to name
+     * @return the name of the rectangle
+     */
+    public String getName()
+    {
+        return name;
+    }
 
     /**
      * outputs the 4 values to the console
@@ -111,7 +120,7 @@ public class Rectangle implements Comparable<Rectangle>
     {
         return x + ", " + y + ", " + width + ", " + height;
     }
-
+    
     /**
      * Comparable interface method that allows two rectangles to be compared
      * based on their coordinates and sizes
