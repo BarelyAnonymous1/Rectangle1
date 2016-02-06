@@ -139,7 +139,7 @@ public class SkipList<K extends Comparable<K>, E>
         {
             while (current.next[i] != null)
             {
-                if (current.getKey().compareTo(key) == 0)
+                if (current.next[i].getKey().compareTo(key) == 0)
                 {
                     located = current.getValue();
                     current.next[i] = current.next[i].next[i];
@@ -154,7 +154,7 @@ public class SkipList<K extends Comparable<K>, E>
         }
         return located;
     }
-    
+
     /**
      * Locates a value at a point in the array, moves pointers from its previous
      * nodes to the nodes following to "delete" the node for the garbage
@@ -173,7 +173,8 @@ public class SkipList<K extends Comparable<K>, E>
         {
             while (current.next[i] != null)
             {
-                if (current.getValue().toString().compareTo(value.toString()) == 0)
+                if (current.next[i].getValue().toString()
+                        .compareTo(value.toString()) == 0)
                 {
                     if (locatedKey == null)
                     {
@@ -188,7 +189,8 @@ public class SkipList<K extends Comparable<K>, E>
                     }
                     break;
                 }
-                if (locatedKey != null && current.getKey().compareTo(locatedKey) > 0)
+                if (locatedKey != null
+                        && current.getKey().compareTo(locatedKey) > 0)
                 {
                     break;
                 }
