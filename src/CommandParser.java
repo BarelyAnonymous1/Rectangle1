@@ -169,7 +169,18 @@ public class CommandParser
             int height = scanner.nextInt();
             if (checkDim(x, y, width, height))
             {
-                Rectangle rect = new Rectangle(null, x, y, width, height);
+                String search = x + ", " + y + ", " + width + ", " + height;
+                Rectangle found = list.remove(search);
+                if (found == null)
+                {
+                    System.out
+                            .println("Rectangle not removed: (" + name + ")");
+                }
+                else
+                {
+                    System.out.println("Rectangle removed: (" + name + ", " + found + ")");
+                }
+                
             }
             else
             {
