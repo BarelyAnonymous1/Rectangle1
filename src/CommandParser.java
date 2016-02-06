@@ -158,7 +158,8 @@ public class CommandParser
             }
             else
             {
-                System.out.println("Rectangle removed: (" + name + ", " + found.toString() + ")");
+                System.out.println("Rectangle removed: (" + name + ", "
+                        + found.toString() + ")");
             }
         }
         else
@@ -169,17 +170,21 @@ public class CommandParser
             int height = scanner.nextInt();
             if (checkDim(x, y, width, height))
             {
-                String search = x + ", " + y + ", " + width + ", " + height;
-                Rectangle searchRect = new Rectangle(null, x, y, width, height);
+                String search = x + ", " + y + ", " + width + ", "
+                        + height;
+                Rectangle searchRect = new Rectangle(null, x, y, width,
+                        height);
                 Rectangle found = list.removeValue(searchRect);
                 if (found == null)
                 {
-                    System.out
-                            .println("Rectangle not removed: (" + search + ")");
+                    System.out.println(
+                            "Rectangle not removed: (" + search + ")");
                 }
                 else
                 {
-                    System.out.println("Rectangle removed: (" + found.getName() + ", " + found.toString() + ")");
+                    System.out.println(
+                            "Rectangle removed: (" + found.getName() + ", "
+                                    + found.toString() + ")");
                 }
             }
             else
