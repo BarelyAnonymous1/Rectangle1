@@ -152,6 +152,10 @@ public class SkipList<K extends Comparable<K>, E>
                 current = current.next[i];
             }
         }
+        if (located !== null)
+        {
+            size--;
+        }
         return located;
     }
 
