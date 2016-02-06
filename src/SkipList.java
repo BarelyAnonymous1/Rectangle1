@@ -177,8 +177,7 @@ public class SkipList<K extends Comparable<K>, E>
         {
             while (current.next[i] != null)
             {
-                if (current.next[i].getValue().toString()
-                        .compareTo(value.toString()) == 0)
+                if (current.next[i].getValue().toString().equals(value.toString()))
                 {
                     if (locatedKey == null)
                     {
