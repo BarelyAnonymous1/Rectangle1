@@ -57,7 +57,8 @@ public class CommandParser
             while (scanner.hasNext())
             { // While the scanner has information to read
                 String cmd = scanner.next(); // Read the next command
-                switch (cmd) {
+                switch (cmd)
+                {
                     case ("insert"):
                     {
                         parseInsert(scanner);
@@ -119,20 +120,20 @@ public class CommandParser
         int width = scanner.nextInt();
         int height = scanner.nextInt();
         char c = name.charAt(0);
-        boolean isDigit = (c >= '0' && c <= '9');
+        boolean isDigit = !(c < '0' || c > '9');
         if (checkDim(x, y, width, height) && !isDigit)
         {
             Rectangle rect = new Rectangle(name, x, y, width, height);
-            KVPair<String, Rectangle> pair = new KVPair<String, Rectangle>(name,
-                    rect);
+            KVPair<String, Rectangle> pair = new KVPair<String, Rectangle>(
+                    name, rect);
             list.insert(pair);
-            System.out.println("Rectangle inserted: (" + name + ", " + x + ", "
-                    + y + ", " + width + ", " + height + ")");
+            System.out.println("Rectangle inserted: (" + name + ", " + x
+                    + ", " + y + ", " + width + ", " + height + ")");
         }
         else
         {
-            System.out.println("Rectangle rejected: (" + name + ", " + x + ", "
-                    + y + ", " + width + ", " + height + ")");
+            System.out.println("Rectangle rejected: (" + name + ", " + x
+                    + ", " + y + ", " + width + ", " + height + ")");
         }
     }
 
@@ -142,7 +143,7 @@ public class CommandParser
      * 
      * @param scanner
      *            the scanner that is used to search the file
-     * @precondition the scanner input is already intiialized
+     * @precondition the scanner input is already initialized
      * @postcondition if the rectangle exists, it is removed from the list
      */
     private void parseRemove(Scanner scanner)
@@ -153,7 +154,8 @@ public class CommandParser
             // KVPair<String, Rectangle> pair = list.search(name);
             if (list.search(name) == null)
             {
-                System.out.println("Rectangle not removed: (" + name + ")");
+                System.out
+                        .println("Rectangle not removed: (" + name + ")");
             }
             else
             {
@@ -172,8 +174,8 @@ public class CommandParser
             }
             else
             {
-                System.out.println("Rectangle rejected: (" + x + ", " + y + ", "
-                        + width + ", " + height + ")");
+                System.out.println("Rectangle rejected: (" + x + ", " + y
+                        + ", " + width + ", " + height + ")");
             }
         }
     }
@@ -196,16 +198,16 @@ public class CommandParser
         int height = scanner.nextInt();
         if (!(height < 1 | width < 1))
         {
-            System.out.println("Rectangles intersecting region (" + x + ", " + y
-                    + ", " + width + ", " + height + "):");
+            System.out.println("Rectangles intersecting region (" + x
+                    + ", " + y + ", " + width + ", " + height + "):");
             Rectangle regionRect = new Rectangle("regionRect", x, y, width,
                     height);
             list.regionSearch(regionRect);
         }
         else
         {
-            System.out.println("Rectangle rejected: (" + x + ", " + y + ", "
-                    + width + ", " + height + ")");
+            System.out.println("Rectangle rejected: (" + x + ", " + y
+                    + ", " + width + ", " + height + ")");
         }
         // look in the SkipList for all Rectangles in the region
     }
@@ -235,8 +237,8 @@ public class CommandParser
                     && node.next[0].getKey().compareTo(node.getKey()) == 0)
             {
                 node = node.next[0];
-                System.out.println(
-                        "(" + name + ", " + node.getValue().toString() + ")");
+                System.out.println("(" + name + ", "
+                        + node.getValue().toString() + ")");
             }
         }
     }
@@ -285,7 +287,7 @@ public class CommandParser
         return (width > 0 && height > 0 && x + width <= 1024
                 && y + height <= 1024 && x + width > 0 && y + height > 0
                 && x >= 0 && y >= 0);
-//        return !(width <= 0 || height <= 0 || x + width > 1024
-//                || y + height > 1024 || x < 0 || y < 0);
+        // return !(width <= 0 || height <= 0 || x + width > 1024
+        // || y + height > 1024 || x < 0 || y < 0);
     }
 }

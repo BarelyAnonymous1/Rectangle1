@@ -44,8 +44,8 @@ public class SkipNodeTest extends TestCase
      */
     public void testGetPairRight()
     {
-        KVPair<String, Integer> newPair = new KVPair<String, Integer>("hello!",
-                1);
+        KVPair<String, Integer> newPair = new KVPair<String, Integer>(
+                "hello!", 1);
         node3 = new SkipNode<String, Integer>(newPair, 4);
         assertFuzzyEquals(node3.getPair().key(), "hello!");
     }
