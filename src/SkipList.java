@@ -38,9 +38,10 @@ public class SkipList<K extends Comparable<K>, E>
         level = 0;
         size = 0;
     }
-    
+
     /**
      * retrieves the head of the list
+     * 
      * @return the head of the list
      */
     public SkipNode<K, E> getHead()
@@ -99,8 +100,8 @@ public class SkipList<K extends Comparable<K>, E>
         {
             fixHead(newLevel);
         }
-        SkipNode<K, E>[] update = (SkipNode[]) Array.newInstance(SkipNode.class,
-                level + 1);
+        SkipNode<K, E>[] update = (SkipNode[]) Array
+                .newInstance(SkipNode.class, level + 1);
         SkipNode<K, E> curr = head;
         for (int i = level; i >= 0; i--)
         {
@@ -120,64 +121,65 @@ public class SkipList<K extends Comparable<K>, E>
         size++;
         return true;
     }
-    
-    
+
     /**
-     * Locates a value at a point in the array, 
-     * moves pointers from its previous nodes to the nodes following to 
-     * "delete" the node for the garbage collector to clean
-     * @param key the searched for value
+     * Locates a value at a point in the array, moves pointers from its previous
+     * nodes to the nodes following to "delete" the node for the garbage
+     * collector to clean
+     * 
+     * @param key
+     *            the searched for value
      * @return located value if found, if not, null
      */
     public E remove(K key)
     {
-    	SkipNode<K, E> current = head;
-    	E located = null;
-    	for (int i = level; i >= 0; i--)
-    	{
-    		while (current.next[i] != null)
-    		{
-    			if (current.getKey().compareTo(key) == 0)
-    			{
-    				located = current.getValue();
-    				current.next[i] = current.next[i].next[i];
-    				break;
-    			}
-    			if (current.getKey().compareTo(key) > 0)
-    			{
-    				break;
-    			}
-    			current = current.next[i];
-    		}
-    	}
-    	return located;
+        SkipNode<K, E> current = head;
+        E located = null;
+        for (int i = level; i >= 0; i--)
+        {
+            while (current.next[i] != null)
+            {
+                if (current.getKey().compareTo(key) == 0)
+                {
+                    located = current.getValue();
+                    current.next[i] = current.next[i].next[i];
+                    break;
+                }
+                if (current.getKey().compareTo(key) > 0)
+                {
+                    break;
+                }
+                current = current.next[i];
+            }
+        }
+        return located;
     }
 
-//    /**
-//     * implements the search method; looks through nodes for a specific key
-//     * 
-//     * @param key
-//     *            the value to search for
-//     * @return the KVPair of the node
-//     */
-//    public KVPair<K, E> search(K key)
-//    {
-//        SkipNode<K, E> current = head;
-//        for (int i = level; 0 <= i; i--)
-//        {
-//            while (current.next[i] != null
-//                    && key.compareTo(current.next[i].getKey()) > 0)
-//            {
-//                current = current.next[i];
-//            }
-//        }
-//        current = current.next[0];
-//        if (current == null || key.compareTo(current.getKey()) != 0)
-//        {
-//            return null;
-//        }
-//        return current.getPair();
-//    }
+    // /**
+    // * implements the search method; looks through nodes for a specific key
+    // *
+    // * @param key
+    // * the value to search for
+    // * @return the KVPair of the node
+    // */
+    // public KVPair<K, E> search(K key)
+    // {
+    // SkipNode<K, E> current = head;
+    // for (int i = level; 0 <= i; i--)
+    // {
+    // while (current.next[i] != null
+    // && key.compareTo(current.next[i].getKey()) > 0)
+    // {
+    // current = current.next[i];
+    // }
+    // }
+    // current = current.next[0];
+    // if (current == null || key.compareTo(current.getKey()) != 0)
+    // {
+    // return null;
+    // }
+    // return current.getPair();
+    // }
 
     /**
      * finds a specific node given a key value
@@ -251,8 +253,8 @@ public class SkipList<K extends Comparable<K>, E>
                     if (((Rectangle) current.getValue())
                             .intersects(((Rectangle) check.getValue())))
                     {
-                        System.out.println(current.getPair().toString() + " | "
-                                + check.getPair().toString());
+                        System.out.println(current.getPair().toString()
+                                + " | " + check.getPair().toString());
                         foundIntersect = true;
                     }
                 }
