@@ -131,7 +131,7 @@ public class SkipList<K extends Comparable<K>, E>
      *            the searched for key
      * @return located value if found, if not, null
      */
-    public E remove(K key)
+    public E removeKey(K key)
     {
         SkipNode<K, E> current = head;
         E located = null;
@@ -168,7 +168,7 @@ public class SkipList<K extends Comparable<K>, E>
      *            the searched for value
      * @return located value if found, if not, null
      */
-    public E remove(E value)
+    public E removeValue(E value)
     {
         SkipNode<K, E> current = head;
         E located = null;
