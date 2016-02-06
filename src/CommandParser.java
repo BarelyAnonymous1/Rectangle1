@@ -150,14 +150,15 @@ public class CommandParser
         String name = scanner.next();
         if (!isNumeric(name))
         {
-            if (list.search(name) == null)
+            Rectangle found = list.remove(name);
+            if (found == null)
             {
                 System.out
                         .println("Rectangle not removed: (" + name + ")");
             }
             else
             {
-                System.out.println("Will remove rectangle");
+                System.out.println("Rectangle removed: (" + name + ", " + found + ")");
             }
         }
         else
