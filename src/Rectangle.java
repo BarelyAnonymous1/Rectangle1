@@ -101,9 +101,10 @@ public class Rectangle implements Comparable<Rectangle>
     {
         return height;
     }
-    
+
     /**
      * access to name
+     * 
      * @return the name of the rectangle
      */
     public String getName()
@@ -120,7 +121,7 @@ public class Rectangle implements Comparable<Rectangle>
     {
         return x + ", " + y + ", " + width + ", " + height;
     }
-    
+
     /**
      * Comparable interface method that allows two rectangles to be compared
      * based on their coordinates and sizes
@@ -141,6 +142,13 @@ public class Rectangle implements Comparable<Rectangle>
         {
             return -1;
         }
+    }
+
+    public boolean equals(Rectangle obj)
+    {
+        return (this.x == obj.getX() && this.y == obj.getY()
+                && this.width == obj.getWidth()
+                && this.height == obj.getHeight());
     }
 
     /**
