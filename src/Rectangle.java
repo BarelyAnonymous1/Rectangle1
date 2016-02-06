@@ -144,6 +144,7 @@ public class Rectangle implements Comparable<Rectangle>
         }
     }
 
+    @Override
     public boolean equals(Rectangle obj)
     {
         return (this.x == obj.getX() && this.y == obj.getY()
