@@ -170,7 +170,8 @@ public class CommandParser
             if (checkDim(x, y, width, height))
             {
                 String search = x + ", " + y + ", " + width + ", " + height;
-                Rectangle found = list.removeValue(search);
+                Rectangle searchRect = new Rectangle(null, x, y, width, height);
+                Rectangle found = list.removeValue(searchRect);
                 if (found == null)
                 {
                     System.out
