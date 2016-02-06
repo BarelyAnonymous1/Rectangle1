@@ -152,7 +152,7 @@ public class SkipList<K extends Comparable<K>, E>
                 current = current.next[i];
             }
         }
-        if (located !== null)
+        if (located != null)
         {
             size--;
         }
@@ -200,6 +200,10 @@ public class SkipList<K extends Comparable<K>, E>
                 }
                 current = current.next[i];
             }
+        }
+        if (located != null)
+        {
+            size--;
         }
         return located;
     }
