@@ -175,6 +175,8 @@ public class SkipList<K extends Comparable<K>, E>
         K locatedKey = null;
         for (int i = level; i >= 0; i--)
         {
+            System.out.println("changed levels");
+            System.out.println(current.next[i].getValue());
             while (current.next[i] != null)
             {
                 System.out.println(current.next[i].getValue());
