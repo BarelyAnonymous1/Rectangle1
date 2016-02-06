@@ -120,8 +120,7 @@ public class CommandParser
         int width = scanner.nextInt();
         int height = scanner.nextInt();
         char c = name.charAt(0);
-        boolean isDigit = !(c < '0' || c > '9');
-        if (checkDim(x, y, width, height) && !isDigit)
+        if (checkDim(x, y, width, height) && Character.isAlphabetic(c))
         {
             Rectangle rect = new Rectangle(name, x, y, width, height);
             KVPair<String, Rectangle> pair = new KVPair<String, Rectangle>(

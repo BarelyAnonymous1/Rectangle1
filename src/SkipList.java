@@ -121,31 +121,31 @@ public class SkipList<K extends Comparable<K>, E>
         return true;
     }
 
-    /**
-     * implements the search method; looks through nodes for a specific key
-     * 
-     * @param key
-     *            the value to search for
-     * @return the KVPair of the node
-     */
-    public KVPair<K, E> search(K key)
-    {
-        SkipNode<K, E> current = head;
-        for (int i = level; 0 <= i; i--)
-        {
-            while (current.next[i] != null
-                    && key.compareTo(current.next[i].getKey()) > 0)
-            {
-                current = current.next[i];
-            }
-        }
-        current = current.next[0];
-        if (current == null || key.compareTo(current.getKey()) != 0)
-        {
-            return null;
-        }
-        return current.getPair();
-    }
+//    /**
+//     * implements the search method; looks through nodes for a specific key
+//     * 
+//     * @param key
+//     *            the value to search for
+//     * @return the KVPair of the node
+//     */
+//    public KVPair<K, E> search(K key)
+//    {
+//        SkipNode<K, E> current = head;
+//        for (int i = level; 0 <= i; i--)
+//        {
+//            while (current.next[i] != null
+//                    && key.compareTo(current.next[i].getKey()) > 0)
+//            {
+//                current = current.next[i];
+//            }
+//        }
+//        current = current.next[0];
+//        if (current == null || key.compareTo(current.getKey()) != 0)
+//        {
+//            return null;
+//        }
+//        return current.getPair();
+//    }
 
     /**
      * finds a specific node given a key value
@@ -154,7 +154,7 @@ public class SkipList<K extends Comparable<K>, E>
      *            the key that is being searched for
      * @return the node that contains a specific key
      */
-    public SkipNode<K, E> nodeSearch(K key)
+    public SkipNode<K, E> search(K key)
     {
         SkipNode<K, E> current = head;
         for (int i = level; 0 <= i; i--)
