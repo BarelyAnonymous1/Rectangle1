@@ -230,14 +230,14 @@ public class CommandParser
         }
         else
         {
-            System.out.println(
-                    "(" + name + ", " + searchResult.getValue().toString() + ")");
-            while (node.next[0] != null
-                    && node.next[0].getKey().compareTo(node.getKey()) == 0)
+            System.out.println("(" + name + ", "
+                    + searchResult.getValue().toString() + ")");
+            while (searchResult.next[0] != null && searchResult.next[0]
+                    .getKey().compareTo(searchResult.getKey()) == 0)
             {
-                node = node.next[0];
+                searchResult = searchResult.next[0];
                 System.out.println("(" + name + ", "
-                        + node.getValue().toString() + ")");
+                        + searchResult.getValue().toString() + ")");
             }
         }
     }
