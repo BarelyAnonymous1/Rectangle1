@@ -128,7 +128,7 @@ public class SkipList<K extends Comparable<K>, E>
      * collector to clean
      * 
      * @param key
-     *            the searched for value
+     *            the searched for key
      * @return located value if found, if not, null
      */
     public E remove(K key)
@@ -160,25 +160,35 @@ public class SkipList<K extends Comparable<K>, E>
      * nodes to the nodes following to "delete" the node for the garbage
      * collector to clean
      * 
-     * @param key
+     * @param value
      *            the searched for value
      * @return located value if found, if not, null
      */
-    public E remove(K key)
+    public E remove(E value)
     {
         SkipNode<K, E> current = head;
         E located = null;
+        K locatedKey = null;
         for (int i = level; i >= 0; i--)
         {
             while (current.next[i] != null)
             {
-                if (current.getKey().compareTo(key) == 0)
+                if (current.getValue().toString().compareTo(value.toString()) == 0)
                 {
-                    located = current.getValue();
-                    current.next[i] = current.next[i].next[i];
+                    if (locatedKey == null)
+                    {
+                        locatedKey = current.getKey();
+                        located = current.getValue();
+                        current.next[i] = current.next[i].next[i];
+                    }
+                    else if (current.getKey().compareTo(locatedKey) == 0)
+                    {
+                        located = current.getValue();
+                        current.next[i] = current.next[i].next[i];
+                    }
                     break;
                 }
-                if (current.getKey().compareTo(key) > 0)
+                if (locatedKey != null && current.getKey().compareTo(locatedKey) > 0)
                 {
                     break;
                 }
