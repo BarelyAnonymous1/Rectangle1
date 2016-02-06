@@ -144,11 +144,17 @@ public class Rectangle implements Comparable<Rectangle>
         }
     }
 
-    public boolean equals(Rectangle obj)
+    @Override
+    public boolean equals(Object obj)
     {
-        return (this.x == obj.getX() && this.y == obj.getY()
-                && this.width == obj.getWidth()
-                && this.height == obj.getHeight());
+        if (obj instanceof Rectangle)
+        {
+            Rectangle rect = (Rectangle) obj;
+            return (this.x == rect.getX() && this.y == rect.getY()
+                && this.width == rect.getWidth()
+                && this.height == rect.getHeight());
+        }
+        return false;
     }
 
     /**
