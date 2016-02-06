@@ -180,7 +180,6 @@ public class CommandParser
                 {
                     System.out.println("Rectangle removed: (" + name + ", " + found + ")");
                 }
-                
             }
             else
             {
