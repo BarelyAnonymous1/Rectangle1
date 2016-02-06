@@ -171,45 +171,16 @@ public class SkipList<K extends Comparable<K>, E>
     public E removeValue(E value)
     {
         SkipNode<K, E> current = head;
-        E located = null;
-        K locatedKey = null;
-        for (int i = level; i >= 0; i--)
+        K foundKey = null;
+        while (current.next[0] != null)
         {
-            System.out.println("changed levels");
-            while (current.next[i] != null)
+            if ( current.next[0].getValue().equals(value))
             {
-                System.out.println(current.next[i].getValue());
-                if (current.next[i].getValue().equals(value))
-                {
-                    if (locatedKey == null)
-                    {
-                        System.out.println("found key");
-                        locatedKey = current.next[i].getKey();
-                        located = current.next[i].getValue();
-                        current.next[i] = current.next[i].next[i];
-                    }
-                    else if (current.next[i].getKey().compareTo(locatedKey) == 0)
-                    {
-                        current.next[i] = current.next[i].next[i];
-                        break;
-                    }  
-                }
-                if (locatedKey != null && current.next[i] != null
-                        && current.next[i].getKey().compareTo(locatedKey) > 0)
-                {
-                    break;
-                }
-                if (current.next[i] != null)
-                {
-                    current = current.next[i];
-                }
+                return removeKey(current.next[0].getKey());
             }
+            current = current.next[0];
         }
-        if (located != null)
-        {
-            size--;
-        }
-        return located;
+        return null;
     }
 
     /**

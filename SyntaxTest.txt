@@ -30,9 +30,7 @@ search virtual_rec0
 
 dump 
 remove r_r
-remove 1 1 1 4
 remove 1 -2 1 1
-remove 1 1 1 1
 	
 regionsearch   -5 -5 20 20 
 
