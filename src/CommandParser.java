@@ -223,15 +223,15 @@ public class CommandParser
     private void parseSearch(Scanner scanner)
     {
         String name = scanner.next();
+        SkipNode<String, Rectangle> searchResult = list.search(name);
         if (null == list.search(name))
         {
             System.out.println("Rectangle not found: " + name);
         }
         else
         {
-            SkipNode<String, Rectangle> node = list.nodeSearch(name);
             System.out.println(
-                    "(" + name + ", " + node.getValue().toString() + ")");
+                    "(" + name + ", " + searchResult.getValue().toString() + ")");
             while (node.next[0] != null
                     && node.next[0].getKey().compareTo(node.getKey()) == 0)
             {
