@@ -34,7 +34,7 @@ public class SkipList<K extends Comparable<K>, E>
      */
     public SkipList()
     {
-        head = new SkipNode<K, E>(null, 1);
+        head = new SkipNode<K, E>(null, 0);
         level = 0;
         size = 0;
     }
