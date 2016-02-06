@@ -299,7 +299,10 @@ public class CommandParser
      */
     public boolean checkDim(int x, int y, int width, int height)
     {
-        return !(width <= 0 || height <= 0 || x + width > 1024
-                || y + height > 1024 || x < 0 || y < 0);
+        return !(width <= 0 || 
+                height <= 0 || 
+                x + width > 1024 ||
+                y + height > 1024 ||
+                x < 0 || y < 0);
     }
 }
