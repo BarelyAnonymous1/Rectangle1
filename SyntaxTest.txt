@@ -13,6 +13,11 @@ insert a 1 1 1 4
 insert <b -2 -3 -5 -6
 insert inExistRec_0 1 1 -1 -2
 
+insert trueNameTrueCoord  10 10 115 15
+insert 1falseNameTrueCoord 15 170 240 321
+insert trueNameFalseCoord -10 14 0 -100
+insert 1falseNameFalseCoord -57 42 1995 -190
+
  regionsearch   11 11                 0 0
 
 intersections
