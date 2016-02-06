@@ -62,6 +62,7 @@ public class SkipList<K extends Comparable<K>, E>
         head = new SkipNode<K, E>(null, newLevel);
         for (int i = 0; i <= level; i++)
         {
+            System.out.println("oldhead");
             System.out.println(oldHead.next[i]);
             head.next[i] = oldHead.next[i];
         }
