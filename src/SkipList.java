@@ -193,7 +193,7 @@ public class SkipList<K extends Comparable<K>, E>
                         break;
                     }  
                 }
-                if (locatedKey != null
+                if (locatedKey != null && current.next[i] != null
                         && current.next[i].getKey().compareTo(locatedKey) > 0)
                 {
                     break;
