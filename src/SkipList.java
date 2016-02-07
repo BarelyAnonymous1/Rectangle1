@@ -160,9 +160,10 @@ public class SkipList<K extends Comparable<K>, E>
     }
 
     /**
-     * Locates a value at a point in the array, moves pointers from its previous
-     * nodes to the nodes following to "delete" the node for the garbage
-     * collector to clean
+     * Scrolls along the bottom level of the list until
+     * the loop hits a value that is the same as the searched
+     * for value. Then uses removeKey(key of value) to delete
+     * the node from the SkipList
      * 
      * @param value
      *            the searched for value
@@ -209,7 +210,9 @@ public class SkipList<K extends Comparable<K>, E>
     }
 
     /**
-     * dumps the things in the skip list
+     * output a list of every item in the list in the following
+     * format: 
+     * "Node has depth 0, Value (0)"
      */
     public void dump()
     {
