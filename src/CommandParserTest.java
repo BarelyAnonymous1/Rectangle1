@@ -43,6 +43,9 @@ public class CommandParserTest extends TestCase
         assertFalse(parser.checkDim(-1, -1, 1, 1));
         assertFalse(parser.checkDim(-1, -1, -1, 1));
         assertFalse(parser.checkDim(-1, -1, -1, -1));
+        assertFalse(parser.checkDim(0,  0, 0, 0));
+        assertFalse(parser.checkDim(0, 0, 1, 0));
+        
     }
     
     /**
