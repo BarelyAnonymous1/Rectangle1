@@ -2,6 +2,16 @@
 insert r_r          -1 -20 3 4
   insert rec        7 -8 1 3
 dump
+
+insert a 2 3 4 5
+insert a -2 3 4 5
+insert 1a 2 3 4 5
+insert 2a -2 3 4 5
+
+remove a
+remove b
+
+
 insert b 1 1 1 1
 insert a 0 0 11 1
 insert a 1 1 1 2

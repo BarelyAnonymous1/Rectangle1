@@ -45,4 +45,14 @@ public class CommandParserTest extends TestCase
         assertFalse(parser.checkDim(-1, -1, -1, -1));
     }
     
+    /**
+     * tests the parsers various tests
+     */
+    public void testParseFile()
+    {
+    	parser = new CommandParser("test.txt");
+    	boolean success = parser.parseFile();
+    	assertTrue(success);
+    }
+    
 }
