@@ -257,12 +257,12 @@ public class RectangleTest extends TestCase
     {
         Rectangle rect1 = new Rectangle("rect1", 1, 1, 1, 1);
         Rectangle rect2 = new Rectangle("rect2", 2, 2, 2, 2);
-    	Rectangle rect3 = new Rectangle("rect3", 1, 1, 1, 1);
-    	Object obj = new Object();
-    	assertFalse(rect1.equals(obj));
-    	assertFalse(rect1.equals(new Rectangle("a", 1, 1, 2, 2)));
-    	assertFalse(rect1.equals(new Rectangle("a", 1, 1, 1, 2)));
-    	assertTrue(rect1.equals(rect3));
-    	assertFalse(rect1.equals(rect2));
+        Rectangle rect3 = new Rectangle("rect3", 1, 1, 1, 1);
+        Object obj = new Object();
+        assertFalse(rect1.equals(obj));
+        assertFalse(rect1.equals(new Rectangle("a", 1, 1, 2, 2)));
+        assertFalse(rect1.equals(new Rectangle("a", 1, 1, 1, 2)));
+        assertTrue(rect1.equals(rect3));
+        assertFalse(rect1.equals(rect2));
     }
 }
