@@ -56,7 +56,7 @@ public class CommandParserTest extends TestCase
      */
     public void testParseFile()
     {
-    	parser = new CommandParser("test.txt");
+        parser = new CommandParser("test.txt");
     	boolean success = parser.parseFile();
     	assertTrue(success);
     }
