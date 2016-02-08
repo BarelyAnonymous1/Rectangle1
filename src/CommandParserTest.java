@@ -39,6 +39,8 @@ public class CommandParserTest extends TestCase
         parser = new CommandParser("test.txt");
         assertTrue(parser.checkDim(0, 0, 1, 1));
         assertTrue(parser.checkDim(1, 1, 1, 1));
+        assertFalse(parser.checkDim(0, 0, 1025, 1));
+        assertFalse(parser.checkDim(0, 0, 1, 1025));
         assertFalse(parser.checkDim(-1, 1, 1, 1));
         assertFalse(parser.checkDim(0, -1, 1, 1));
         assertFalse(parser.checkDim(-1, -1, 1, 1));
