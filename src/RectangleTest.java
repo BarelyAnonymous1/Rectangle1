@@ -261,6 +261,7 @@ public class RectangleTest extends TestCase
     	Object obj = new Object();
     	assertFalse(rect1.equals(obj));
     	assertFalse(rect1.equals(new Rectangle("a", 1, 1, 2, 2)));
+    	assertFalse(rect1.equals(new Rectangle("a", 1, 1, 1, 2)));
     	assertTrue(rect1.equals(rect3));
     	assertFalse(rect1.equals(rect2));
     }
