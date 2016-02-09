@@ -40,13 +40,25 @@ public class SkipNodeTest extends TestCase
      * tests that a node with a KVPair returns that pair by testing its key,
      * also tests whether the node returns the correct key
      */
-    public void testGetPairRight()
+    public void testGetPairTrue()
     {
         KVPair<String, Integer> newPair = new KVPair<String, Integer>(
                 "hello!", 1);
         nodeTrue = new SkipNode<String, Integer>(newPair, 4);
         assertFuzzyEquals(nodeTrue.getPair().key(), "hello!");
         assertFuzzyEquals(nodeTrue.getKey(), "hello!");
+    }
+    
+    /**
+     * tests when the node returns the value of the pair it contains
+     */
+    public void testGetValueTrue()
+    {
+        KVPair<String, Integer> newPair = new KVPair<String, Integer>(
+                "hello!", 151);
+        nodeTrue = new SkipNode<String, Integer>(newPair, 4);
+        assertFuzzyEquals(nodeTrue.getPair().key(), "hello!");
+        assertTrue(nodeTrue.getValue() == 151);
     }
 
 }
