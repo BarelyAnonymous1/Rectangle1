@@ -127,7 +127,7 @@ public class Rectangle
      * determines if two rectangles are the same rectangle in terms of
      * coordinates, ignores name
      * 
-     * @param the rectangle that is being compared to this
+     * @param obj the rectangle that is being compared to this
      * @return true if the same integer values, false if different
      */
     @Override
