@@ -95,6 +95,7 @@ public class CommandParser
                     }
                     case ("dump"):
                     {
+                        System.out.println("SkipList dump:");
                         list.dump();
                         break;
                     }
