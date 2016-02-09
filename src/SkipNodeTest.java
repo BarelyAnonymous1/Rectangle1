@@ -23,7 +23,7 @@ public class SkipNodeTest extends TestCase
     /**
      * tests the getKey method properly
      */
-    public void testGetKey()
+    public void testGetKeyNull()
     {
         assertNull(nodeNull.getKey());
     }
@@ -31,7 +31,7 @@ public class SkipNodeTest extends TestCase
     /**
      * tests that a node with no pair returns null
      */
-    public void testGetPair()
+    public void testGetPairNull()
     {
         assertNull(nodeNull.getPair());
     }
