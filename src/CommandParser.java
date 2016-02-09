@@ -4,7 +4,11 @@ import java.util.Scanner;
 
 /**
  * CommandParser class used to scan through a file with a Scanner and retrieve
- * specific values to create a SkipList of Rectangles
+ * specific values to create a list of Rectangles. The parser only checks to see
+ * if the file that is input for the Scanner actually exists in the current
+ * directory. The scanner will only attempt to take any action its list if the
+ * correct command is input. an invalid commands will nullify the line. The
+ * parser makes no effort to error check the other inputs beyond the commands.
  * 
  * @author Jonathan DeFreeuw (jondef95), Preston Lattimer (platt)
  * @version 1
@@ -22,7 +26,7 @@ public class CommandParser
     private SkipList<String, Rectangle> list;
 
     /**
-     * constructor for parser, stores filename
+     * constructor for parser, stores filename and creates a new SkipList
      * 
      * @param file
      *            name for the file that is being parsed
@@ -37,22 +41,25 @@ public class CommandParser
      * function used to scan through the file input into the main program
      * 
      * @return boolean did the parsing succeed?
+     * @precondition the file being input either doesn't exist or exists and
+     *               contains the properly formatted commands and inputs
      */
     public boolean parseFile()
     {
         Scanner scanner = null;
         Exception d = null;
+        // check to make sure that the file exists in the pwd
         try
         {
             scanner = new Scanner(new File(inputFile));
         }
         catch (FileNotFoundException e)
-        {
+        {   // Create new scanner
             d = e;
             e.printStackTrace();
             System.out.println(e.getMessage());
-        } // Create new scanner
-        if (d == null)
+        }
+        if (d == null) // if no error was found, let scanner go through file
         {
             while (scanner.hasNext())
             { // While the scanner has information to read
@@ -76,7 +83,8 @@ public class CommandParser
                     }
                     case ("intersections"):
                     {
-                        parseIntersections();
+                        System.out.println("Intersection pairs:");
+                        list.intersections();
                         break;
                     }
                     case ("search"):
@@ -259,20 +267,6 @@ public class CommandParser
     }
 
     /**
-     * calls the intersections function of the SkipList to output all
-     * intersections of rectangles
-     * 
-     * @precondition the correct command has been asserted
-     * @postcondition terminal will have outputs containing intersections of
-     *                rectangles, if any
-     */
-    private void parseIntersections()
-    {
-        System.out.println("Intersection pairs:");
-        list.intersections();
-    }
-
-    /**
      * checks for numeric nature of the string
      * 
      * @param str
@@ -299,10 +293,7 @@ public class CommandParser
      */
     public boolean checkDim(int x, int y, int width, int height)
     {
-        return !(width <= 0 || 
-                height <= 0 || 
-                x + width > 1024 ||
-                y + height > 1024 ||
-                x < 0 || y < 0);
+        return !(width <= 0 || height <= 0 || x + width > 1024
+                || y + height > 1024 || x < 0 || y < 0);
     }
 }
