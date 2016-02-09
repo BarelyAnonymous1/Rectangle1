@@ -217,7 +217,6 @@ public class SkipList<K extends Comparable<K>, E>
      */
     public void dump()
     {
-        System.out.println("SkipList dump:");
         SkipNode<K, E> current = head;
         while (current != null)
         {
