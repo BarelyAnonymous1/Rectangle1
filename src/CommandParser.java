@@ -38,7 +38,8 @@ public class CommandParser
     }
 
     /**
-     * function used to scan through the file input into the main program
+     * function used to scan through the file input into the main program. if a
+     * command is not found as the first string in the line, the line is skipped
      * 
      * @return boolean did the parsing succeed?
      * @precondition the file being input either doesn't exist or exists and
@@ -214,11 +215,10 @@ public class CommandParser
      * 
      * @param scanner
      *            the scanner that is used to search the file
-     * @precondition the scanner input is already initialized
-<<<<<<< HEAD
+     * @precondition the scanner input is already initialized <<<<<<< HEAD
      * @precondition the command "regionsearch" is followed by four integers
-=======
->>>>>>> branch 'master' of https://github.com/BarelyAnonymous1/Rectangle1.git
+     *               ======= >>>>>>> branch 'master' of
+     *               https://github.com/BarelyAnonymous1/Rectangle1.git
      * @postcondition if the height and width are appropriate, a list of
      *                rectangles are output to the console
      */
@@ -289,8 +289,7 @@ public class CommandParser
     }
 
     /**
-     * helper method to do math regarding the dimensions of 
-     * the rectangle
+     * helper method to do math regarding the dimensions of the rectangle
      * 
      * @param x
      *            coordinate
