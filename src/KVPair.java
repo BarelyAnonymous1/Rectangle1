@@ -45,9 +45,9 @@ public class KVPair<K extends Comparable<K>, E>
      *            the KVPair that is being checked against this pair
      * @return 0 if they have the same key, another integer if different
      */
-    public int compareTo(KVPair<K, E> it)
+    public int compareTo(KVPair<K, E> otherKV)
     {
-        return theKey.compareTo(it.key());
+        return theKey.compareTo(otherKV.key());
     }
 
     /**
