@@ -69,12 +69,9 @@ public class KVPairTest extends TestCase
      */
     public void testValue()
     {
-        assertTrue(
-                pair1.value() == 1);
-        assertTrue(
-                pair2.value() == 2 );
-        assertFalse( pair3.value() == 
-                pair1.value());
+        assertTrue(pair1.value() == 1);
+        assertTrue(pair2.value() == 2);
+        assertFalse(pair3.value() == pair1.value());
     }
 
     /**
