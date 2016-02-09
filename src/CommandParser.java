@@ -215,10 +215,8 @@ public class CommandParser
      * 
      * @param scanner
      *            the scanner that is used to search the file
-     * @precondition the scanner input is already initialized <<<<<<< HEAD
+     * @precondition the scanner input is already initialized
      * @precondition the command "regionsearch" is followed by four integers
-     *               ======= >>>>>>> branch 'master' of
-     *               https://github.com/BarelyAnonymous1/Rectangle1.git
      * @postcondition if the height and width are appropriate, a list of
      *                rectangles are output to the console
      */
