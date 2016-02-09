@@ -8,8 +8,6 @@ import student.TestCase;
  */
 public class RectangleTest extends TestCase
 {
-
-
    /**
      * tests the toString method of the rectangle
      */
