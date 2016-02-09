@@ -40,9 +40,11 @@ insert trueNameFalseCoord -10 14 0 -100
 insert 1falseNameFalseCoord -57 42 1995 -190
 
  regionsearch   11 11                 0 0
-
+ regionsearch 11 11 20 0
+ regionsearch 11 11 0 20
+ 
 intersections
-
+garbage 
 dump
 
 search a
