@@ -227,7 +227,7 @@ public class CommandParser
         int y = scanner.nextInt();
         int width = scanner.nextInt();
         int height = scanner.nextInt();
-        if (!(height < 1 | width < 1))
+        if (!(height < 1 || width < 1))
         {
             System.out.println("Rectangles intersecting region (" + x
                     + ", " + y + ", " + width + ", " + height + "):");

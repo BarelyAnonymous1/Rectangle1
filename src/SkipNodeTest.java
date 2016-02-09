@@ -23,7 +23,6 @@ public class SkipNodeTest extends TestCase
      */
     public void testGetPairNull()
     {
-        pair = null;
         nodeNull = new SkipNode<String, Integer>(null, 1);
         assertNull(nodeNull.getPair());
     }
