@@ -32,7 +32,7 @@ public class CommandParserTest extends TestCase
     }
 
     /**
-     * tests checkDim
+     * tests checkDim for the variety of conditions that are available
      */
     public void testCheckDim()
     {
