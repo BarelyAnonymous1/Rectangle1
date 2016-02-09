@@ -41,7 +41,7 @@ public class KVPair<K extends Comparable<K>, E>
     /**
      * compares two KVPairs based on keys
      * 
-     * @param it
+     * @param otherKV
      *            the KVPair that is being checked against this pair
      * @return 0 if they have the same key, another integer if different
      */
@@ -53,7 +53,7 @@ public class KVPair<K extends Comparable<K>, E>
     /**
      * compares this KVPair's key to a given key
      * 
-     * @param it
+     * @param newKey
      *            the key that is being used to compare with this
      * @return 0 if they keys are equal, another integer if different
      */
