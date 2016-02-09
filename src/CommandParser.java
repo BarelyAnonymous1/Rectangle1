@@ -99,6 +99,7 @@ public class CommandParser
                     }
                     default:
                     {
+                        scanner.nextLine();
                         break;
                     }
                 }
