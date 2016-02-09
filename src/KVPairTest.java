@@ -51,8 +51,7 @@ public class KVPairTest extends TestCase
     {
         assertEquals(0, pair2.compareTo("second"));
         assertEquals(0, pair3.compareTo(pair1.key()));
-        assertFalse(Integer.valueOf(pair1.compareTo(pair2.key()))
-                .equals(Integer.valueOf(0)));
+        assertFalse((pair1.compareTo(pair2.key()) == 0));
     }
 
     /**
