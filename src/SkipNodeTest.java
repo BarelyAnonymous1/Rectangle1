@@ -8,15 +8,13 @@ public class SkipNodeTest extends TestCase
 {
     private SkipNode<String, Integer> nodeNull;
     private SkipNode<String, Integer> nodeTrue;
-    private KVPair<String, Integer>   pair;
 
     /**
      * tests the getKey method properly
      */
     public void testGetKeyNull()
     {
-        pair = null;
-        nodeNull = new SkipNode<String, Integer>(pair, 1);
+        nodeNull = new SkipNode<String, Integer>(null, 1);
         assertNull(nodeNull.getKey());
     }
 
@@ -26,7 +24,7 @@ public class SkipNodeTest extends TestCase
     public void testGetPairNull()
     {
         pair = null;
-        nodeNull = new SkipNode<String, Integer>(pair, 1);
+        nodeNull = new SkipNode<String, Integer>(null, 1);
         assertNull(nodeNull.getPair());
     }
 
