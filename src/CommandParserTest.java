@@ -59,5 +59,4 @@ public class CommandParserTest extends TestCase
         boolean success = parser.parseFile();
         assertTrue(success);
     }
-    
 }
