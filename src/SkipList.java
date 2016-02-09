@@ -113,7 +113,7 @@ public class SkipList<K extends Comparable<K>, E>
             update[i] = curr;
         }
         curr = new SkipNode<K, E>(newPair, newLevel);
-        for (int i = 0; i <= level; i++)
+        for (int i = 0; i < level; i++)
         {
             curr.next[i] = update[i].next[i];
             update[i].next[i] = curr;
