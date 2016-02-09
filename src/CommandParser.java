@@ -116,7 +116,7 @@ public class CommandParser
 
     /**
      * private method that allows the parser to scan a line and insert the new
-     * rectangle into a SkipList
+     * rectangle into a list
      * 
      * @param scanner
      *            the scanner that is used to search the file
