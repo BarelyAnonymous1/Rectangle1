@@ -118,6 +118,8 @@ public class CommandParser
      * @param scanner
      *            the scanner that is used to search the file
      * @precondition the scanner input is already initialized
+     * @precondition the command "insert" is followed by one string and four
+     *               integers
      * @postcondition if coordinates are correct, a node is added to the list
      */
     private void parseInsert(Scanner scanner)
@@ -151,6 +153,8 @@ public class CommandParser
      * @param scanner
      *            the scanner that is used to search the file
      * @precondition the scanner input is already initialized
+     * @precondition the command "remove" is followed by one string or four
+     *               integers
      * @postcondition if the rectangle exists, it is removed from the list
      */
     private void parseRemove(Scanner scanner)
@@ -209,7 +213,8 @@ public class CommandParser
      * 
      * @param scanner
      *            the scanner that is used to search the file
-     * @precondition the scanner input is already intiialized
+     * @precondition the scanner input is already initialized
+     * @precondition the command "regionsearch" is followed by four integers
      * @postcondition if the height and width are appropriate, a list of
      *                rectangles are output to the console
      */
@@ -242,6 +247,7 @@ public class CommandParser
      * @param scanner
      *            the scanner that is used to search the file
      * @precondition the scanner input is already initialized
+     * @precondition the command "search" is followed by one string
      * @postcondition if coordinates are correct, a node is added to the list
      */
     private void parseSearch(Scanner scanner)
