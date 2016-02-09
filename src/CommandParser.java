@@ -239,7 +239,6 @@ public class CommandParser
             System.out.println("Rectangle rejected: (" + x + ", " + y
                     + ", " + width + ", " + height + ")");
         }
-        // look in the SkipList for all Rectangles in the region
     }
 
     /**
