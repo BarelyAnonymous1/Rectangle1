@@ -221,17 +221,17 @@ public class SkipList<K extends Comparable<K>, E>
         SkipNode<K, E> current = head;
         while (current != null)
         {
-            String name = "";
+            String value = "";
             if (current.getValue() == null)
             {
-                name = "null";
+                value = "null";
             }
             else
             {
-                name = current.getPair().toString();
+                value = current.getPair().toString();
             }
             System.out.println("Node has depth " + current.getLevel()
-                    + ", Value (" + name + ")");
+                    + ", Value (" + value + ")");
 
             current = current.next[0];
         }
