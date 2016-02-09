@@ -168,7 +168,8 @@ public class Rectangle implements Comparable<Rectangle>
      * determines if the given rectangle intersects with the current rectangle.
      * does so by checking if the given rectangle could possibly NOT intersect.
      * set of all not intersecting rectangles is much smaller than the set of
-     * all possible intersecting rectangles
+     * all possible intersecting rectangles. in comments, r1 = this, r2 =
+     * otherRect
      * 
      * @param otherRect
      *            the second rectangle that is being checked for intersections
