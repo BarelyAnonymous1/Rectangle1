@@ -123,27 +123,27 @@ public class Rectangle implements Comparable<Rectangle>
         return x + ", " + y + ", " + width + ", " + height;
     }
 
-    /**
-     * Comparable interface method that allows two rectangles to be compared
-     * based on their coordinates and sizes
-     * 
-     * @param obj
-     *            rectangle object to compare to current
-     * @return an integer to describe if the rectangles are the same
-     */
-    public int compareTo(Rectangle obj)
-    {
-        if (this.x == obj.getX() && this.y == obj.getY()
-                && this.width == obj.getWidth()
-                && this.height == obj.getHeight())
-        {
-            return 0;
-        }
-        else
-        {
-            return -1;
-        }
-    }
+//    /**
+//     * Comparable interface method that allows two rectangles to be compared
+//     * based on their coordinates and sizes
+//     * 
+//     * @param obj
+//     *            rectangle object to compare to current
+//     * @return an integer to describe if the rectangles are the same
+//     */
+//    public int compareTo(Rectangle obj)
+//    {
+//        if (this.x == obj.getX() && this.y == obj.getY()
+//                && this.width == obj.getWidth()
+//                && this.height == obj.getHeight())
+//        {
+//            return 0;
+//        }
+//        else
+//        {
+//            return -1;
+//        }
+//    }
 
     @Override
     public boolean equals(Object obj)
