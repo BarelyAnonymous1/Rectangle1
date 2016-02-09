@@ -57,9 +57,9 @@ public class KVPair<K extends Comparable<K>, E>
      *            the key that is being used to compare with this
      * @return 0 if they keys are equal, another integer if different
      */
-    public int compareTo(K it)
+    public int compareTo(K newKey)
     {
-        return theKey.compareTo(it);
+        return theKey.compareTo(newKey);
     }
 
     /**
