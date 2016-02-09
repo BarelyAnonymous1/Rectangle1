@@ -145,6 +145,12 @@ public class Rectangle implements Comparable<Rectangle>
         }
     }
 
+    /**
+     * determines if two rectangles are the same rectangle in terms of
+     * coordinates, ignores name
+     * 
+     * @return true if the same integer values, false if different
+     */
     @Override
     public boolean equals(Object obj)
     {
@@ -152,8 +158,8 @@ public class Rectangle implements Comparable<Rectangle>
         {
             Rectangle rect = (Rectangle) obj;
             return (this.x == rect.getX() && this.y == rect.getY()
-                && this.width == rect.getWidth()
-                && this.height == rect.getHeight());
+                    && this.width == rect.getWidth()
+                    && this.height == rect.getHeight());
         }
         return false;
     }
