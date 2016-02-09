@@ -47,6 +47,7 @@ public class Rectangle implements Comparable<Rectangle>
      * @param newHeight
      *            vertical length of Rectangle
      * 
+     * @precondition name starts with an alphabetic character
      * @precondition width and height are greater than 0
      * @precondition x and y coordinate are greater than or equal to 0
      * @precondition x + width is less than 1024
