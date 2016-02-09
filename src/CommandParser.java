@@ -54,7 +54,7 @@ public class CommandParser
             scanner = new Scanner(new File(inputFile));
         }
         catch (FileNotFoundException e)
-        {   // Create new scanner
+        { // Create new scanner
             d = e;
             e.printStackTrace();
             System.out.println(e.getMessage());
