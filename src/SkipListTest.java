@@ -12,9 +12,6 @@ public class SkipListTest extends TestCase
 {
 
     private SkipList<String, Integer> list;
-    private SkipNode<String, Integer> node1;
-    private SkipNode<String, Integer> node2;
-    private SkipNode<String, Integer> node3;
     private KVPair<String, Integer>   pair1;
     private KVPair<String, Integer>   pair2;
     private KVPair<String, Integer>   pair3;
