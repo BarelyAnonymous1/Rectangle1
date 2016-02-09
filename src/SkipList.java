@@ -275,6 +275,7 @@ public class SkipList<K extends Comparable<K>, E>
      * @param region
      *            KVPair that contains the rectangle for the intersecting region
      * @return whether or not a rectangle was found in the region
+     * @precondition the parameter rectangle has width > 0 and length > 0
      */
     public boolean regionSearch(Rectangle region)
     {

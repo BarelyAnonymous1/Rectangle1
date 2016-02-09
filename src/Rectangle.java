@@ -7,7 +7,7 @@
  * @author Jonathan DeFreeuw (jondef95), Preston Lattimer (platt)
  * @version 1
  */
-public class Rectangle implements Comparable<Rectangle>
+public class Rectangle
 {
     /**
      * x coordinate of upper left corner of Rectangle
@@ -121,28 +121,6 @@ public class Rectangle implements Comparable<Rectangle>
     public String toString()
     {
         return x + ", " + y + ", " + width + ", " + height;
-    }
-
-    /**
-     * Comparable interface method that allows two rectangles to be compared
-     * based on their coordinates and sizes
-     * 
-     * @param obj
-     *            rectangle object to compare to current
-     * @return an integer to describe if the rectangles are the same
-     */
-    public int compareTo(Rectangle obj)
-    {
-        if (this.x == obj.getX() && this.y == obj.getY()
-                && this.width == obj.getWidth()
-                && this.height == obj.getHeight())
-        {
-            return 0;
-        }
-        else
-        {
-            return -1;
-        }
     }
 
     /**
