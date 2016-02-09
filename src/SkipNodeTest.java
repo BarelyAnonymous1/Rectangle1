@@ -42,7 +42,7 @@ public class SkipNodeTest extends TestCase
         assertFuzzyEquals(nodeTrue.getPair().key(), "hello!");
         assertFuzzyEquals(nodeTrue.getKey(), "hello!");
     }
-    
+
     /**
      * tests when the node returns the value of the pair it contains
      */
