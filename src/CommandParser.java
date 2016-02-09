@@ -133,7 +133,7 @@ public class CommandParser
         int width = scanner.nextInt();
         int height = scanner.nextInt();
         char c = name.charAt(0);
-        if (checkDim(x, y, width, height) && Character.isAlphabetic(c))
+        if (Character.isAlphabetic(c) && checkDim(x, y, width, height))
         {
             Rectangle rect = new Rectangle(name, x, y, width, height);
             KVPair<String, Rectangle> pair = new KVPair<String, Rectangle>(
