@@ -69,7 +69,7 @@ public class SkipList<K extends Comparable<K>, E>
     }
 
     /**
-     * flips a coin to generate a random level for the nodes to be added.
+     * flips a "coin" to generate a random level for the nodes to be added.
      *
      * @return picked random level
      */
@@ -85,7 +85,7 @@ public class SkipList<K extends Comparable<K>, E>
     }
 
     /**
-     * inserts a node in a sorted order
+     * inserts a node in a sorted order. based on given code from canvas
      * 
      * @param newPair
      *            is the pair to be inserted
@@ -184,7 +184,8 @@ public class SkipList<K extends Comparable<K>, E>
     }
 
     /**
-     * finds a specific node given a key value
+     * finds a specific node given a key value using a while loop
+     * to discover the specific node. 
      * 
      * @param key
      *            the key that is being searched for

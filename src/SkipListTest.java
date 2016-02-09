@@ -12,9 +12,6 @@ public class SkipListTest extends TestCase
 {
 
     private SkipList<String, Integer> list;
-    private SkipNode<String, Integer> node1;
-    private SkipNode<String, Integer> node2;
-    private SkipNode<String, Integer> node3;
     private KVPair<String, Integer>   pair1;
     private KVPair<String, Integer>   pair2;
     private KVPair<String, Integer>   pair3;
@@ -42,22 +39,7 @@ public class SkipListTest extends TestCase
         assertEquals(pair3.compareTo(list.search("node3").getPair()), 0);
 
         list.dump();
-
-        // list.dump();
     }
-
-//    /**
-//     * tests search
-//     */
-//    public void testSearch()
-//    {
-//        assertNull(list.search("a"));
-//        assertNull(list.nodeSearch("a"));
-//        list.insert(pair1);
-//        list.insert(pair2);
-//        list.nodeSearch("node1");
-//        list.nodeSearch("node2");
-//    }
 
     /**
      * make sure that the list will adjust the head when a node is added higher

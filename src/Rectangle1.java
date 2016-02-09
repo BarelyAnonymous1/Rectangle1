@@ -22,8 +22,15 @@
 // Signed: Preston Lattimer on 02/01/2015
 
 /**
- * WE NEED TO TYPE OUT A BETTER HEADER COMMENT FOR THE OVERALL PROJECT
- * The class containing the main method, the entry point of the application.
+ * This project takes in a text file and uses it to parse commands relating
+ * to rectangles. It then performs operations using rectangles as the objects
+ * to demonstrate knowledge of and capability using a SkipList and kv pairs. 
+ * 
+ * The skip list performs such options as insert, delete, checking for 
+ * intersection points, and checking for all of the rectangles within a
+ * certain area. 
+ * 
+ * This class contains the main method, the entry point of the application.
  *
  * @author Jonathan DeFreeuw (jondef95), Preston Lattimer (platt)
  * @version Rectangle1
@@ -31,8 +38,10 @@
 public class Rectangle1
 {
     /**
-     * NEED A BETTER EXPLANATION HERE TOO
-     * The entry point of the application.
+     * Takes in a text file for use with the command input. 
+     * this text file can have commands such as insert, remove, regionsearch,
+     * search, intersections, and dump. all other commands should not be given
+     * and will be treated as garbage by the parser. 
      *
      * @param args
      *            The name of the command file passed in as a command line

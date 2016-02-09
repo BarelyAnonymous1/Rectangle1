@@ -51,7 +51,7 @@ public class KVPair<K extends Comparable<K>, E>
     }
 
     /**
-     * compares this KVPair to a given key
+     * compares this KVPair's key to a given key
      * 
      * @param it
      *            the key that is being used to compare with this
